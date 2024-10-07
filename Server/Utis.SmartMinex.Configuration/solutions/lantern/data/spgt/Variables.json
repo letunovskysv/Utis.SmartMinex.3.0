@@ -1,0 +1,56 @@
+{
+  "objects": [
+    {
+      "id": 27021597764222976,
+      "parent": 259,
+      "type": 259,
+      "code": "ТаблицаДляХраненияРазличныхПеременных",
+      "name": "Таблица для хранения различных переменных",
+      "source": "$(Production)variables",
+      "model": "TVariablesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 27021597764224000,
+          "code": "ИмяПеременной",
+          "name": "Имя переменной",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 27021597764225024,
+          "code": "ЗначениеТипаInt",
+          "name": "Значение типа int",
+          "source": "int_value",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 27021597764226048,
+          "code": "ЗначениеТипаTimestamp",
+          "name": "Значение типа timestamp",
+          "source": "datetime_value",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 27021597764227072,
+          "code": "ЗначениеТипаFloat",
+          "name": "Значение типа float",
+          "source": "float_value",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 27021597764228096,
+          "code": "ЗначениеТипаVarchar",
+          "name": "Значение типа varchar",
+          "source": "str_value",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

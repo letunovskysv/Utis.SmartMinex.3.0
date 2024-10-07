@@ -1,0 +1,43 @@
+﻿@*--------------------------------------------------------------------------------------------------
+// (С) 2017-2025 ООО УралТехИС. Интеллектуальная Системная Платформа 3.0. Все права защищены.
+// Описание: StartCentre – Главная страница приложения, старт-центр.
+//------------------------------------------------------------------------------------------------*@
+@inject DialogService _dlg
+@inject NavigationManager _nav
+@inject IDispatcher _dsp
+<style>
+    .rz-body {
+        background-image: url(images/startcentre.webp);
+        background-size: cover;
+    }
+    .rz-button {
+        border-radius: 16px;
+    }
+</style>
+<div style="display: flex;align-items:center;justify-content: center;">
+    <div style="margin:0 auto;position:absolute;width:50%">
+        <RadzenButton Text="Светильники" ButtonStyle="ButtonStyle.Warning" Click=@(e => _nav.NavigateTo("Справочник/Светильники")) Style="position:absolute;top:3em;left:2em;width:13em;z-index:1" />
+        <RadzenButton Text="Сотрудники" ButtonStyle="ButtonStyle.Danger" Click=@(e => _nav.NavigateTo("Справочник/Сотрудники")) Style="position:absolute;top:3em;left:25em;width:13em;z-index:1" />
+        <RadzenButton Text="Назначения светильников" ButtonStyle="ButtonStyle.Success" Click=@(e => _nav.NavigateTo("Журнал/ВыдачаСветильников")) Style="position:absolute;top:10em;left:9em;width:22em;z-index:1" />
+        <RadzenButton Text="Выдача светильника" ButtonStyle="ButtonStyle.Primary" Click=@(e => _dlg.OpenFindPersonForm(LampAction.Take)) Style="position:absolute;top:18.5em;left:4em;width:15em;z-index:1" />
+        <RadzenButton Text="Сдача светильника" ButtonStyle="ButtonStyle.Secondary" Click=@(e => _dlg.OpenFindPersonForm(LampAction.Back)) Style="position:absolute;top:18.5em;left:21em;width:15em;z-index:1" />
+        <RadzenButton Text="В шахте" ButtonStyle="ButtonStyle.Info" Click=@(e => _nav.NavigateTo("Справочник/inshaft")) Style="position:absolute;top:27em;left:13.5em;width:13em;z-index:1" />
+        <svg style="position:absolute;top:5em;left:7em;transform-origin:23px 30px;transform:rotate(-45deg);"><path d="M15 0 l0 30, -15 0,23 23,23-23,-15 0,0-30z" stroke="darkcyan" fill="darkred" /></svg>
+        <svg style="position:absolute;top:5em;left:25em;transform-origin:23px 30px;transform:rotate(45deg);"><path d="M15 0 l0 30, -15 0,23 23,23-23,-15 0,0-30z" stroke="darkcyan" fill="darkred" /></svg>
+        <svg style="position:absolute;top:12em;left:16em;"><path d="M15 0 l0 30, -15 0,23 23,23-23,-15 0,0-30z" stroke="darkcyan" fill="darkred" /></svg>
+        <svg style="position:absolute;top:19.5em;left:11em;transform-origin:23px 30px;transform:rotate(-45deg);"><path d="M15 0 l0 30, -15 0,23 23,23-23,-15 0,0-30z" stroke="darkcyan" fill="darkred" /></svg>
+        <svg style="position:absolute;top:19em;left:21em;transform-origin:23px 30px;transform:rotate(-135deg);"><path d="M15 0 l0 30, -15 0,23 23,23-23,-15 0,0-30z" stroke="darkcyan" fill="darkred" /></svg>
+    </div>
+    <UtisClock Style="position:absolute;left:46px;top:8px;" />
+    <div style="position:absolute;left:1em;top:8em;">
+        <table style="font-weight:bold;color:#111257;">
+            <tr><td colspan="2">Светильники</td></tr>
+            <tr><td>Выдано:</td><td>@_dsp.BusyLamps</td></tr>
+            <tr><td>Свободно:</td><td>@_dsp.FreeLamps</td></tr>
+            <tr><td>Выдано за смену:</td><td>@_dsp.TakeLampsShift</td></tr>
+            <tr><td>Сдано за смену:</td><td>@_dsp.BackLampsShift</td></tr>
+            <tr><td>Люди в шахте:</td><td>0</td></tr>
+            <tr><td>Несданные светильники:</td><td>0</td></tr>
+        </table>
+    </div>
+</div>

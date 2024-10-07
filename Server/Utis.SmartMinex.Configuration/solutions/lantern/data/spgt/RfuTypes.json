@@ -1,0 +1,34 @@
+{
+  "objects": [
+    {
+      "id": 24488322973827072,
+      "parent": 259,
+      "type": 259,
+      "code": "ТипыРадиоблоков",
+      "name": "Типы радиоблоков",
+      "source": "$(Production)rfu_types",
+      "model": "TRfuTypesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 24488322973828096,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "description": "1-субр-01см, 2-субр-02см, 3-субр-03см, 4-МГ01 Исеть",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 24488322973829120,
+          "code": "НазваниеТипа",
+          "name": "Название типа",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

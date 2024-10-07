@@ -1,0 +1,90 @@
+{
+  "objects": [
+    {
+      "id": 7036874417766400,
+      "parent": 259,
+      "type": 259,
+      "code": "ДанныеПоПеремещениям",
+      "name": "Данные по перемещениям",
+      "description": "Срок хранения - 1 месяц.",
+      "source": "$(Production)data",
+      "model": "TDataRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 7036874417767424,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 7036874417768448,
+          "code": "ДатаИВремя",
+          "name": "Дата и время",
+          "source": "datetime",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 7036874417769472,
+          "code": "НомерМетки",
+          "name": "Номер метки",
+          "source": "met_nom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 7036874417770496,
+          "code": "Считывателя",
+          "name": "Считывателя",
+          "source": "reader_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 7036874417771520,
+          "code": "Зоны1",
+          "name": "Зоны 1",
+          "source": "zone1_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 7036874417772544,
+          "code": "Зоны2",
+          "name": "Зоны 2",
+          "source": "zone2_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 7036874417773568,
+          "code": "Зоны3",
+          "name": "Зоны 3",
+          "source": "zone3_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 7036874417774592,
+          "code": "Зоны4",
+          "name": "Зоны 4",
+          "source": "zone4_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 7036874417775616,
+          "code": "НомерМеткиПередавшегоТранзитныеДанные",
+          "name": "Номер метки передавшего транзитные данные",
+          "source": "src_met_nom",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

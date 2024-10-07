@@ -1,0 +1,50 @@
+{
+  "objects": [
+    {
+      "id": 15199648742375424,
+      "parent": 259,
+      "type": 259,
+      "code": "Горизонты",
+      "name": "Горизонты",
+      "source": "$(Production)levels",
+      "model": "TLevelsRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 15199648742376448,
+          "code": "ИД",
+          "name": "Горизонта",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 15199648742377472,
+          "code": "НазваниеГоризонта",
+          "name": "Название горизонта",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 15199648742378496,
+          "code": "Поверхность",
+          "name": "Поверхность",
+          "description": "0-горизонт в шахте; 1-горизонт является поверхностью (пром.площадка)",
+          "source": "zero_level",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 15199648742379520,
+          "code": "МестаРасположения",
+          "name": "Места расположения",
+          "source": "location_id",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

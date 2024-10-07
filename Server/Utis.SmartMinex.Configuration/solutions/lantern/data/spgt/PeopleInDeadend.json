@@ -1,0 +1,49 @@
+{
+  "objects": [
+    {
+      "id": 18577348462903296,
+      "parent": 259,
+      "type": 259,
+      "code": "ЛюдиВТупиковойВыработке",
+      "name": "Люди в тупиковой выработке",
+      "source": "$(Production)people_in_deadend",
+      "model": "TPeopleInDeadendRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 18577348462904320,
+          "code": "НомерМетки",
+          "name": "Номер метки",
+          "source": "met_nom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 18577348462905344,
+          "code": "ВремяВхожденияВТупик",
+          "name": "Время вхождения в тупик",
+          "source": "datetime",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 18577348462906368,
+          "code": "Считывателя",
+          "name": "Считывателя",
+          "source": "reader_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 18577348462907392,
+          "code": "СообщениеПослано",
+          "name": "Сообщение послано",
+          "description": "0-нет, 1-да",
+          "source": "event_sended",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

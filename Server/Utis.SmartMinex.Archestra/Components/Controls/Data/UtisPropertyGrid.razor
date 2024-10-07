@@ -1,0 +1,28 @@
+﻿@*--------------------------------------------------------------------------------------------------
+// (С) 2017-2025 ООО УралТехИС. Интеллектуальная Системная Платформа 3.0. Все права защищены.
+// Описание: UtisPropertyGrid – Элемент управления свойствами объекта конфигурации.
+//------------------------------------------------------------------------------------------------*@
+@namespace Utis.SmartMinex.Archestra.Controls
+
+<table class="ut-pgrid">
+    @if (DataSource is TEntity && TryGetProperties(out var props))
+        foreach(var p in props)
+        {
+            <tr>
+                <td>@p.Label</td>
+                <td>
+                    @if (p.Value is bool bval)
+                    {
+                        <RadzenCheckBox class="ut-pgrid-val" TValue="bool" Value=@bval ReadOnly=@p.ReadOnly
+                                        Change=@(e => OnInput(p.Name, e)) />
+                    }
+                    else
+                    {
+                        var sval = p.Value?.ToString();
+                        <RadzenTextBox class="ut-pgrid-val" Value=@sval
+                                       Change=@(e => OnInput(p.Name, e)) />
+                    }
+                </td>
+            </tr>
+        }
+</table>

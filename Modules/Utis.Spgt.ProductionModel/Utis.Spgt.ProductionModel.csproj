@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\Utis.SmartMinex.3.0.csproj" />
+
+  <PropertyGroup>
+    <Description>Модели данных СПГТ-41 на основании БД SPGT_CBASE3 конвертированной в PostgreSQL.</Description>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

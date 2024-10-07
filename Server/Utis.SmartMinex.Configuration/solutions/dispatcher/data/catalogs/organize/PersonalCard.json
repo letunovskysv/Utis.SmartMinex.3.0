@@ -1,0 +1,110 @@
+{
+  "objects": [
+    {
+      "id": 11540474045136896,
+      "parent": 17179871232,
+      "type": 259,
+      "code": "ПерсональнаяКарта",
+      "name": "Персональная карта",
+      "description": "Персональная карта сотрудника",
+      "source": "$(Production)personalcard",
+      "model": "PersonalCard, Utis.Minex.ProductionModel",
+      "attributes": [
+        {
+          "id": 11540474045137920,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "description": "Уникальный идентификатор объекта",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 11540474045138944,
+          "code": "Наименование",
+          "name": "Наименование",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 11540474045139968,
+          "code": "НомерКарты",
+          "name": "Номер карты",
+          "source": "number_id",
+          "datatype": 131,
+          "visible": true
+        },
+        {
+          "id": 11540474045140992,
+          "code": "ФорматНомера",
+          "name": "Формат номера персональной карты",
+          "source": "handlertype",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 11540474045142016,
+          "code": "НомерКарты",
+          "name": "Номер карты",
+          "source": "cardnumber",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 11540474045143040,
+          "code": "ТипКарты",
+          "name": "Тип карты",
+          "source": "cardtype",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 11540474045144064,
+          "code": "СтатусКарты",
+          "name": "Статус карты",
+          "source": "cardstatus",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 11540474045145088,
+          "code": "Создан",
+          "name": "Создан",
+          "description": "Дата/время создания объекта",
+          "source": "created",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 11540474045146112,
+          "code": "Изменён",
+          "name": "Изменён",
+          "description": "Дата/время изменения объекта",
+          "source": "updated",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 11540474045147136,
+          "code": "Удалено",
+          "name": "Удалено",
+          "description": "Метка удаления объекта",
+          "source": "deleted",
+          "datatype": 144,
+          "visible": false
+        },
+        {
+          "id": 11540474045148160,
+          "code": "ВерсияОбъекта",
+          "name": "Версия объекта",
+          "source": "versionobject",
+          "datatype": 131,
+          "visible": false
+        }
+      ],
+      "data": []
+    }
+  ]
+}

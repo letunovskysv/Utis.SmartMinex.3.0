@@ -1,0 +1,88 @@
+{
+  "objects": [
+    {
+      "id": 12666373951979520,
+      "parent": 259,
+      "type": 259,
+      "code": "СписокМетокВЛифте",
+      "name": "Список меток в лифте",
+      "source": "$(Production)in_lift",
+      "model": "TInLiftRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 12666373951980544,
+          "code": "НомерМетки",
+          "name": "Номер метки",
+          "source": "met_num",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 12666373951981568,
+          "code": "Считывателя",
+          "name": "Считывателя",
+          "source": "reader_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 12666373951982592,
+          "code": "Горизонта",
+          "name": "Горизонта",
+          "source": "level_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 12666373951983616,
+          "code": "Зоны1",
+          "name": "Зоны 1",
+          "source": "zone1_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 12666373951984640,
+          "code": "Зоны2",
+          "name": "Зоны 2",
+          "source": "zone2_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 12666373951985664,
+          "code": "Зоны3",
+          "name": "Зоны 3",
+          "source": "zone3_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 12666373951986688,
+          "code": "Зоны4",
+          "name": "Зоны 4",
+          "source": "zone4_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 12666373951987712,
+          "code": "ДатаИВремяПоследнейРегистрации",
+          "name": "Дата и время последней регистрации",
+          "source": "dt",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 12666373951988736,
+          "code": "Srcmetnom",
+          "name": "SrcMetNom",
+          "source": "srcmetnom",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

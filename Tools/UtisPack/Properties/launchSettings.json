@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "UtisPack": {
+      "commandName": "Project",
+      "commandLineArgs": "\"$(SolutionDir)Tools\\Utis.SmartMinex.Configurator\\wwwroot\\scripts\\elements\" \"$(SolutionDir)Tools\\Utis.SmartMinex.Configurator\\wwwroot\\scripts\\utis.js\" \"$(SolutionDir)Tools\\Utis.SmartMinex.Configurator\\wwwroot\\styles\\elements\" \"$(SolutionDir)Tools\\Utis.SmartMinex.Configurator\\wwwroot\\styles\\utis.css\""
+    }
+  }
+}

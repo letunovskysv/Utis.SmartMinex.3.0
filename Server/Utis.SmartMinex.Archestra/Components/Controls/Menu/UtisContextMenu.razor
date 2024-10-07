@@ -1,0 +1,193 @@
+﻿@*--------------------------------------------------------------------------------------------------
+// (С) 2017-2025 ООО УралТехИС. Интеллектуальная Системная Платформа 3.0. Все права защищены.
+// Описание: ContextMenu – Элемент управления контекстного меню.
+// https://translated.turbopages.org/proxy_u/en-ru.ru.0a891ca2-66e5f8ae-934c938a-74722d776562/https/stackoverflow.com/questions/77349496/custom-blazor-component-collection-is-being-reset-before-rendering
+//------------------------------------------------------------------------------------------------*@
+@using System.Xml.Linq
+@namespace Utis.SmartMinex.Archestra.Controls
+@inject IJSRuntime _jsr
+
+@if (_visible && _items != null)
+{
+    <div class="ut-ctx-menu ut-popup" style="left:@(_x)px;top:@(_y)px">
+        <ul>
+            @foreach (var item in _items)
+            {
+                if (item.Splitter)
+                {
+                    <li class="ut-ctx-split" />
+                }
+                else
+                {
+                    <li>
+                        <div style="display:inline-block;width: 100%;" @onmouseover=@(() => ItemHover(item)) @onclick=@(() => OnItemClick(item))>
+                            @item.Name<div class=@(item.HasChild ? "icon-right" : "icon-space") style="float:right"></div>
+                        </div>
+                        @if (_selected[0] == item)
+                        {
+                            <div class="ut-ctx-submenu ut-popup">
+                                <ul>
+                                    @foreach (var subitem in item.Items)
+                                    {
+                                        if (subitem.Splitter)
+                                        {
+                                            <li class="ut-ctx-split" />
+                                        }
+                                        else
+                                        {
+                                            <li>
+                                                <div class="ut-ctx-subname" @onmouseover=@(() => ItemHover(subitem)) @onclick=@(() => OnItemClick(subitem))>
+                                                    @subitem.Name<div class=@(subitem.HasChild ? "icon-right" : "icon-space") style="float:right"></div>
+                                                </div>
+                                                @if (_selected[1] == subitem)
+                                                {
+                                                    <div class="ut-ctx-submenu ut-popup">
+                                                        <ul>
+                                                            @foreach (var subitem2 in subitem.Items)
+                                                            {
+                                                                if (subitem2.Splitter)
+                                                                {
+                                                                    <li class="ut-ctx-split" />
+                                                                }
+                                                                else
+                                                                {
+                                                                    <li>
+                                                                        <div class="ut-ctx-subname" @onmouseover=@(() => ItemHover(subitem2)) @onclick=@(() => OnItemClick(subitem2))>
+                                                                            @subitem2.Name<div class=@(subitem2.HasChild ? "icon-right" : "icon-space") style="float:right"></div>
+                                                                        </div>
+                                                                        @if (_selected[2] == subitem2)
+                                                                        {
+                                                                            <ul class="ut-ctx-submenu ut-popup">
+                                                                                @foreach (var subitem3 in subitem2.Items)
+                                                                                {
+                                                                                    if (subitem3.Splitter)
+                                                                                    {
+                                                                                        <li class="ut-ctx-split" />
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        <li>
+                                                                                            <div class="ut-ctx-subname" @onmouseover=@(() => ItemHover(subitem3)) @onclick=@(() => OnItemClick(subitem3))>
+                                                                                                @subitem3.Name<div class=@(subitem3.HasChild ? "icon-right" : "icon-space") style="float:right"></div>
+                                                                                            </div>
+                                                                                        </li>
+                                                                                    }
+                                                                                }
+                                                                            </ul>
+                                                                        }
+                                                                    </li>
+                                                                }
+                                                            }
+                                                        </ul>
+                                                    </div>
+                                                }
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        }
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public EventCallback<UtisMenuItemEventArgs> ItemClick { get; set; }
+
+    [Parameter, EditorRequired]
+    public object? DataSource
+    {
+        get => _items;
+        set
+        {
+            if (value is string str)
+                ReadItems(_items = [], XDocument.Parse(string.Concat("<r>", str, "</r>")).Root.Elements());
+
+            else if (value is IEnumerable<UtisMenuItem> lst)
+                _items = lst.ToList();
+
+            if (_items != null)
+                AssignLevel(_items, 0);
+        }
+    }
+
+    List<UtisMenuItem>? _items = default!;
+    bool _visible;
+    int _x, _y;
+    object? _sender;
+    UtisMenuItem?[] _selected = new UtisMenuItem[3];
+
+    public Task ShowModal(object? sender, MouseEventArgs e)
+    {
+        _sender = sender;
+        _selected[0] = null;
+        if (_items != null && _items.Count > 0)
+        {
+            _x = (int)e.ClientX;
+            _y = (int)e.ClientY;
+            _visible = true;
+        }
+        return Task.CompletedTask;
+    }
+
+    public Task Close()
+    {
+        _visible = false;
+        _selected[0] = null;
+        _jsr.InvokeVoidAsync(WellKnownJS.ResetWindowClick);
+        StateHasChanged();
+        return Task.CompletedTask;
+    }
+
+    Task ItemHover(UtisMenuItem item)
+    {
+        _selected[item.Level] = null;
+        if (item.HasChild && item != _selected[item.Level])
+            _selected[item.Level] = item;
+
+        return Task.CompletedTask;
+    }
+
+    Task OnItemClick(UtisMenuItem item)
+    {
+        if (!item.HasChild)
+        {
+            Close();
+            ItemClick.InvokeAsync(new UtisMenuItemEventArgs(_sender, item));
+        }
+        return Task.CompletedTask;
+    }
+
+    #region Build
+
+    void ReadItems(List<UtisMenuItem> menu, IEnumerable<XElement> items)
+    {
+        foreach (var ex in items)
+        {
+            var item = new UtisMenuItem()
+                {
+                    Name = ex.Attribute("name")?.Value ?? "-",
+                    Value = ex.Attribute("value")?.Value ?? ex.Attribute("name")?.Value ?? string.Empty
+                };
+
+            if (ex.HasElements)
+                ReadItems(item.Items = [], ex.Elements());
+
+            menu.Add(item);
+        }
+    }
+
+    static void AssignLevel(List<UtisMenuItem> items, int level) =>
+        items.ForEach(a =>
+        {
+            a.Level = level;
+            if (a.Items != null)
+                AssignLevel(a.Items, level + 1);
+        });
+
+    #endregion Build
+}

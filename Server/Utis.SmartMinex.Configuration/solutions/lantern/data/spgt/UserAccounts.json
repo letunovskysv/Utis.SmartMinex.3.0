@@ -1,0 +1,41 @@
+{
+  "objects": [
+    {
+      "id": 26458647810801664,
+      "parent": 259,
+      "type": 259,
+      "code": "ПользователиСистемы",
+      "name": "Пользователи системы",
+      "source": "$(Production)user_accounts",
+      "model": "TUserAccountsRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 26458647810802688,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 26458647810803712,
+          "code": "Человека",
+          "name": "Человека",
+          "source": "person_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 26458647810804736,
+          "code": "ЛогинПользователя",
+          "name": "Логин пользователя",
+          "source": "login",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

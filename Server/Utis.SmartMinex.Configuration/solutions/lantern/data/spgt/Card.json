@@ -1,0 +1,32 @@
+{
+  "objects": [
+    {
+      "id": 5629499534213120,
+      "parent": 259,
+      "type": 259,
+      "code": "ПривязкаКартДоступаКЛюдям",
+      "name": "Привязка карт доступа к людям",
+      "source": "$(Production)card",
+      "model": "TCardRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 5629499534214144,
+          "code": "НомерКарты",
+          "name": "Номер карты",
+          "source": "num",
+          "datatype": 131,
+          "visible": true
+        },
+        {
+          "id": 5629499534215168,
+          "code": "Сотрудник",
+          "name": "Сотрудник",
+          "source": "person_id",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

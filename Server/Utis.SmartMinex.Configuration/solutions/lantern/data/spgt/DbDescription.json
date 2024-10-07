@@ -1,0 +1,40 @@
+{
+  "objects": [
+    {
+      "id": 7318349394477056,
+      "parent": 259,
+      "type": 259,
+      "code": "ОписаниеБазыДанных",
+      "name": "Описание базы данных",
+      "source": "$(Production)db_description",
+      "model": "TDbDescriptionRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 7318349394478080,
+          "code": "Программы",
+          "name": "Программы",
+          "source": "prog_id",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 7318349394479104,
+          "code": "ВерсияДоступности",
+          "name": "Версия доступности",
+          "source": "ver",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 7318349394480128,
+          "code": "ДатаИзменения",
+          "name": "Дата изменения",
+          "source": "ver_datetime",
+          "datatype": 141,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

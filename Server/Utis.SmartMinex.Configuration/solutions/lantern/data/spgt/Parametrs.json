@@ -1,0 +1,56 @@
+{
+  "objects": [
+    {
+      "id": 17732923532771328,
+      "parent": 259,
+      "type": 259,
+      "code": "Parametrs",
+      "name": "Parametrs",
+      "source": "$(Production)parametrs",
+      "model": "TParametrsRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 17732923532772352,
+          "code": "Устройства",
+          "name": "Устройства",
+          "source": "device_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 17732923532773376,
+          "code": "ТипаПараметра",
+          "name": "Типа параметра",
+          "source": "par_type_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 17732923532774400,
+          "code": "ЗначениеПараметраDouble",
+          "name": "Значение параметра double",
+          "source": "val_dp",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 17732923532775424,
+          "code": "ЗначениеПараметраДатаИВремя",
+          "name": "Значение параметра дата и время",
+          "source": "datetime",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 17732923532776448,
+          "code": "ЗначениеПараметраСтрока",
+          "name": "Значение параметра строка",
+          "source": "val_str",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

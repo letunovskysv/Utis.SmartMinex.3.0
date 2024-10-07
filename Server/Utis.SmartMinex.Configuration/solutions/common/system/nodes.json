@@ -1,0 +1,158 @@
+{
+  "objects": [
+    {
+      "id": 281474976710656,
+      "parent": 17179870208,
+      "type": 259,
+      "code": "Узлы",
+      "name": "Узлы баз данных",
+      "source": "config.nodes",
+      "flags": "System,Replicated",
+      "attributes": [
+        {
+          "id": 281474976711680,
+          "code": "ИД",
+          "name": "ИД",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 281474976712704,
+          "code": "Родитель",
+          "name": "Родитель",
+          "source": "parent",
+          "datatype": 131,
+          "flags": "Parent",
+          "visible": false
+        },
+        {
+          "id": 281474976713728,
+          "code": "ЭтоГруппа",
+          "name": "Это группа",
+          "source": "isgroup",
+          "datatype": 144,
+          "flags": "Parent",
+          "visible": false
+        },
+        {
+          "id": 281474976714752,
+          "code": "СостояниеЗаписи",
+          "name": "Состояние",
+          "source": "state",
+          "datatype": 130,
+          "default": 8,
+          "visible": false
+        },
+        {
+          "id": 281474976715776,
+          "code": "Площадка",
+          "name": "Площадка",
+          "source": "site",
+          "datatype": 131,
+          "visible": true
+        },
+        {
+          "id": 281474976716800,
+          "code": "Код",
+          "name": "Код",
+          "source": "code",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 281474976717824,
+          "code": "Наименование",
+          "name": "Наименование",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 281474976718848,
+          "code": "Адрес",
+          "name": "Адрес",
+          "description": "Сетевой адрес или имя сервера",
+          "source": "host",
+          "datatype": 140,
+          "nullable": true,
+          "visible": true
+        },
+        {
+          "id": 281474976719872,
+          "code": "Тип",
+          "name": "Тип узла БД",
+          "description": "Используется при распределённой БД",
+          "source": "type",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 281474976720896,
+          "code": "Уровень",
+          "name": "Уровень узла БД",
+          "description": "Используется при распределённой иеррархической БД",
+          "source": "level",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 281474976721920,
+          "code": "Индекс",
+          "name": "Индекс БД",
+          "description": "Идентификатор БД = [0..1023]",
+          "source": "index",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 281474976722944,
+          "code": "Активный",
+          "name": "Активный",
+          "source": "active",
+          "datatype": 144,
+          "visible": true
+        },
+        {
+          "id": 281474976723968,
+          "code": "Примечание",
+          "name": "Примечание",
+          "source": "description",
+          "datatype": 140,
+          "nullable": true,
+          "visible": true
+        },
+        {
+          "id": 281474976724992,
+          "code": "ВерсияПО",
+          "name": "Версия ПО",
+          "description": "Версия ПО объектового сервера. Обновляется при подключении публикатора узла",
+          "source": "fwrev",
+          "datatype": 140,
+          "nullable": true,
+          "visible": true
+        },
+        {
+          "id": 281474976726016,
+          "code": "ВерсияБД",
+          "name": "Версия БД",
+          "description": "Версия базы данных объектового сервера. Обновляется при подключении публикатора узла",
+          "source": "dbrev",
+          "datatype": 140,
+          "nullable": true,
+          "visible": true
+        },
+        {
+          "id": 281474976727040,
+          "code": "ВерсияЗаписи",
+          "name": "Версия записи",
+          "source": "rowversion",
+          "datatype": 131,
+          "flags": "Version",
+          "visible": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  
+  <Import Project="..\..\Utis.SmartMinex.3.0.csproj" />
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="C:\Users\Letunovsky\.nuget\packages\babylon.blazor\1.4.0\contentFiles\any\net8.0\Properties\launchSettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Babylon.Blazor" Version="1.4.0" />
+  </ItemGroup>
+
+</Project>

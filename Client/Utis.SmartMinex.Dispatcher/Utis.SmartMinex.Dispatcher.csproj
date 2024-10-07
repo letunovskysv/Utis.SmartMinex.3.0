@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\Utis.SmartMinex.3.0.csproj" />
+
+  <PropertyGroup>
+    <RootNamespace>Utis.SmartMinex.Client</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Server\Utis.SmartMinex.Runtime\Utis.SmartMinex.Runtime.csproj" />
+  </ItemGroup>
+
+</Project>

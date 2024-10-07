@@ -1,0 +1,57 @@
+﻿@*--------------------------------------------------------------------------------------------------
+// (С) 2017-2025 ООО УралТехИС. Интеллектуальная Системная Платформа 3.0. Все права защищены.
+// Описание: Inspector – Боковая панель навигации по конфигурации Системы. Инспектор конфигурации.
+//------------------------------------------------------------------------------------------------*@
+@using Utis.SmartMinex.Data
+@inherits UtisPage
+@inject NavigationManager _nav
+@inject SessionData _session
+
+<ul class="ut-inspector" role="tree" tabindex="-1" label="Боковое меню" @onkeydown=@((e) => OnKeyDown(e)) @onkeydown:preventDefault=@(_state != XState.Edit)>
+    @if (_nodes != null)
+    {
+        int lev = 0;
+        @foreach (var node in _nodes.RecursiveBy(n => n.Nodes))
+        {
+            if (node.Level < lev)
+                lev = node.Level;
+
+            if (node.Level == lev)
+            {
+                <li>
+                    @if (node == _itemedit)
+                    {
+                        <div class="ut-inspector-item @(node == _selected ? "select" : string.Empty)">
+                            @for (int i = 1; i < node.Level; i++)
+                            {
+                                <div class="indent">&nbsp;</div>
+                            }
+                            <div class=@(node.HasChild ? node.Expanded ? "marker icon-adown" : "marker icon-aright" : "indent")>&nbsp;</div><img src="images/@(node.Icon)" />
+                            <input @ref="_input" class="ut-inspector-inp" type="text" value="@node.Name" @oninput="@(e => _input_val = e.Value.ToString())" />
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="ut-inspector-item @(node == _selected ? "select" : string.Empty)"
+                             @onclick=@((e) => OnItemClick(node))
+                             @ondblclick=@((e) => OnItemDblClick(node))
+                             @oncontextmenu=@((e) => OnContextMenu(new InspectorItemEventArgs(node, e))) @oncontextmenu:preventDefault="true">
+
+                            @for (int i = 1; i < node.Level; i++)
+                            {
+                                <div class="indent">&nbsp;</div>
+                            }
+                            @if (node.Level > 0)
+                            {
+                                <div class=@(node.HasChild ? node.Expanded ? "marker icon-adown" : "marker icon-aright" : "indent")>&nbsp;</div>
+                            }<img src="images/@(node.Icon)" />@node.Name
+                        </div>
+                    }
+                </li>
+                if (node.Expanded) lev++;
+            }
+        }
+    }
+</ul>
+
+<UtisContextMenu @ref=_ctxmenu DataSource=@_ds_ctxmenu ItemClick=@OnMenuClick />

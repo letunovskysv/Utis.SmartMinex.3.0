@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/utis.css?@(typeof(UtisApp).Assembly.GetName().Version)" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <script src="_content/Radzen.Blazor/Radzen.Blazor.js?v=@(typeof(Radzen.Colors).Assembly.GetName().Version)"></script>
+    <script src="scripts/utis.js?@(typeof(UtisApp).Assembly.GetName().Version)"></script>
+    <RadzenTheme Theme="material" @rendermode="InteractiveServer" />
+    <HeadOutlet />
+</head>
+
+<body>
+    <div id="components-reconnect-modal">
+        <div id="components-reconnect-message">
+            Потеряно соединение с сервером!<br />
+            Попытка подключения: <span id="components-reconnect-current-attempt"></span> из <span id="components-reconnect-max-retries"></span>
+            <br /><br />
+            <div id="components-reconnect-rejected">
+                <button onclick="location.reload()">Обновить</button>
+            </div>
+        </div>
+    </div>
+    <UtisRoutes @rendermode="InteractiveServer" />
+    <script src="_framework/blazor.web.js"></script>
+</body>
+
+</html>

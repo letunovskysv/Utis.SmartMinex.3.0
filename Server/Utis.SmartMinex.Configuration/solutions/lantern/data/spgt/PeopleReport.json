@@ -1,0 +1,57 @@
+{
+  "objects": [
+    {
+      "id": 19140298416324608,
+      "parent": 259,
+      "type": 259,
+      "code": "РазрешениеДляSpgtstlamps",
+      "name": "Разрешение для SPGTSTLAMPS на people_report.",
+      "source": "$(Production)people_report",
+      "model": "TPeopleReportRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 19140298416325632,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 19140298416326656,
+          "code": "КодОперации",
+          "name": "Код операции",
+          "source": "code",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 19140298416327680,
+          "code": "Время",
+          "name": "Время",
+          "source": "datetime",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 19140298416328704,
+          "code": "НомерМетки",
+          "name": "Номер метки",
+          "source": "met_nom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 19140298416329728,
+          "code": "Человека",
+          "name": "Человека",
+          "source": "person_id",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

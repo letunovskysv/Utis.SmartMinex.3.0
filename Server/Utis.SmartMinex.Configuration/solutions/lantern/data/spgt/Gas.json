@@ -1,0 +1,40 @@
+{
+  "objects": [
+    {
+      "id": 10414574138294272,
+      "parent": 259,
+      "type": 259,
+      "code": "НазванияГазов",
+      "name": "Названия газов",
+      "source": "$(Production)gas",
+      "model": "TGasRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 10414574138295296,
+          "code": "Газа",
+          "name": "Газа",
+          "source": "code",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 10414574138296320,
+          "code": "Название",
+          "name": "Название",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 10414574138297344,
+          "code": "ЕденицаИзмерения",
+          "name": "Еденица измерения",
+          "source": "unit",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+﻿@page "/logon"
+@namespace Utis.SmartMinex.Client
+@inject AuthenticationStateProvider _auth
+@inject IDispatcher _dsp
+
+<style type="text/css">
+    :root {
+        --rz-input-height: auto;
+        --rz-input-line-height: 0;
+    }
+    .col1 {
+        width: 150px;
+    }
+    .required {
+        color: red;
+        font-size: smaller;
+    }
+</style>
+
+<RadzenCard class="rz-shadow-9 ut-logon">
+    <table style="width:95%;margin: 170px 50px 0 0">
+        <tr>
+            <td class="col-sm-3 col-form-label col1" style="padding-left:1em;">Имя пользователя:</td>
+            <td>
+                <RadzenTextBox Style="width:95%" @bind-Value="@_username" Name="UserName" onkeypress="if (event.keyCode===13) $('pass').focus()" />
+            </td>
+        </tr>
+        <tr class="required"><td>&nbsp;</td><td>@_userRequired</td></tr>
+        <tr>
+            <td class="col-sm-3 col-form-label col1" style="padding-left:1em;">Пароль:</td>
+            <td>
+                <RadzenPassword id="pass" Style="width:95%" @bind-Value="@_password" Name="Password" onkeypress="if (event.keyCode===13) { $('entry').focus(); $('entry').click(); }" />
+            </td>
+        </tr>
+        <tr class="required"><td>&nbsp;</td><td>@_passRequired</td></tr>
+        <tr><td></td><td><RadzenButton id="entry" Text="Войти" Click="OnEntry" Style="z-index:1" /></td></tr>
+    </table>
+    <RadzenLink Icon="question_mark" Path="help" Target="_blank" title="Справка" Style="position:absolute;top:9px;left:660px;color:#0d324d;text-decoration:none;font:20pt Tahoma, Verdana, sans-serif;" />
+    <span class="ut-notsel" style="position:absolute;top:369px;left:0;width:98%;text-align:center;font: 1.8rem Tahoma;font-weight:400">@_dsp.Name</span>
+    <span class="ut-notsel" style="position:absolute;top:348px;left:0;width:98%;text-align:right;padding-right:1rem;font:11pt/10pt Tahoma, Verdana, sans-serif;">Версия @_dsp.Version</span>
+</RadzenCard>
+
+@code {
+    string? _username;
+    string? _password;
+    string? _userRequired;
+    string? _passRequired;
+
+    async Task OnEntry(MouseEventArgs e)
+    {
+        if (!string.IsNullOrWhiteSpace(_username) && !string.IsNullOrWhiteSpace(_password))
+        {
+            var client = "::ffff:127.0.0.1";
+            var state = ((UtisAuthStateProvider)_auth).Logon(_username, _password, client);
+            await state.WaitAsync(new CancellationToken());
+            // if (state == null)
+            //     _userRequired = _passRequired = "Неверно указано имя пользователя или пароль";
+            // else
+            // {
+            //     LocalConfig appsets;
+            //     try
+            //     {
+            //         appsets = Newtonsoft.Json.JsonConvert.DeserializeObject<LocalConfig>(
+            //             await _jsr.InvokeAsync<string>(WellKnownJS.GetLocalItem, "appsets"));
+            //     }
+            //     catch
+            //     {
+            //         await _jsr.InvokeAsync<object>(WellKnownJS.SetLocalItem, "appsets",
+            //             Newtonsoft.Json.JsonConvert.SerializeObject(appsets = new LocalConfig()));
+            //     }
+            //     var ssn = _dsp.Session(state.GetSessionId());
+            //     ssn.Application = appsets;
+            //     var machine = await _dsp.GetDataAsync<TMachineRow>(WellKnownTypes.Machines.ToString(), "address='" + client + "'", null);
+            //     ssn.Address = client;
+            //     ssn.Site = machine.FirstOrDefault().Name ?? "Неопеределено";
+            //     _app.StateHasChanged();
+            // }
+        }
+        else
+        {
+            _userRequired = string.IsNullOrWhiteSpace(_username) ? "Введите имя пользователя" : string.Empty;
+            _passRequired = string.IsNullOrWhiteSpace(_password) ? "Введите пароль" : string.Empty;
+        }
+    }
+}

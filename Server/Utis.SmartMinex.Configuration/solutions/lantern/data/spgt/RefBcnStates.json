@@ -1,0 +1,32 @@
+{
+  "objects": [
+    {
+      "id": 23080948090273792,
+      "parent": 259,
+      "type": 259,
+      "code": "СправочникКодовСостоянияАто",
+      "name": "Справочник кодов состояния АТО.",
+      "source": "$(Production)ref_bcn_states",
+      "model": "TRefBcnStatesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 23080948090274816,
+          "code": "Code",
+          "name": "Code",
+          "source": "code",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 23080948090275840,
+          "code": "Name",
+          "name": "Name",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

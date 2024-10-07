@@ -1,0 +1,655 @@
+{
+  "objects": [
+    {
+      "id": 1,
+      "code": "Обработчик",
+      "name": "Обработчики",
+      "description": "Загрузчики метаданных в Систему при запуске сервера приложений (объектового сервера)",
+      "source": "Utis.SmartMinex.Runtime.THandler, Utis.SmartMinex.Runtime",
+      "objects": [
+        {
+          "id": 4294968320,
+          "types": [ 2, 3, 4, 5, 13 ],
+          "source": "Utis.SmartMinex.Helpers.EntityDataHelper, Utis.SmartMinex.Metadata"
+        },
+        {
+          "id": 4294969344,
+          "types": [ 7 ],
+          "source": "Utis.SmartMinex.Helpers.ModuleDataHelper, Utis.SmartMinex.Metadata"
+        },
+        {
+          "id": 4294970368,
+          "types": [ 256, 257, 258, 259 ],
+          "source": "Utis.SmartMinex.Helpers.ObjectDataHelper, Utis.SmartMinex.Metadata"
+        },
+        {
+          "id": 4294971392,
+          "types": [ 8 ],
+          "source": "Utis.SmartMinex.Helpers.AttributeDataHelper, Utis.SmartMinex.Metadata"
+        },
+        {
+          "id": 4294972416,
+          "types": [ 14 ],
+          "source": "Utis.SmartMinex.Helpers.UIDataHelper, Utis.SmartMinex.Metadata"
+        },
+        {
+          "id": 4294973440,
+          "types": [ 266, 137438954496, 137438955520 ],
+          "source": "Utis.SmartMinex.Helpers.MapDataHelper, Utis.SmartMinex.Metadata"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "code": "Конфигурация",
+      "name": "Объекты конфигурации",
+      "source": "config.objects",
+      "objects": [
+        {
+          "id": 3,
+          "code": "Манифест",
+          "name": "Манифест",
+          "description": "Сведения о конфигурации",
+          "source": "manifest"
+        },
+        {
+          "id": 4,
+          "code": "Папка",
+          "name": "Папка",
+          "description": "Объединение объектов в папку",
+          "source": "folder"
+        },
+        {
+          "id": 5,
+          "code": "Компонент",
+          "name": "Компоненты",
+          "objects": [
+            {
+              "id": 6,
+              "code": "Приложение",
+              "name": "Приложения",
+              "description": "Приложения (группировка микросервисов, модулей по функциональным признакам)",
+              "source": "application",
+              "ordinal": 200,
+              "deleted": true
+            },
+            {
+              "id": 7,
+              "code": "Модуль",
+              "name": "Модули",
+              "description": "Микросервисы, модули, службы",
+              "source": "module",
+              "ordinal": 210,
+              "designer": "ObjectEditor",
+              "attributes": [
+                {
+                  "id": 30064772096,
+                  "code": "id",
+                  "name": "Идентификатор",
+                  "readonly": true,
+                  "visible": true,
+                  "flags": "Key"
+                },
+                {
+                  "id": 30064773120,
+                  "code": "code",
+                  "name": "Код",
+                  "description": "Строковый идентификатор объекта.",
+                  "visible": true
+                },
+                {
+                  "id": 30064774144,
+                  "code": "name",
+                  "name": "Наименование",
+                  "visible": true
+                },
+                {
+                  "id": 30064775168,
+                  "code": "moduletype",
+                  "name": "Класс модуля",
+                  "visible": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "code": "Реквизит",
+          "name": "Реквизиты",
+          "description": "Реквизит, поле, свойство и т.д.",
+          "source": "attribute",
+          "designer": "ObjectEditor",
+          "attributes": [
+            {
+              "id": 34359739392,
+              "code": "id",
+              "name": "Идентификатор",
+              "readonly": true,
+              "visible": true,
+              "flags": "Key"
+            },
+            {
+              "id": 34359740416,
+              "code": "code",
+              "name": "Код",
+              "description": "Строковый идентификатор объекта.",
+              "visible": true
+            },
+            {
+              "id": 34359741440,
+              "code": "name",
+              "name": "Наименование",
+              "visible": true
+            },
+            {
+              "id": 34359742464,
+              "code": "source",
+              "name": "Поле таблицы",
+              "description": "Источник данных объекта в базе данных (колонка таблицы).",
+              "visible": true
+            },
+            {
+              "id": 34359743488,
+              "code": "ordinal",
+              "name": "Порядок",
+              "description": "Порядок отображения в различных списках.",
+              "visible": true
+            },
+            {
+              "id": 34359744512,
+              "code": "readonly",
+              "name": "Только для чтения",
+              "description": "Признак запрета редактирования значения.",
+              "visible": true
+            },
+            {
+              "id": 34359745536,
+              "code": "description",
+              "name": "Описание",
+              "visible": true
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "code": "Категория",
+          "name": "Категории",
+          "description": "Категория, группировки, папка"
+        },
+        {
+          "id": 10,
+          "code": "ТабличнаяЧасть",
+          "name": "Табличная части"
+        },
+        {
+          "id": 11,
+          "code": "Измерение",
+          "name": "Измерение"
+        },
+        {
+          "id": 12,
+          "code": "ПростойТип",
+          "name": "Простые типы",
+          "objects": [
+            {
+              "id": 128,
+              "code": "byte",
+              "name": "Байт",
+              "source": "tinyint"
+            },
+            {
+              "id": 129,
+              "code": "int16",
+              "name": "Целое(16)",
+              "source": "smallint"
+            },
+            {
+              "id": 130,
+              "code": "int32",
+              "name": "Целое(32)",
+              "source": "int"
+            },
+            {
+              "id": 131,
+              "code": "int64",
+              "name": "Целое(64)",
+              "source": "bigint"
+            },
+            {
+              "id": 132,
+              "code": "float",
+              "name": "Вещественное(32)",
+              "source": "real"
+            },
+            {
+              "id": 133,
+              "code": "double",
+              "name": "Вещественное(64)",
+              "source": "float"
+            },
+            {
+              "id": 134,
+              "code": "decimal",
+              "name": "Число",
+              "source": "decimal"
+            },
+            {
+              "id": 135,
+              "code": "numeric",
+              "name": "Число(19,4)",
+              "source": "decimal(19,4)"
+            },
+            {
+              "id": 136,
+              "code": "char",
+              "name": "Символьная",
+              "source": "char"
+            },
+            {
+              "id": 137,
+              "code": "nchar",
+              "name": "Символьная Unicode",
+              "source": "nchar"
+            },
+            {
+              "id": 138,
+              "code": "varchar",
+              "name": "Строка",
+              "source": "varchar"
+            },
+            {
+              "id": 139,
+              "code": "nvarchar",
+              "name": "Строка Unicode",
+              "source": "nvarchar"
+            },
+            {
+              "id": 140,
+              "code": "text",
+              "name": "Строка",
+              "source": "text"
+            },
+            {
+              "id": 141,
+              "code": "datetime",
+              "name": "ДатаВремя",
+              "source": "datetime"
+            },
+            {
+              "id": 142,
+              "code": "date",
+              "name": "Дата",
+              "source": "date"
+            },
+            {
+              "id": 143,
+              "code": "time",
+              "name": "Время",
+              "source": "time"
+            },
+            {
+              "id": 144,
+              "code": "bool",
+              "name": "Логическое",
+              "source": "bit"
+            },
+            {
+              "id": 145,
+              "code": "vinary",
+              "name": "Двоичные фиксированной длинны",
+              "source": "binary"
+            },
+            {
+              "id": 146,
+              "code": "varbinary",
+              "name": "Двоичные",
+              "source": "varbinary"
+            },
+            {
+              "id": 147,
+              "code": "guid",
+              "name": "GUID",
+              "source": "uniqueidentifier"
+            },
+            {
+              "id": 148,
+              "code": "timestamp",
+              "name": "Timestamp",
+              "source": "rowversion"
+            },
+            {
+              "id": 149,
+              "code": "array",
+              "name": "Список",
+              "source": "array"
+            },
+            {
+              "id": 150,
+              "code": "xml",
+              "name": "XML",
+              "source": "xml"
+            },
+            {
+              "id": 151,
+              "code": "json",
+              "name": "JSON",
+              "source": "json"
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "code": "Тип",
+          "name": "Типы",
+          "source": "Utis.SmartMinex.Runtime.TTypeInfo, Utis.SmartMinex.Runtime",
+          "objects": [
+            {
+              "id": 256,
+              "code": "БД",
+              "name": "Базы данных",
+              "source": "database",
+              "ordinal": 10
+            },
+            {
+              "id": 257,
+              "code": "Константа",
+              "name": "Константы",
+              "source": "constant",
+              "ordinal": 10,
+              "attributes": [
+                {
+                  "id": 1103806596096,
+                  "code": "id",
+                  "name": "Идентификатор",
+                  "readonly": true,
+                  "visible": true,
+                  "flags": "Key"
+                },
+                {
+                  "id": 1103806597120,
+                  "code": "name",
+                  "name": "Наименование",
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "id": 258,
+              "code": "Перечисление",
+              "name": "Перечисления",
+              "source": "enum",
+              "ordinal": 30,
+              "attributes": [
+                {
+                  "id": 1108101563392,
+                  "code": "id",
+                  "name": "Идентификатор",
+                  "readonly": true,
+                  "visible": true,
+                  "flags": "Key"
+                },
+                {
+                  "id": 1108101563392,
+                  "code": "name",
+                  "name": "Наименование",
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "id": 259,
+              "code": "Справочник",
+              "name": "Справочники",
+              "source": "catalog",
+              "ordinal": 20,
+              "designer": "ObjectEditor",
+              "attributes": [
+                {
+                  "id": 1112396530688,
+                  "code": "id",
+                  "name": "Идентификатор",
+                  "description": "Глобальный уникальный 64-разрядный идентификатор объекта.",
+                  "readonly": true,
+                  "visible": true
+                },
+                {
+                  "id": 1112396531712,
+                  "code": "code",
+                  "name": "Код",
+                  "description": "Строковый идентификатор объекта.",
+                  "visible": true
+                },
+                {
+                  "id": 1112396532736,
+                  "code": "name",
+                  "name": "Наименование",
+                  "visible": true
+                },
+                {
+                  "id": 1112396533760,
+                  "code": "source",
+                  "name": "Источник данных",
+                  "description": "Источник данных объекта в базе данных (таблица, представление, функция и т.д.).",
+                  "visible": true
+                },
+                {
+                  "id": 1112396534784,
+                  "code": "description",
+                  "name": "Описание",
+                  "visible": true
+                },
+                {
+                  "id": 1112396535808,
+                  "code": "ordinal",
+                  "name": "Порядок",
+                  "description": "Порядок отображения в различных списках.",
+                  "visible": true
+                },
+                {
+                  "id": 1112396536832,
+                  "code": "model",
+                  "name": "Связанный тип данных",
+                  "description": "Связанный тип данных, модель данных.",
+                  "visible": true
+                },
+                {
+                  "id": 1112396537856,
+                  "code": "flags",
+                  "name": "Системный",
+                  "source": "System",
+                  "description": "Признак системного объекта, конфигурируемого на этапе разработки Системы.",
+                  "visible": true
+                },
+                {
+                  "id": 1112396538880,
+                  "code": "flags",
+                  "name": "Реплицируемый",
+                  "source": "Replicated",
+                  "description": "Признак участия в обмене между различными узлами в распределённой базе данных.",
+                  "visible": true
+                },
+                {
+                  "id": 1112396539904,
+                  "code": "deleted",
+                  "name": "Удалён",
+                  "description": "Признак исключения объекта из конфигурации, не используется.",
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "id": 260,
+              "code": "Документ",
+              "name": "Документы",
+              "source": "document",
+              "ordinal": 40,
+              "designer": "ObjectEditor",
+              "attributes": [
+                {
+                  "id": 1116691497984,
+                  "code": "id",
+                  "name": "Идентификатор",
+                  "readonly": true,
+                  "visible": true,
+                  "flags": "Key"
+                },
+                {
+                  "id": 1116691499008,
+                  "code": "name",
+                  "name": "Наименование",
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "id": 261,
+              "code": "Журнал",
+              "name": "Журналы документов",
+              "source": "journal",
+              "ordinal": 50,
+              "designer": "ObjectEditor",
+              "attributes": [
+                {
+                  "id": 1120986465280,
+                  "code": "id",
+                  "name": "Идентификатор",
+                  "readonly": true,
+                  "visible": true,
+                  "flags": "Key"
+                },
+                {
+                  "id": 1120986466304,
+                  "code": "name",
+                  "name": "Наименование",
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "id": 262,
+              "code": "Регистр",
+              "name": "Регистры",
+              "source": "register",
+              "ordinal": 60,
+              "designer": "ObjectEditor",
+              "attributes": [
+                {
+                  "id": 1125281432576,
+                  "code": "id",
+                  "name": "Идентификатор",
+                  "readonly": true,
+                  "visible": true,
+                  "flags": "Key"
+                },
+                {
+                  "id": 1125281433600,
+                  "code": "name",
+                  "name": "Наименование",
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "id": 263,
+              "code": "УчётныйРегистр",
+              "name": "Учётный регистры",
+              "source": "account",
+              "ordinal": 70,
+              "designer": "ObjectEditor",
+              "attributes": [
+                {
+                  "id": 1129576399872,
+                  "code": "id",
+                  "name": "Идентификатор",
+                  "readonly": true,
+                  "visible": true,
+                  "flags": "Key"
+                },
+                {
+                  "id": 1129576400896,
+                  "code": "name",
+                  "name": "Наименование",
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "id": 264,
+              "code": "Отчёт",
+              "name": "Отчёты",
+              "source": "report",
+              "ordinal": 80,
+              "designer": "ObjectEditor",
+              "attributes": [
+                {
+                  "id": 1133871367168,
+                  "code": "id",
+                  "name": "Идентификатор",
+                  "readonly": true,
+                  "visible": true,
+                  "flags": "Key"
+                },
+                {
+                  "id": 1133871368192,
+                  "code": "name",
+                  "name": "Наименование",
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "id": 265,
+              "code": "Тэг",
+              "name": "Тэги",
+              "source": "tag",
+              "ordinal": 90,
+              "attributes": [
+                {
+                  "id": 1138166334464,
+                  "code": "id",
+                  "name": "Идентификатор",
+                  "readonly": true,
+                  "visible": true,
+                  "flags": "Key"
+                },
+                {
+                  "id": 1138166335488,
+                  "code": "name",
+                  "name": "Наименование",
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "id": 266,
+              "code": "Схема",
+              "name": "План-схема",
+              "source": "scheme",
+              "ordinal": 100,
+              "objects": [
+                {
+                  "id": 137438954496,
+                  "type": 137438954496,
+                  "code": "Уровень",
+                  "name": "Горизонт"
+                },
+                {
+                  "id": 137438955520,
+                  "type": 137438955520,
+                  "code": "Слой",
+                  "name": "Слой"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "code": "Меню",
+          "name": "Меню"
+        }
+      ]
+    }
+  ]
+}

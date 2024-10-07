@@ -1,0 +1,51 @@
+{
+  "objects": [
+    {
+      "id": 15762598695796736,
+      "parent": 259,
+      "type": 259,
+      "code": "ЛинииСвязи",
+      "name": "Линии связи",
+      "source": "$(Production)lines",
+      "model": "TLinesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 15762598695797760,
+          "code": "НомерЛинии",
+          "name": "Номер линии",
+          "source": "nom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 15762598695798784,
+          "code": "ОбывКольцевойЛинии",
+          "name": "Обыв кольцевой линии",
+          "description": "0-линия целая; 1-линия оборвана",
+          "source": "broken",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 15762598695799808,
+          "code": "СостояниеПреобразователяПорта1",
+          "name": "Состояние преобразователя порта 1",
+          "description": "null-отсутствует, 0-отказ, 1-работает",
+          "source": "port1_state",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 15762598695800832,
+          "code": "СостояниеПреобразователяПорта2",
+          "name": "Состояние преобразователя порта 2",
+          "description": "null-отсутствует, 0-отказ, 1-работает",
+          "source": "port2_state",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

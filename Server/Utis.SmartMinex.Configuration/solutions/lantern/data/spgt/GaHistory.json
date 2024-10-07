@@ -1,0 +1,74 @@
+{
+  "objects": [
+    {
+      "id": 9851624184872960,
+      "parent": 259,
+      "type": 259,
+      "code": "ИсторияСдачиВыдачиГазоанализаторов",
+      "name": "История сдачи/выдачи газоанализаторов ГА",
+      "source": "$(Production)ga_history",
+      "model": "TGaHistoryRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 9851624184873984,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 9851624184875008,
+          "code": "НомерМеткиГа",
+          "name": "Номер метки ГА",
+          "source": "ga_met_nom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 9851624184876032,
+          "code": "ДатаИВремяРегистрации",
+          "name": "Дата и время регистрации",
+          "source": "datetime",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 9851624184877056,
+          "code": "СерийныйНомерГа",
+          "name": "Серийный номер ГА",
+          "source": "serial_nom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 9851624184878080,
+          "code": "ГодВыпускаГа",
+          "name": "Год выпуска ГА",
+          "source": "serial_year",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 9851624184879104,
+          "code": "СотрудникаКоторомуВыданГа",
+          "name": "Сотрудника, которому выдан ГА",
+          "source": "person_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 9851624184880128,
+          "code": "ТипОперации",
+          "name": "Тип операции",
+          "description": "1 - выдача, 0 - сдача ГА",
+          "source": "type",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

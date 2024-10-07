@@ -1,0 +1,56 @@
+{
+  "objects": [
+    {
+      "id": 23643898043695104,
+      "parent": 259,
+      "type": 259,
+      "code": "RfuParam",
+      "name": "rfu param",
+      "source": "$(Production)rfu_param",
+      "model": "TRfuParamRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 23643898043696128,
+          "code": "Metnom",
+          "name": "MetNom",
+          "source": "metnom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 23643898043697152,
+          "code": "Mettype",
+          "name": "MetType",
+          "source": "mettype",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 23643898043698176,
+          "code": "Valtype",
+          "name": "ValType",
+          "source": "valtype",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 23643898043699200,
+          "code": "Val",
+          "name": "Val",
+          "source": "val",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 23643898043700224,
+          "code": "Dt",
+          "name": "Dt",
+          "source": "dt",
+          "datatype": 141,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

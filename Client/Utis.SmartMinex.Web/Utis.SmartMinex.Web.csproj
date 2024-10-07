@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <Import Project="..\..\Utis.SmartMinex.3.0.csproj" />
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <UserSecretsId>b12436e1-64fd-409f-8f28-f6bde4555cb0</UserSecretsId>
+    <RootNamespace>Utis.SmartMinex.Client</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.Graphics\Utis.SmartMinex.Graphics.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.Http\Utis.SmartMinex.Http.csproj" />
+    <ProjectReference Include="..\..\Server\Utis.SmartMinex.Runtime\Utis.SmartMinex.Runtime.csproj" />
+    <ProjectReference Include="..\Utis.SmartMinex.Client\Utis.SmartMinex.Client.csproj" />
+    <ProjectReference Include="..\Utis.SmartMinex.Dispatcher\Utis.SmartMinex.Dispatcher.csproj" />
+    <ProjectReference Include="..\Utis.SmartMinex.Lantern\Utis.SmartMinex.Lantern.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Remove="wwwroot\scripts\elements\**" />
+    <Content Remove="wwwroot\styles\elements\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\scripts\elements\**" />
+    <None Include="wwwroot\styles\elements\**" />
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="$(SolutionDir)Bin\Tools\$(Configuration)\utispack &quot;$(SolutionDir)Client\Utis.SmartMinex.Web\wwwroot\scripts\elements&quot; &quot;$(SolutionDir)Client\Utis.SmartMinex.Web\wwwroot\scripts\utis.js&quot; &quot;$(SolutionDir)Client\Utis.SmartMinex.Web\wwwroot\styles\elements&quot; &quot;$(SolutionDir)Client\Utis.SmartMinex.Web\wwwroot\styles\utis.css&quot;" />
+  </Target>
+
+  <ItemGroup>
+    <RadzenFiles Include="$(NuGetPackageRoot)radzen.blazor\5.2.6\staticwebassets\**\*.*" />
+    <BabylonFiles Include="$(NuGetPackageRoot)babylon.blazor\1.4.0\staticwebassets\babylonInterop.js" />
+  </ItemGroup>
+
+  <Target Name="CopyRadzenContent" BeforeTargets="AfterBuild">
+    <Message Text="Copy Radzen NuGet content: $(NuGetPackageRoot)" Importance="high" />
+    <Copy SourceFiles="@(RadzenFiles)" DestinationFolder="$(OutDir)wwwroot\_content\Radzen.Blazor\%(RecursiveDir)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="@(BabylonFiles)" DestinationFolder="$(OutDir)wwwroot\_content\Babylon.Blazor\%(RecursiveDir)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+  </Target>
+
+</Project>

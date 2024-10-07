@@ -1,0 +1,33 @@
+{
+  "objects": [
+    {
+      "id": 19421773393035264,
+      "parent": 259,
+      "type": 259,
+      "code": "СправочникКодовОперяцийДляОтчетаОСпускеПодъемеЛюдей",
+      "name": "Справочник кодов оперяций для отчета о спуске.подъеме людей",
+      "source": "$(Production)people_report_operations",
+      "model": "TPeopleReportOperationsRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 19421773393036288,
+          "code": "Операции",
+          "name": "Операции",
+          "description": "1-получение светильника; 2-сдача светильника; 3-спуск в шахту; 4-выход из шахты",
+          "source": "code",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 19421773393037312,
+          "code": "НазваниеОперации",
+          "name": "Название операции",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "objects": [
+    {
+      "id": 13792273858822144,
+      "parent": 259,
+      "type": 259,
+      "code": "СостоянияСветильников",
+      "name": "Состояния светильников",
+      "source": "$(Production)lamp_states",
+      "model": "TLampStatesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 13792273858823168,
+          "code": "КодСостоянияСветильника",
+          "name": "Код состояния светильника",
+          "description": "0-в ремонте; 1-в работе; 2-в резерве",
+          "source": "code",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 13792273858824192,
+          "code": "НазваниеСостояния",
+          "name": "Название состояния",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

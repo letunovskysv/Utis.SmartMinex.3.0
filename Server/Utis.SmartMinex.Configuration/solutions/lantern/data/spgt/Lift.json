@@ -1,0 +1,48 @@
+{
+  "objects": [
+    {
+      "id": 15481123719086080,
+      "parent": 259,
+      "type": 259,
+      "code": "ТочноеПозиционированиеКлети",
+      "name": "Точное позиционирование клети",
+      "source": "$(Production)lift",
+      "model": "TLiftRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 15481123719087104,
+          "code": "Считывателя",
+          "name": "Считывателя",
+          "source": "reader_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 15481123719088128,
+          "code": "ДистанцияДоКлети",
+          "name": "Дистанция до клети",
+          "source": "dist",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 15481123719089152,
+          "code": "ДатаИВремяПоследнейРегистрации",
+          "name": "Дата и время последней регистрации",
+          "source": "dt",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 15481123719090176,
+          "code": "НомерМеткиПозиционированияКлети",
+          "name": "Номер метки позиционирования клети",
+          "source": "met_nom",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

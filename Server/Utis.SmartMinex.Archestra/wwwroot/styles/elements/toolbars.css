@@ -1,0 +1,44 @@
+.ut-actions-bar {
+    position: fixed;
+    height: 2rem;
+    top: inherit;
+    left: 0;
+}
+
+.ut-glyph-box {
+    color: #0071e3;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+}
+
+ui-button {
+    margin: 0 6px 0 10px;
+    padding: 5px 6px;
+    white-space: nowrap;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    touch-action: manipulation;
+    -ms-flex-align: center;
+    -ms-touch-action: manipulation;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+ui-button:hover {
+    background-color: #e4e4e6;
+}

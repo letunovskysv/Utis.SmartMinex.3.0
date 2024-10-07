@@ -1,0 +1,66 @@
+{
+  "objects": [
+    {
+      "id": 27584547717644288,
+      "parent": 259,
+      "type": 259,
+      "code": "ИсторияДоступаВЗоны",
+      "name": "История доступа в зоны",
+      "source": "$(Production)zones_access_history",
+      "model": "TZonesAccessHistoryRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 27584547717645312,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 27584547717646336,
+          "code": "Человека",
+          "name": "Человека",
+          "source": "person_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 27584547717647360,
+          "code": "Зоны",
+          "name": "Зоны",
+          "source": "zone_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 27584547717648384,
+          "code": "Считывателя",
+          "name": "Считывателя",
+          "source": "reader_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 27584547717649408,
+          "code": "ВходВЗону",
+          "name": "Вход в зону - 1, выход из зоны - 0",
+          "description": "Вход в зону - 1, выход из зоны - 0",
+          "source": "in_zone",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 27584547717650432,
+          "code": "ДатаИВремяПоследнейРегистрации",
+          "name": "Дата и время последней регистрации",
+          "source": "dt",
+          "datatype": 141,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

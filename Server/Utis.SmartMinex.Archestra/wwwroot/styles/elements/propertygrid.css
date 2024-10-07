@@ -1,0 +1,25 @@
+.ut-pgrid {
+    font-size: 14px;
+}
+
+.ut-pgrid td {
+      padding: 0.1rem 1rem;
+}
+
+.ut-pgrid-val {
+    width: 100% !important;
+    height: 1.25rem !important;
+    border: none !important;
+    font-size: inherit;
+}
+
+.ut-pgrid-val {
+}
+
+.ut-pgrid td:nth-child(1) {
+    width: 200px;
+}
+
+.ut-pgrid td:nth-child(2) {
+    width: 600px;
+}

@@ -1,0 +1,32 @@
+{
+  "objects": [
+    {
+      "id": 19984723346456576,
+      "parent": 259,
+      "type": 259,
+      "code": "ПостоянныеДефолтныеПривязкиСветильниковРабочим",
+      "name": "Постоянные (дефолтные) привязки светильников рабочим",
+      "source": "$(Production)pl_links_default",
+      "model": "TPlLinksDefaultRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 19984723346457600,
+          "code": "Светильника",
+          "name": "Светильника",
+          "source": "lamp_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 19984723346458624,
+          "code": "Человека",
+          "name": "Человека",
+          "source": "person_id",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

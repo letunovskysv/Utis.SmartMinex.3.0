@@ -1,0 +1,33 @@
+{
+  "objects": [
+    {
+      "id": 10977524091715584,
+      "parent": 259,
+      "type": 259,
+      "code": "СправочникСостоянийКаналаГаза",
+      "name": "Справочник состояний канала газа",
+      "source": "$(Production)gas_states",
+      "model": "TGasStatesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 10977524091716608,
+          "code": "КодСостояния",
+          "name": "Код состояния",
+          "description": "0-отказ канала, 1-канал отключен, 2- канал исправен",
+          "source": "code",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 10977524091717632,
+          "code": "НазваниеСостояния",
+          "name": "Название состояния",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "objects": [
+    {
+      "id": 7881299347898368,
+      "parent": 259,
+      "type": 259,
+      "code": "ВидУстройств",
+      "name": "Вид устройств",
+      "source": "$(Production)device_classes",
+      "model": "TDeviceClassesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 7881299347899392,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 7881299347900416,
+          "code": "НазваниеВидовУстройств",
+          "name": "Название видов устройств",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 7881299347901440,
+          "code": "КоментарииКТипуПараметра",
+          "name": "Коментарии к типу параметра",
+          "source": "note",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

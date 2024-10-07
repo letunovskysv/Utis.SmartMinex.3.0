@@ -1,0 +1,70 @@
+{
+  "objects": [
+    {
+      "id": 8444249301319680,
+      "parent": 259,
+      "type": 259,
+      "code": "Производитель",
+      "name": "Производитель",
+      "description": "Производитель",
+      "source": "$(Production)vendor",
+      "model": "Vendor, Utis.Minex.ProductionModel",
+      "attributes": [
+        {
+          "id": 8444249301320704,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "description": "Уникальный идентификатор объекта",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 8444249301321728,
+          "code": "Наименование",
+          "name": "Наименование",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 8444249301322752,
+          "code": "Создан",
+          "name": "Создан",
+          "description": "Дата/время создания объекта",
+          "source": "created",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 8444249301323776,
+          "code": "Изменён",
+          "name": "Изменён",
+          "description": "Дата/время изменения объекта",
+          "source": "updated",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 8444249301324800,
+          "code": "Удалено",
+          "name": "Удалено",
+          "description": "Метка удаления объекта",
+          "source": "deleted",
+          "datatype": 144,
+          "visible": false
+        },
+        {
+          "id": 8444249301325824,
+          "code": "ВерсияОбъекта",
+          "name": "Версия объекта",
+          "source": "versionobject",
+          "datatype": 131,
+          "visible": false
+        }
+      ],
+      "data": []
+    }
+  ]
+}

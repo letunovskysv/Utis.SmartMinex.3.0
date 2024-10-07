@@ -1,0 +1,19 @@
+.ut-menu-r {
+    cursor: pointer;
+}
+
+.ut-menu-top ul {
+    left: -4em;
+}
+
+.ut-menu-top .rz-navigation-item-icon-children {
+    display: none !important;
+}
+
+.ut-menu-top .rz-navigation-item-text, .ut-menu-top .rz-navigation-item-icon {
+    color: #fff !important;
+}
+
+ut-menu-top a .rz-navigation-item-text, .ut-menu-back .rz-navigation-item-text {
+    color: #212121 !important;
+}

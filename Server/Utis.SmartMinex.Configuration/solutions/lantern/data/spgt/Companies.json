@@ -1,0 +1,33 @@
+{
+  "objects": [
+    {
+      "id": 5910974510923776,
+      "parent": 259,
+      "type": 259,
+      "code": "СписокПредприятий",
+      "name": "Список предприятий",
+      "source": "$(Production)companies",
+      "model": "TCompaniesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 5910974510924800,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 5910974510925824,
+          "code": "Название",
+          "name": "Название предприятия",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

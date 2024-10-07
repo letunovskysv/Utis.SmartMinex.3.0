@@ -1,0 +1,33 @@
+{
+  "objects": [
+    {
+      "id": 11540474045136896,
+      "parent": 259,
+      "type": 259,
+      "code": "СправочникСостоянийГлона",
+      "name": "Справочник состояний глона",
+      "source": "$(Production)glon_states",
+      "model": "TGlonStatesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 11540474045137920,
+          "code": "КодСостоянияГлона",
+          "name": "Код состояния глона",
+          "description": "0-состояние неизвестно, 1-исправен, 2-неисправен, 3-состояние неизвестно",
+          "source": "code",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 11540474045138944,
+          "code": "НазваниеСостояния",
+          "name": "Название состояния",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

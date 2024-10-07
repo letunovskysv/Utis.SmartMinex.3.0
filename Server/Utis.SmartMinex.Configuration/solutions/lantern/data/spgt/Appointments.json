@@ -1,0 +1,41 @@
+{
+  "objects": [
+    {
+      "id": 5348024557502464,
+      "parent": 259,
+      "type": 259,
+      "code": "Должности",
+      "name": "Должности",
+      "source": "$(Production)appointments",
+      "model": "TAppointmentsRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 5348024557503488,
+          "code": "ИД",
+          "name": "Должности",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 5348024557504512,
+          "code": "Название",
+          "name": "Название должности",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 5348024557505536,
+          "code": "ПризнакИтрНеИтр(10)",
+          "name": "Признак ИТР / не ИТР (1 / 0)",
+          "source": "engeneer",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

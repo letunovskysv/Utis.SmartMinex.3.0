@@ -1,0 +1,32 @@
+{
+  "objects": [
+    {
+      "id": 16607023625928704,
+      "parent": 259,
+      "type": 259,
+      "code": "ФайлыГрафики",
+      "name": "Файлы графики",
+      "source": "$(Production)maps",
+      "model": "TMapsRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 16607023625929728,
+          "code": "ДатаИВремяСохраненияФайлаГрафики",
+          "name": "Дата и время сохранения файла графики",
+          "source": "datetime",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 16607023625930752,
+          "code": "ФайлГрафики",
+          "name": "Файл графики",
+          "source": "map",
+          "datatype": 131,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

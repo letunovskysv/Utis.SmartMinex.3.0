@@ -1,0 +1,32 @@
+{
+  "objects": [
+    {
+      "id": 11821949021847552,
+      "parent": 259,
+      "type": 259,
+      "code": "УчетныеЗаписиПользователей",
+      "name": "Учетные записи пользователей",
+      "source": "$(Production)group_membership",
+      "model": "TGroupMembershipRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 11821949021848576,
+          "code": "Пользователя",
+          "name": "Пользователя",
+          "source": "user_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 11821949021849600,
+          "code": "Группы",
+          "name": "Группы",
+          "source": "group_id",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

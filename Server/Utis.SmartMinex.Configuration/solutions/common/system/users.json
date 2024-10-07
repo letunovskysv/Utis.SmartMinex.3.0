@@ -1,0 +1,50 @@
+{
+  "objects": [
+    {
+      "id": 844424930131968,
+      "parent": 17179870208,
+      "type": 259,
+      "code": "Пользователи",
+      "name": "Пользователи",
+      "source": "config.users",
+      "flags": "System,Replicated",
+      "attributes": [
+        {
+          "id": 844424930132992,
+          "code": "ИД",
+          "name": "ИД",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 844424930134016,
+          "code": "СостояниеЗаписи",
+          "name": "Состояние",
+          "source": "state",
+          "datatype": 130,
+          "visible": false
+        },
+        {
+          "id": 844424930135040,
+          "code": "Группа",
+          "name": "Группа",
+          "source": "grpid",
+          "datatype": 131,
+          "nullable": true,
+          "flags": "Group",
+          "visible": true
+        },
+        {
+          "id": 844424930136064,
+          "code": "Тип",
+          "name": "Тип",
+          "source": "type",
+          "datatype": 130,
+          "visible": true
+        }
+      ]
+    }
+  ]
+}

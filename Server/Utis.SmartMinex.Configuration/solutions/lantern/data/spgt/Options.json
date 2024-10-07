@@ -1,0 +1,32 @@
+{
+  "objects": [
+    {
+      "id": 17451448556060672,
+      "parent": 259,
+      "type": 259,
+      "code": "Options",
+      "name": "Options",
+      "source": "$(Production)options",
+      "model": "TOptionsRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 17451448556061696,
+          "code": "ТипУстройства",
+          "name": "Тип устройства",
+          "source": "dev_type_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 17451448556062720,
+          "code": "ТипПараметра",
+          "name": "Тип параметра",
+          "source": "par_type_id",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

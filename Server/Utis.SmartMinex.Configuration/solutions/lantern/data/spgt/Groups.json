@@ -1,0 +1,40 @@
+{
+  "objects": [
+    {
+      "id": 12103423998558208,
+      "parent": 259,
+      "type": 259,
+      "code": "ГруппыПользователейСистемы",
+      "name": "Группы пользователей системы",
+      "source": "$(Production)groups",
+      "model": "TGroupsRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 12103423998559232,
+          "code": "Группы",
+          "name": "Группы",
+          "source": "code",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 12103423998560256,
+          "code": "НазваниеГруппыПользователей",
+          "name": "Название группы пользователей",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 12103423998561280,
+          "code": "ИмяРолиВБд",
+          "name": "Имя роли в БД",
+          "source": "db_role",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

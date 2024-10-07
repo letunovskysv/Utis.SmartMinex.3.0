@@ -1,0 +1,13 @@
+{
+  "solution": {
+    "product": "Сервер приложений «УТИС»",
+    "company": "$(Company)",
+    "copyright": "$(Copyright)",
+    "version": "$(Version)",
+    "links": "..\\common\\*",
+    "partnames": "system\\*,data\\*"
+  },
+  "macros": {
+    "Production": "UTIS001.public."
+  }
+}

@@ -1,0 +1,29 @@
+Развёртывание сервера на Astra Linux SE 1.7 x86-64 (192.168.170.51, amd64) 192.168.210.51
+========================================================================================================================
+Установка среды выполнения Microsoft .NET Core 7.0 (https://wiki.astralinux.ru/pages/viewpage.action?pageId=41192241)
+1. Выполнять уставновку от имени непривилегированного пользователя;
+2. Для включения установки пакетов с использованием протокола HTTPS установить пакеты ca-certificates и apt-transport-https:
+	sudo apt install ca-certificates apt-transport-https
+3. Добавить ключ подписывания пакетов Microsoft в список доверенных ключей:
+	wget -O - https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
+4. Загрузить параметры репозитория Microsoft (параметры сохраняются в файле /etc/apt/sources.list.d/microsoft-prod.list):
+	sudo wget https://packages.microsoft.com/config/debian/10/prod.list -O /etc/apt/sources.list.d/microsoft-prod.list
+5. Обновить список пакетов:
+	sudo apt update
+6. Установить пакеты:
+	sudo apt install aspnetcore-runtime-7.0
+7. Удалить пакеты при необходимости:
+	sudo apt-get --purge remove aspnetcore-runtime-7.0
+	sudo apt autoremove
+------------------------------------------------------------------------------------------------------------------------
+Установка сервера приложений ПТК ГД 3.0.0.0:
+1. Создать каталоги приложения:
+	sudo mkdir /opt/utis
+	sudo mkdir /opt/utis/minex
+	sudo mkdir /opt/utis/minex/bin
+	sudo mkdir /var/log/utis
+	sudo mkdir /var/log/utis/minex
+2. Назначить разрешения для папок:
+	sudo chmod -R ugo+rwx /opt/utis/minex
+------------------------------------------------------------------------------------------------------------------------
+sudo dotnet /opt/utis/minex/bin/minex.dll

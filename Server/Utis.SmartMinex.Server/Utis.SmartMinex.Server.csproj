@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+  
+  <Import Project="..\..\Utis.SmartMinex.3.0.csproj" />
+
+  <PropertyGroup>
+    <AssemblyName>utsrv</AssemblyName>
+    <PublishAot>false</PublishAot>
+    <UserSecretsId>dotnet-Utis.SmartMinex.Server-44b2d557-9edf-4c24-aa88-d0822bf6dac4</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="config\dispatcher.smx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Systemd" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Client\Utis.SmartMinex.Client\Utis.SmartMinex.Client.csproj" />
+    <ProjectReference Include="..\..\Client\Utis.SmartMinex.Dispatcher\Utis.SmartMinex.Dispatcher.csproj" />
+    <ProjectReference Include="..\..\Client\Utis.SmartMinex.Lantern\Utis.SmartMinex.Lantern.csproj" />
+    <ProjectReference Include="..\..\Client\Utis.SmartMinex.Web\Utis.SmartMinex.Web.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.Minex.Common\Utis.Minex.Common.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.Minex.ProductionModel\Utis.Minex.ProductionModel.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.DAS\Utis.SmartMinex.DAS.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.DataAccess\Utis.SmartMinex.DataAccess.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.Data\Utis.SmartMinex.Data.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.Devices\Utis.SmartMinex.Devices.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.Graphics\Utis.SmartMinex.Graphics.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.Historian\Utis.SmartMinex.Historian.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.Http\Utis.SmartMinex.Http.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.Integration\Utis.SmartMinex.Integration.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.Maintenance\Utis.SmartMinex.Maintenance.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.Rtls\Utis.SmartMinex.Rtls.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.Windows.Shell\Utis.SmartMinex.Windows.Shell.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.Workflow\Utis.SmartMinex.Workflow.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.Spgt.ProductionModel\Utis.Spgt.ProductionModel.csproj" />
+    <ProjectReference Include="..\..\Tests\Utis.SmartMinex.Test\Utis.SmartMinex.Test.csproj" />
+    <ProjectReference Include="..\..\Tools\Utis.SmartMinex.Configurator\Utis.SmartMinex.Configurator.csproj" />
+    <ProjectReference Include="..\Utis.SmartMinex.Archestra\Utis.SmartMinex.Archestra.csproj" />
+    <ProjectReference Include="..\Utis.SmartMinex.Core\Utis.SmartMinex.Core.csproj" />
+    <ProjectReference Include="..\Utis.SmartMinex.FactorySuite\Utis.SmartMinex.FactorySuite.csproj" />
+    <ProjectReference Include="..\Utis.SmartMinex.FirebirdSql\Utis.SmartMinex.FirebirdSql.csproj" />
+    <ProjectReference Include="..\Utis.SmartMinex.Metadata\Utis.SmartMinex.Metadata.csproj" />
+    <ProjectReference Include="..\Utis.SmartMinex.MsSql\Utis.SmartMinex.MsSql.csproj" />
+    <ProjectReference Include="..\Utis.SmartMinex.PostgreSql\Utis.SmartMinex.PostgreSql.csproj" />
+    <ProjectReference Include="..\Utis.SmartMinex.Runtime\Utis.SmartMinex.Runtime.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\Keys\Utis.SmartMinex.pfx">
+      <Link>certificate\Utis.SmartMinex.pfx</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\*.smx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="$(SolutionDir)Bin\Tools\$(Configuration)\make &quot;$(SolutionDir)Server\Utis.SmartMinex.Configuration\solutions\dispatcher&quot; &quot;$(SolutionDir)Server\Utis.SmartMinex.Server\config\dispatcher.smx&quot; -$(ConfigurationName)&#xD;&#xA;$(SolutionDir)Bin\Tools\$(Configuration)\make &quot;$(SolutionDir)Server\Utis.SmartMinex.Configuration\solutions\lantern&quot; &quot;$(SolutionDir)Server\Utis.SmartMinex.Server\config\lantern.smx&quot; -$(ConfigurationName)&#xD;&#xA;$(SolutionDir)Bin\Tools\$(Configuration)\make &quot;$(SolutionDir)Server\Utis.SmartMinex.Configuration\solutions\present&quot; &quot;$(SolutionDir)Server\Utis.SmartMinex.Server\config\present.smx&quot; -$(ConfigurationName)" />
+  </Target>
+
+</Project>

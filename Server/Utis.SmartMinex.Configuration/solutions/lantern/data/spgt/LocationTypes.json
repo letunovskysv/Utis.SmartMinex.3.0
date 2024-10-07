@@ -1,0 +1,41 @@
+{
+  "objects": [
+    {
+      "id": 16325548649218048,
+      "parent": 259,
+      "type": 259,
+      "code": "ТипыРасположений",
+      "name": "Типы расположений",
+      "source": "$(Production)location_types",
+      "model": "TLocationTypesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 16325548649219072,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 16325548649220096,
+          "code": "НаименованиеТипаРасположения",
+          "name": "Наименование типа расположения",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 16325548649221120,
+          "code": "ВнешнийИдентификатор",
+          "name": "Внешний идентификатор",
+          "source": "external_id",
+          "datatype": 131,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

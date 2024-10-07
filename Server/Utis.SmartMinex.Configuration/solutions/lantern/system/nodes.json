@@ -1,0 +1,23 @@
+{
+  "objects": [
+    {
+      "id": 281474976710656,
+      "data": [
+        {
+          "id": 281474976711680,
+          "parent": 0,
+          "isgroup": false,
+          "state": 8,
+          "site": 562949953422336,
+          "code": "001",
+          "name": "Ламповая 1",
+          "host": "127.0.0.1",
+          "type": 0,
+          "level": 0,
+          "index": 0,
+          "active": true
+        }
+      ]
+    }
+  ]
+}

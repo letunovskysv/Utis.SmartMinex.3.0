@@ -1,0 +1,73 @@
+{
+  "objects": [
+    {
+      "id": 20547673299877888,
+      "parent": 259,
+      "type": 259,
+      "code": "ИсточникиПитания",
+      "name": "Источники питания",
+      "source": "$(Production)powers",
+      "model": "TPowersRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 20547673299878912,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 20547673299879936,
+          "code": "НазваниеИсточникаПитания",
+          "name": "Название источника питания",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 20547673299880960,
+          "code": "НомерЛинииСвязи",
+          "name": "Номер линии связи",
+          "source": "line_nom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 20547673299881984,
+          "code": "НомерИсточникаПитанияНаЛинии",
+          "name": "Номер источника питания на линии",
+          "source": "pow_nom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 20547673299883008,
+          "code": "Состояние",
+          "name": "Состояние",
+          "source": "state",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 20547673299884032,
+          "code": "ДатаИВремяИзмененияСостояния",
+          "name": "Дата и время изменения состояния",
+          "source": "state_changed",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 20547673299885056,
+          "code": "МестаРасположения",
+          "name": "Места расположения",
+          "source": "location_id",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

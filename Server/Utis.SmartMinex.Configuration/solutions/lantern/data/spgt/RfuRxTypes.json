@@ -1,0 +1,33 @@
+{
+  "objects": [
+    {
+      "id": 23925373020405760,
+      "parent": 259,
+      "type": 259,
+      "code": "СправочникТиповРадиоблоковДляСубра",
+      "name": "Справочник типов радиоблоков (для Субра)",
+      "source": "$(Production)rfu_rx_types",
+      "model": "TRfuRxTypesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 23925373020406784,
+          "code": "КодыТиповРадиоблокаДляСубра",
+          "name": "Коды типов радиоблока (для СУБРа)",
+          "description": "0-прямой; 1-зеркальный",
+          "source": "code",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 23925373020407808,
+          "code": "НазваниеТипа",
+          "name": "Название типа",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

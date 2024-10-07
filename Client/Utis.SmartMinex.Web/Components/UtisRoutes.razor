@@ -1,0 +1,12 @@
+﻿<Router AppAssembly="typeof(UtisApp).Assembly" AdditionalAssemblies="new[] { typeof(UtisApp).Assembly }">
+    <Found Context="routeData">
+        <AuthorizeRouteView RouteData="routeData" DefaultLayout="typeof(UtisLayout)" />
+        <FocusOnNavigate RouteData="routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>Страница не найдена</PageTitle>
+        <LayoutView Layout="typeof(UtisLayout)">
+            <p role="alert">Ой! Извините, но такой странички не существует или она была удалена.</p>
+        </LayoutView>
+    </NotFound>
+</Router>

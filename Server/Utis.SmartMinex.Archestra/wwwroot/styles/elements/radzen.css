@@ -1,0 +1,10 @@
+/* Для всех таблиц RadzenDataGrid сузить строки */
+.rz-grid-table td {
+    padding: 2px 5px 2px 5px;
+}
+
+/* Кооректировка для отображения в <table> */
+.rz-chkbox {
+    width: var(--rz-checkbox-width) !important;
+    height: var(--rz-checkbox-height) !important;
+}

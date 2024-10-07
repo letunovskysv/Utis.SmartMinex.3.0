@@ -1,0 +1,87 @@
+{
+  "objects": [
+    {
+      "id": 10133099161583616,
+      "parent": 17179871232,
+      "type": 259,
+      "code": "Должности",
+      "name": "Должности",
+      "description": "Справочник профессий/должностей",
+      "source": "$(Production)jobtitle",
+      "model": "JobTitle, Utis.Minex.ProductionModel",
+      "attributes": [
+        {
+          "id": 10133099161584640,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "description": "Уникальный идентификатор объекта",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 10133099161585664,
+          "code": "Наименование",
+          "name": "Наименование",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 10133099161586688,
+          "code": "Должность",
+          "name": "Должность",
+          "description": "Сокращенное наименование должности",
+          "source": "shortname",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 10133099161587712,
+          "code": "Категория",
+          "name": "Категория",
+          "source": "jobcategory",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 10133099161588736,
+          "code": "Создан",
+          "name": "Создан",
+          "description": "Дата/время создания объекта",
+          "source": "created",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 10133099161589760,
+          "code": "Изменён",
+          "name": "Изменён",
+          "description": "Дата/время изменения объекта",
+          "source": "updated",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 10133099161590784,
+          "code": "Удалено",
+          "name": "Удалено",
+          "description": "Метка удаления объекта",
+          "source": "deleted",
+          "datatype": 144,
+          "visible": false
+        },
+        {
+          "id": 10133099161591808,
+          "code": "ВерсияОбъекта",
+          "name": "Версия объекта",
+          "source": "versionobject",
+          "datatype": 131,
+          "visible": false
+        }
+      ],
+      "data": []
+    }
+  ]
+}

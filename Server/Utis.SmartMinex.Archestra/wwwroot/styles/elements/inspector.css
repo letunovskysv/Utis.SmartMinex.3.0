@@ -1,0 +1,75 @@
+.ut-inspector {
+    position: absolute;
+    width: 250px;
+    background: #fbfbfd;
+    inline-size: 250px;
+    list-style-type: none;
+    padding: 1.7em 0 0 0;
+    font-size: var(--ut-font-size);
+    height: 100%;
+    overflow: auto;
+}
+
+.ut-inspector ul {
+    width: 250px;
+    background: #fbfbfd;
+    inline-size: 250px;
+    list-style-type: none;
+    padding: 0;
+    font-size: var(--ut-font-size);
+}
+
+.ut-inspector-item {
+    padding-left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.ut-inspector-item.select {
+    background-color: #e4e4e6;
+    border-right: solid 3px #326690;
+}
+
+.ut-inspector ul.hide {
+    display: none;
+}
+
+.ut-inspector-item:hover {
+    background-color: #f1f1f3;
+}
+
+.ut-inspector .indent {
+    display: inline-block;
+    border-left: solid thin #c0bcbc;
+    margin: 0 -10px 0 10px;
+    width: 16px
+}
+
+.ut-inspector .marker {
+    display: inline-block;
+    width: 16px
+}
+
+.ut-hsplit {
+    position: absolute;
+    left: 249px;
+    width: 3px;
+    height: 100%;
+    cursor: col-resize;
+}
+
+.ut-inspector-inp {
+    font: inherit;
+    height: 22px;
+    border: solid thin grey;
+    outline-width: 0;
+}
+
+.ut-inspector-inp:focus {
+    outline: none;
+}

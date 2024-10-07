@@ -1,0 +1,97 @@
+{
+  "objects": [
+    {
+      "id": 11258999068426240,
+      "parent": 259,
+      "type": 259,
+      "code": "Газоанализаторы",
+      "name": "Газоанализаторы",
+      "source": "$(Production)glons",
+      "model": "TGlonsRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 11258999068427264,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 11258999068428288,
+          "code": "ЗаводскойНомер",
+          "name": "Заводской номер",
+          "source": "serial_nom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 11258999068429312,
+          "code": "ДатаПоступления",
+          "name": "Дата поступления",
+          "source": "expl_begin",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 11258999068430336,
+          "code": "ДатаСписания",
+          "name": "Дата списания",
+          "source": "expl_end",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 11258999068431360,
+          "code": "ДатаОкончанияГарантийногоСрока",
+          "name": "Дата окончания гарантийного срока",
+          "source": "warranty_end",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 11258999068432384,
+          "code": "ДатаОкончанияСрокаЭксплуатации",
+          "name": "Дата окончания срока эксплуатации",
+          "source": "lifetime_end",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 11258999068433408,
+          "code": "Состояние",
+          "name": "Состояние",
+          "source": "state",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 11258999068434432,
+          "code": "ВремяИзмененияСотояния",
+          "name": "Время изменения сотояния",
+          "source": "state_changed",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 11258999068435456,
+          "code": "Канал",
+          "name": "Канал",
+          "source": "channel",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 11258999068436480,
+          "code": "Частота",
+          "name": "Частота",
+          "source": "freq",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

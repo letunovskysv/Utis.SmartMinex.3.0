@@ -1,0 +1,101 @@
+{
+  "objects": [
+    {
+      "id": 30064772096,
+      "start": "auto",
+      "type": 7,
+      "parent": 7,
+      "code": "СерверВводаВывода",
+      "name": "Сервер ввода/вывода, реестр оборудования",
+      "moduletype": "IOServer, Utis.SmartMinex.Devices"
+    },
+    {
+      "id": 30064773120,
+      "start": "auto",
+      "type": 7,
+      "parent": 7,
+      "code": "СлужбаСбораТехнологическихДанных",
+      "name": "Служба сбора технологических данных",
+      "moduletype": "DataAcquisitionService, Utis.SmartMinex.DAS"
+    },
+    {
+      "id": 30064774144,
+      "start": "auto",
+      "type": 7,
+      "parent": 7,
+      "code": "СлужбаХраненияТехнологическихДанных",
+      "name": "Служба хранения технологических данных",
+      "moduletype": "HistorianService, Utis.SmartMinex.Historian"
+    },
+    {
+      "id": 30064775168,
+      "start": "auto",
+      "type": 7,
+      "parent": 7,
+      "code": "МодульРасчётаКоординатРеальногоВремени",
+      "name": "Модуль расчёта координат реального времени",
+      "moduletype": "RtlsService, Utis.SmartMinex.Rtls"
+    },
+    {
+      "id": 30064776192,
+      "start": "manual",
+      "type": 7,
+      "parent": 7,
+      "code": "РабочиеПроцессы",
+      "name": "Служба рабочих процессов",
+      "moduletype": "WorkflowService, Utis.SmartMinex.WorkflowService"
+    },
+    {
+      "id": 30064777216,
+      "start": "manual",
+      "type": 7,
+      "parent": 7,
+      "code": "ОбслуживаниеБД",
+      "name": "Служба обслуживания системы и базы данных",
+      "moduletype": "MaintenanceService, Utis.SmartMinex.Maintenance"
+    },
+    {
+      "id": 30064778240,
+      "start": "auto",
+      "type": 7,
+      "parent": 7,
+      "code": "ВебСервис",
+      "name": "Веб-служба доступа к данным Системы",
+      "moduletype": "HttpApiService, Utis.SmartMinex.DataAccess",
+      "uri": "https://0.0.0.0:8087/api/",
+      "certificate_": {
+        "path": "certificate\\Utis.SmartMinex.pfx",
+        "password": "7HfpJnvthm!"
+      }
+    },
+    {
+      "id": 30064779264,
+      "start": "auto",
+      "type": 7,
+      "parent": 7,
+      "code": "ВебКонфигуратур",
+      "name": "Веб-конфигуратур параметров Системы",
+      "moduletype": "ArchestraService, Utis.SmartMinex.Archestra",
+      "uri": "https://0.0.0.0:8088/"
+    },
+    {
+      "id": 30064780288,
+      "start": "auto",
+      "type": 7,
+      "parent": 7,
+      "code": "ВебКлиент",
+      "name": "Клиентская Веб-служба",
+      "moduletype": "WebClient, Utis.SmartMinex.Web",
+      "uri": "https://0.0.0.0:8080"
+    },
+    {
+      "id": 30064781312,
+      "start": "auto",
+      "type": 7,
+      "parent": 7,
+      "code": "КафкаИнтегратор",
+      "name": "Интеграция с брокером сообщений Apache Kafka",
+      "moduletype": "ApacheKafkaIntegrator, Utis.SmartMinex.Integration"
+    }
+  ]
+}

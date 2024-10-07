@@ -1,0 +1,114 @@
+{
+  "objects": [
+    {
+      "id": 13510798882111488,
+      "parent": 259,
+      "type": 259,
+      "code": "ВыданныеСветильники",
+      "name": "Выданные светильники",
+      "source": "$(Production)lamps_in_use",
+      "model": "TLampsInUseRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 13510798882112512,
+          "code": "Светильника",
+          "name": "Светильника",
+          "source": "lamp_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 13510798882113536,
+          "code": "ДатаИВремяВыдачи",
+          "name": "Дата и время выдачи",
+          "source": "datetime",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 13510798882114560,
+          "code": "СветильникВыдан",
+          "name": "Светильник выдан",
+          "description": "0-нет, 1-да",
+          "source": "in_use",
+          "datatype": 144,
+          "visible": true
+        },
+        {
+          "id": 13510798882115584,
+          "code": "ФлагВыдачиВзамен",
+          "name": "Флаг выдачи взамен",
+          "description": "0-обычная выдача, 1-выдача взамен",
+          "source": "instead",
+          "datatype": 144,
+          "visible": true
+        },
+        {
+          "id": 13510798882116608,
+          "code": "ЧеловекаКоторомуВыдалиСветильник",
+          "name": "Человека которому выдали светильник",
+          "source": "person_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 13510798882117632,
+          "code": "Tabno",
+          "name": "TabNo",
+          "source": "person_id_tab_nom_view",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 13510798882118656,
+          "code": "Lastname",
+          "name": "LastName",
+          "source": "person_id_lastname_view",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 13510798882119680,
+          "code": "Firstname",
+          "name": "FirstName",
+          "source": "person_id_firstname_view",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 13510798882120704,
+          "code": "Middlename",
+          "name": "MiddleName",
+          "source": "person_id_middlename_view",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 13510798882121728,
+          "code": "Lampserial",
+          "name": "LampSerial",
+          "source": "lamp_id_serial_nom_view",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 13510798882122752,
+          "code": "Lamptype",
+          "name": "LampType",
+          "source": "lamp_id_type_id_view",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 13510798882123776,
+          "code": "Lamproom",
+          "name": "LampRoom",
+          "source": "lamp_id_group_nom_view",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "objects": [
+    {
+      "id": 10977524091715584,
+      "parent": 17179871232,
+      "type": 259,
+      "code": "ПодразделенияПриравненныеКПодземнымУсловиям",
+      "name": "Подразделения с условиями труда, приравненными к подземным условиям",
+      "description": "Подразделения с условиями труда, приравненными к подземным условиям",
+      "source": "$(Production)payrollbylampissuedivision",
+      "model": "PayrollByLampIssueDivision, Utis.Minex.ProductionModel",
+      "attributes": [
+        {
+          "id": 10977524091716608,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "description": "Уникальный идентификатор объекта",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 10977524091717632,
+          "code": "Наименование",
+          "name": "Наименование",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 10977524091718656,
+          "code": "Подразделение",
+          "name": "Подразделение",
+          "source": "division_id",
+          "datatype": 131,
+          "visible": true
+        },
+        {
+          "id": 10977524091719680,
+          "code": "Создан",
+          "name": "Создан",
+          "description": "Дата/время создания объекта",
+          "source": "created",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 10977524091720704,
+          "code": "Изменён",
+          "name": "Изменён",
+          "description": "Дата/время изменения объекта",
+          "source": "updated",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 10977524091721728,
+          "code": "Удалено",
+          "name": "Удалено",
+          "description": "Метка удаления объекта",
+          "source": "deleted",
+          "datatype": 144,
+          "visible": false
+        },
+        {
+          "id": 10977524091722752,
+          "code": "ВерсияОбъекта",
+          "name": "Версия объекта",
+          "source": "versionobject",
+          "datatype": 131,
+          "visible": false
+        }
+      ],
+      "data": []
+    }
+  ]
+}

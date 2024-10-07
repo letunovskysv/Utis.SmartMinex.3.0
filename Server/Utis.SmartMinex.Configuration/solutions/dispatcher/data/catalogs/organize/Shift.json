@@ -1,0 +1,158 @@
+{
+  "objects": [
+    {
+      "id": 12103423998558208,
+      "parent": 17179871232,
+      "type": 259,
+      "code": "Смены",
+      "name": "Смены",
+      "description": "Справочник смен",
+      "source": "$(Production)shift",
+      "model": "Shift, Utis.Minex.ProductionModel",
+      "attributes": [
+        {
+          "id": 12103423998559232,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "description": "Уникальный идентификатор объекта",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 12103423998560256,
+          "code": "Наименование",
+          "name": "Наименование",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 12103423998561280,
+          "code": "НомерСмены",
+          "name": "Номер смены",
+          "source": "number",
+          "datatype": 128,
+          "visible": true
+        },
+        {
+          "id": 12103423998562304,
+          "code": "РежимСменности",
+          "name": "Режим сменности",
+          "source": "shiftmode_id",
+          "datatype": 131,
+          "visible": true
+        },
+        {
+          "id": 12103423998563328,
+          "code": "ДлительностьСмены",
+          "name": "Длительность смены",
+          "source": "duration",
+          "datatype": 133,
+          "visible": true
+        },
+        {
+          "id": 12103423998564352,
+          "code": "НачалоВыдачиСветильников",
+          "name": "Начало выдачи светильников",
+          "source": "lampgiveoutbegin",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 12103423998565376,
+          "code": "НачалоСпуска",
+          "name": "Начало спуска",
+          "source": "mineenterbegin",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 12103423998566400,
+          "code": "ОкончаниеСпуска",
+          "name": "Окончание спуска",
+          "source": "mineenterend",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 12103423998567424,
+          "code": "НачалоСмены",
+          "name": "Начало смены",
+          "source": "shiftbegin",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 12103423998568448,
+          "code": "ОкончаниеСмены",
+          "name": "Окончание смены",
+          "source": "shiftend",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 12103423998569472,
+          "code": "НачалоПодъема",
+          "name": "Начало подъема",
+          "source": "mineleavebegin",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 12103423998570496,
+          "code": "ОкончаниеПодъема",
+          "name": "Окончание подъема",
+          "source": "mineleaveend",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 12103423998571520,
+          "code": "КонтрольноеВремяСдачиСветильников",
+          "name": "Контрольное время сдачи светильников",
+          "source": "lampturninend",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 12103423998572544,
+          "code": "Создан",
+          "name": "Создан",
+          "description": "Дата/время создания объекта",
+          "source": "created",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 12103423998573568,
+          "code": "Изменён",
+          "name": "Изменён",
+          "description": "Дата/время изменения объекта",
+          "source": "updated",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 12103423998574592,
+          "code": "Удалено",
+          "name": "Удалено",
+          "description": "Метка удаления объекта",
+          "source": "deleted",
+          "datatype": 144,
+          "visible": false
+        },
+        {
+          "id": 12103423998575616,
+          "code": "ВерсияОбъекта",
+          "name": "Версия объекта",
+          "source": "versionobject",
+          "datatype": 131,
+          "visible": false
+        }
+      ],
+      "data": []
+    }
+  ]
+}

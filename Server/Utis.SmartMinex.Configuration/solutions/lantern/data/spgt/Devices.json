@@ -1,0 +1,33 @@
+{
+  "objects": [
+    {
+      "id": 8162774324609024,
+      "parent": 259,
+      "type": 259,
+      "code": "Устройства",
+      "name": "Устройства",
+      "source": "$(Production)devices",
+      "model": "TDevicesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 8162774324610048,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 8162774324611072,
+          "code": "ТипУстройства",
+          "name": "Тип устройства",
+          "source": "type_id",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

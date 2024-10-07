@@ -1,0 +1,57 @@
+{
+  "objects": [
+    {
+      "id": 16044073672507392,
+      "parent": 259,
+      "type": 259,
+      "code": "СхемаРасположений",
+      "name": "Схема расположений",
+      "source": "$(Production)locations",
+      "model": "TLocationsRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 16044073672508416,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 16044073672509440,
+          "code": "НаименованиеМеста",
+          "name": "Наименование места",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 16044073672510464,
+          "code": "ВнешнийИдентификатор",
+          "name": "Внешний идентификатор",
+          "source": "external_id",
+          "datatype": 131,
+          "visible": true
+        },
+        {
+          "id": 16044073672511488,
+          "code": "Родителя",
+          "name": "Родителя",
+          "source": "parent_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 16044073672512512,
+          "code": "ТипаРасположения",
+          "name": "Типа расположения",
+          "source": "type_id",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

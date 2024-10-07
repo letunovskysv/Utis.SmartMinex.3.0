@@ -1,0 +1,89 @@
+{
+  "objects": [
+    {
+      "id": 6192449487634432,
+      "parent": 259,
+      "type": 259,
+      "code": "СоединенияУстановленныеСБазойДанных",
+      "name": "Соединения, установленные с базой данных",
+      "source": "$(Production)connections",
+      "model": "TConnectionsRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 6192449487635456,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 6192449487636480,
+          "code": "ИмяПользователя",
+          "name": "Имя пользователя",
+          "source": "username",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 6192449487637504,
+          "code": "РольПользователя",
+          "name": "Роль пользователя",
+          "source": "rolename",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 6192449487638528,
+          "code": "IpАдресСКоторогоУстановленоСоединение",
+          "name": "Ip адрес, с которого установлено соединение",
+          "source": "ip",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 6192449487639552,
+          "code": "ПроцессаВСистемеПользователя",
+          "name": "Процесса в системе пользователя",
+          "source": "pid",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 6192449487640576,
+          "code": "ПолныйПутьКФайлуПроцессаУстановившегоСоединение",
+          "name": "Полный путь к файлу процесса, установившего соединение",
+          "source": "process_name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 6192449487641600,
+          "code": "ДатаИВремяУстановленияСоединения",
+          "name": "Дата и время установления соединения",
+          "source": "connection_datetime",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 6192449487642624,
+          "code": "ДатаИВремяОбновления",
+          "name": "Дата и время обновления (для отслеживания живых соединений)",
+          "source": "update_datetime",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 6192449487643648,
+          "code": "Hostname",
+          "name": "HostName",
+          "source": "hostname",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "objects": [
+    {
+      "id": 14073748835532800,
+      "parent": 259,
+      "type": 259,
+      "code": "ТипыСветильников",
+      "name": "Типы светильников",
+      "source": "$(Production)lamp_types",
+      "model": "TLampTypesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 14073748835533824,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 14073748835534848,
+          "code": "НазваниеТипаСветильника",
+          "name": "Название типа светильника",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

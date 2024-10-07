@@ -1,0 +1,10 @@
+﻿@namespace Utis.SmartMinex.Client
+@inherits UtisComponent
+
+<svg width="100" height="100" style=@string.Concat(Style, ";margin:.5em 2em;")>
+    <circle stroke-width="3" stroke="#677283" fill="white" fill-opacity=".9" cx="50" cy="50" r="48" />
+    @_dial
+    <path d="M46,60l8,0-2,-53,-4,0z" transform="rotate(@_minute,50,50)" />
+    <path d="M46,60l8,0-1,-40,-6,0z" transform="rotate(@_hour,50,50)" />
+    <path d="M49,69l3,0-1,-45 a5 5 0 1 0 -1 0z" fill="#a8141b" transform="rotate(@_second,50,50)" />
+</svg>

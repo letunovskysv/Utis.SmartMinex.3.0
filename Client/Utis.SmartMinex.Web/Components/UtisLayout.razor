@@ -1,0 +1,70 @@
+﻿@*--------------------------------------------------------------------------------------------------
+// (С) 2017-2025 ООО УралТехИС. Интеллектуальная Системная Платформа 3.0. Все права защищены.
+// Описание: UtisLayout – Основная схема приложения.
+//------------------------------------------------------------------------------------------------*@
+@inherits LayoutComponentBase
+@inject AuthenticationStateProvider _auth
+@inject IDispatcher _dsp
+@inject UtisSession _session
+
+<title>Диспетчер ПТК ГД</title>
+<RadzenComponents @rendermode="InteractiveAuto" />
+<PageTitle>@_dsp.Title</PageTitle>
+<AuthorizeView>
+    <Authorized>
+        <RadzenLayout>
+            <RadzenHeader>
+                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0">
+                    <RadzenSidebarToggle Click="@(() => _menuBarVisible = !_menuBarVisible)" />
+                    <a href="/"><RadzenImage Path="images/uraltexis.png" Style="width:32px;margin-left:-16px;padding-right:0.5em;" /></a>
+                    <RadzenLink Text="@_dsp.Header" Path="/" />
+                    <RadzenMenu Style="margin-left:auto;">
+                        <RadzenMenuItem class="ut-menu-top" Icon="account_balance" Text="_session.Site"  />
+                        <RadzenMenuItem class="ut-menu-top" Icon="schedule" Text="_session.Shift"/>
+                        <RadzenMenuItem class="ut-menu-top" Icon="person" Text="AuthState.GetLabel()" />
+                        <RadzenMenuItem class="ut-menu-top" Icon="logout" title="TResources.Exit" Click="OnExit" />
+                        <RadzenMenuItem class="ut-menu-top" Icon="question_mark">
+                            <RadzenMenuItem class="ut-menu-back" Text="Справка" Path="Application.HelpServiceUrl" Target="_blank" />
+                            <RadzenMenuItem class="ut-menu-back" Text="О программе…" Path="about" />
+                        </RadzenMenuItem>
+                        <RadzenMenuItem class="ut-menu-top" Icon="settings" title="TResources.Settings" Path="settings" />
+                    </RadzenMenu>
+                </RadzenStack>
+            </RadzenHeader>
+            <RadzenSidebar @bind-Expanded="@_menuBarVisible">
+                <RadzenPanelMenu Style="margin:0;padding:0;">
+                    @foreach (var item in _session.Menu.Items)
+                    {
+                        <RadzenPanelMenuItem Text=@item.Name Image=@item.Image Icon=@item.Icon Path=@(item.Items == null ? Redirector.Prefix + item.Path : null)>
+                            @if (item.Items != null)
+                                foreach (var subitem in item.Items)
+                                {
+                                    <RadzenPanelMenuItem Text=@subitem.Name Image=@subitem.Image Icon=@subitem.Icon Path=@(Redirector.Prefix + subitem.Path) />
+                                    @if (subitem.Items != null)
+                                        foreach (var subitem2 in subitem.Items)
+                                        {
+                                            <RadzenPanelMenuItem Text=@subitem2.Name Image=@subitem2.Image Icon=@subitem2.Icon Path=@(Redirector.Prefix + subitem2.Path) />
+                                        }
+                                }
+                        </RadzenPanelMenuItem>
+                    }
+                </RadzenPanelMenu>
+            </RadzenSidebar>
+            <RadzenBody>
+                @Body
+            </RadzenBody>
+            <RadzenFooter>
+                <i>Здесь может быть ваша реклама...</i>
+            </RadzenFooter>
+        </RadzenLayout>
+    </Authorized>
+    <NotAuthorized>
+        <RedirectToLogon />
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    bool _menuBarVisible = true;
+
+    void OnExit() => ((UtisAuthStateProvider)_auth).Logout();
+}

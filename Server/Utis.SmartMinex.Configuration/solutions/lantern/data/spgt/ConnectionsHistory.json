@@ -1,0 +1,65 @@
+{
+  "objects": [
+    {
+      "id": 6473924464345088,
+      "parent": 259,
+      "type": 259,
+      "code": "ConnectionsHistory",
+      "name": "Connections history",
+      "source": "$(Production)connections_history",
+      "model": "TConnectionsHistoryRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 6473924464346112,
+          "code": "ИД",
+          "name": "Записи",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 6473924464347136,
+          "code": "IpАдресКомпьютераСоздавшегоПодключение",
+          "name": "IP адрес компьютера создавшего подключение",
+          "source": "ip",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 6473924464348160,
+          "code": "ИмяКомпьютераСоздавшегоПодключение",
+          "name": "Имя компьютера создавшего подключение",
+          "source": "host_name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 6473924464349184,
+          "code": "ИмяКомпьютераСоздавшегоПодключение",
+          "name": "Имя компьютера создавшего подключение",
+          "source": "dt_begin",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 6473924464350208,
+          "code": "ДатаЗакрытияСоединения",
+          "name": "Дата закрытия соединения",
+          "source": "dt_end",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 6473924464351232,
+          "code": "УстановленногоСоединенияСБазойДанных",
+          "name": "Установленного соединения с базой данных",
+          "source": "connection_id",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

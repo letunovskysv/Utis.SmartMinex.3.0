@@ -1,0 +1,41 @@
+{
+  "objects": [
+    {
+      "id": 27303072740933632,
+      "parent": 259,
+      "type": 259,
+      "code": "Зоны",
+      "name": "Зоны",
+      "source": "$(Production)zones",
+      "model": "TZonesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 27303072740934656,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 27303072740935680,
+          "code": "НазваниеЗоны",
+          "name": "Название зоны",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 27303072740936704,
+          "code": "Safetime",
+          "name": "Safetime",
+          "source": "safetime",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

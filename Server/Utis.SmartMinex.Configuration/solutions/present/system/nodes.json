@@ -1,0 +1,37 @@
+{
+  "objects": [
+    {
+      "id": 281474976710656,
+      "data": [
+        {
+          "id": 281474976711680,
+          "parent": 0,
+          "isgroup": false,
+          "state": 8,
+          "site": 562949953422336,
+          "code": "001",
+          "name": "Центральный узел",
+          "host": "192.168.1.100",
+          "type": 0,
+          "level": 0,
+          "index": 0,
+          "active": true
+        },
+        {
+          "id": 281474976712704,
+          "parent": 0,
+          "isgroup": false,
+          "state": 8,
+          "site": 562949953422336,
+          "code": "002",
+          "name": "Резервный узел",
+          "host": "192.168.1.101",
+          "type": 0,
+          "level": 0,
+          "index": 0,
+          "active": false
+        }
+      ]
+    }
+  ]
+}

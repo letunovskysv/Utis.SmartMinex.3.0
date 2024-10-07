@@ -1,0 +1,42 @@
+﻿.ut-tabs-label {
+    height: 2rem;
+    margin: 0 0 0.5em 0;
+}
+
+.ut-tabs-img {
+    margin-right: 3px;
+}
+
+.ut-tabs-label li {
+    display: inline;
+    font-size: var(--ut-font-size);
+    padding: 0 0.5em 3px 0.5em;
+    cursor: pointer;
+}
+
+.ut-tabs-label li {
+}
+
+.ut-tabs-label li div {
+    display: none;
+    color: darkred;
+    margin: 0 -14px 0 -6px;
+}
+
+.ut-tabs-label li div:hover {
+    background-color: #e4e4e6;
+    border-radius: 50%;
+}
+
+.ut-tabs-label li:hover div {
+    display: inline-block;
+}
+
+.ut-tabs-label li.select {
+    color: #326690;
+    border-bottom: solid 3px #326690;
+}
+
+.ut-tabs-page {
+    padding: 0 0 0 0.5em;
+}

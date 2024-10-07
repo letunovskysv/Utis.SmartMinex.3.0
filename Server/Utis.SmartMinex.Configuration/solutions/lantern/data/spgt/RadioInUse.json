@@ -1,0 +1,66 @@
+{
+  "objects": [
+    {
+      "id": 21673573206720512,
+      "parent": 259,
+      "type": 259,
+      "code": "ТекущиеВыданныеРадиостанции",
+      "name": "Текущие выданные радиостанции",
+      "source": "$(Production)radio_in_use",
+      "model": "TRadioInUseRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 21673573206721536,
+          "code": "НомерМеткиРадиостанции",
+          "name": "Номер метки радиостанции",
+          "source": "met_nom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21673573206722560,
+          "code": "ДатаИВремяРегистрации",
+          "name": "Дата и время регистрации",
+          "source": "datetime",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 21673573206723584,
+          "code": "ФлагВыдачи",
+          "name": "Флаг выдачи",
+          "description": "0-не выдан, 1-выдан",
+          "source": "in_use",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21673573206724608,
+          "code": "СерийныйНомерРадиостанции",
+          "name": "Серийный номер радиостанции",
+          "source": "serial_nom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21673573206725632,
+          "code": "ФлагВыдачи",
+          "name": "Флаг выдачи",
+          "description": "0-не выдан, 1-выдан",
+          "source": "in_mine",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21673573206726656,
+          "code": "СотрудникаКоторомуВыданаРадиостанция",
+          "name": "Сотрудника, которому выдана радиостанция",
+          "source": "person_id",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

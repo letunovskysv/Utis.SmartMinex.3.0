@@ -1,0 +1,94 @@
+{
+  "objects": [
+    {
+      "id": 12666373951979520,
+      "parent": 17179871232,
+      "type": 259,
+      "code": "ПривязкиРежимаСменностиКПареПодразделениеДолжность",
+      "name": "Привязки режима сменности к паре подразделение-должность",
+      "description": "Справочник привязки режима сменности к паре подразделение-должность",
+      "source": "$(Production)shiftmodetojobdivision",
+      "model": "ShiftModeToJobDivision, Utis.Minex.ProductionModel",
+      "attributes": [
+        {
+          "id": 12666373951980544,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "description": "Уникальный идентификатор объекта",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 12666373951981568,
+          "code": "Наименование",
+          "name": "Наименование",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 12666373951982592,
+          "code": "Подразделение",
+          "name": "Подразделение",
+          "source": "division_id",
+          "datatype": 131,
+          "visible": true
+        },
+        {
+          "id": 12666373951983616,
+          "code": "Должность",
+          "name": "Должность",
+          "source": "jobtitle_id",
+          "datatype": 131,
+          "visible": true
+        },
+        {
+          "id": 12666373951984640,
+          "code": "РежимСменности",
+          "name": "Режим сменности",
+          "source": "shiftmode_id",
+          "datatype": 131,
+          "visible": true
+        },
+        {
+          "id": 12666373951985664,
+          "code": "Создан",
+          "name": "Создан",
+          "description": "Дата/время создания объекта",
+          "source": "created",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 12666373951986688,
+          "code": "Изменён",
+          "name": "Изменён",
+          "description": "Дата/время изменения объекта",
+          "source": "updated",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 12666373951987712,
+          "code": "Удалено",
+          "name": "Удалено",
+          "description": "Метка удаления объекта",
+          "source": "deleted",
+          "datatype": 144,
+          "visible": false
+        },
+        {
+          "id": 12666373951988736,
+          "code": "ВерсияОбъекта",
+          "name": "Версия объекта",
+          "source": "versionobject",
+          "datatype": 131,
+          "visible": false
+        }
+      ],
+      "data": []
+    }
+  ]
+}

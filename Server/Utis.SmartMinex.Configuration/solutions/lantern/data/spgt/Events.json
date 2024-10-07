@@ -1,0 +1,58 @@
+{
+  "objects": [
+    {
+      "id": 9007199254740992,
+      "parent": 259,
+      "type": 259,
+      "code": "ЖурналСобытийСКвитированием",
+      "name": "Журнал событий с квитированием",
+      "description": "Срок хранения - 3 месяца.",
+      "source": "$(Production)events",
+      "model": "TEventsRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 9007199254742016,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 9007199254743040,
+          "code": "КодСобытия",
+          "name": "Код события",
+          "source": "type_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 9007199254744064,
+          "code": "ВремяВозникновенияСобытия",
+          "name": "Время возникновения события",
+          "source": "beginning_datetime",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 9007199254745088,
+          "code": "КвитировавшегоПользователя",
+          "name": "Квитировавшего пользователя",
+          "source": "user_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 9007199254746112,
+          "code": "ДатаИВремяКвитирования",
+          "name": "Дата и время квитирования",
+          "source": "confirmation_datetime",
+          "datatype": 141,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

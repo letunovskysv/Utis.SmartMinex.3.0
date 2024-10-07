@@ -1,0 +1,13 @@
+{
+  "solution": {
+    "product": "АРМ «Старший Ламповщик»",
+    "company": "$(Company)",
+    "copyright": "$(Copyright)",
+    "version": "$(Version)",
+    "links": "..\\common\\*",
+    "partnames": "system\\*,data\\*"
+  },
+  "macros": {
+    "Production": "SPGT_CBASE3.public."
+  }
+}

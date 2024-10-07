@@ -1,0 +1,13 @@
+{
+  "solution": {
+    "product": "ПТК «Горный диспетчер»",
+    "company": "$(Company)",
+    "copyright": "$(Copyright)",
+    "version": "$(Version)",
+    "links": "..\\common\\*",
+    "partnames": "system\\*,data\\*,maps\\*"
+  },
+  "macros": {
+    "Production": "ProductionDB_LS.public."
+  }
+}

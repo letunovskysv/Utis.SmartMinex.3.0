@@ -1,0 +1,25 @@
+﻿@namespace Utis.SmartMinex.Client
+@inject AuthenticationStateProvider _auth
+
+@if (_loading)
+{
+    <RadzenText Text="Загрузка приложения..." />
+}
+else {
+    <Logon />
+}
+@code {
+    bool _loading { get; set; } = true;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            if (_loading = await ((UtisAuthStateProvider)_auth).AutoLogon() != null)
+                ;// _app.StateHasChanged();
+
+            StateHasChanged();
+        }
+        await base.OnAfterRenderAsync(firstRender);
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "objects": [
+    {
+      "id": 6755399441055744,
+      "parent": 259,
+      "type": 259,
+      "code": "СправочникСостоянийКрышкиСчитывателя",
+      "name": "Справочник состояний крышки считывателя",
+      "source": "$(Production)cover_states",
+      "model": "TCoverStatesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 6755399441056768,
+          "code": "КодыСостоянийКрышкиСчитывателя",
+          "name": "Коды состояний крышки считывателя",
+          "description": "0-закрыта; 1-открыта",
+          "source": "code",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 6755399441057792,
+          "code": "НазваниеСостояния",
+          "name": "Название состояния",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "objects": [
+    {
+      "id": 14636698788954112,
+      "parent": 259,
+      "type": 259,
+      "code": "ПоследняяРегистрацияДоступаВЗону",
+      "name": "Последняя регистрация доступа в зону",
+      "source": "$(Production)last_reg_access_zone",
+      "model": "TLastRegAccessZoneRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 14636698788955136,
+          "code": "Человека",
+          "name": "Человека",
+          "source": "person_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 14636698788956160,
+          "code": "Зоны",
+          "name": "Зоны",
+          "source": "zone_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 14636698788957184,
+          "code": "Считывателя",
+          "name": "Считывателя",
+          "source": "reader_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 14636698788958208,
+          "code": "ВходВЗону",
+          "name": "Вход/выход в зону",
+          "description": "Вход в зону - 1, выход из зоны - 0",
+          "source": "in_zone",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 14636698788959232,
+          "code": "ДатаИВремяПоследнейРегистрации",
+          "name": "Дата и время последней регистрации",
+          "source": "dt",
+          "datatype": 141,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

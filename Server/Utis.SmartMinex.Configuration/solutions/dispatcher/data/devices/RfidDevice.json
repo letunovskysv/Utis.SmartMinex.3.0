@@ -1,0 +1,86 @@
+{
+  "objects": [
+    {
+      "id": 9570149208162304,
+      "parent": 17179872256,
+      "type": 259,
+      "code": "МеткаRfidУстройства",
+      "name": "Метка RFID устройства",
+      "description": "Метка RFID устройства",
+      "source": "$(Production)rfiddevice",
+      "model": "RfidDevice, Utis.Minex.ProductionModel",
+      "attributes": [
+        {
+          "id": 9570149208163328,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "description": "Уникальный идентификатор объекта",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 9570149208164352,
+          "code": "Наименование",
+          "name": "Наименование",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 9570149208165376,
+          "code": "МеткаRfid",
+          "name": "Метка RFID",
+          "source": "rfid",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 9570149208166400,
+          "code": "ТипМетки",
+          "name": "Тип метки (класс устройства)",
+          "source": "rfiddevicetype",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 9570149208167424,
+          "code": "Создан",
+          "name": "Создан",
+          "description": "Дата/время создания объекта",
+          "source": "created",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 9570149208168448,
+          "code": "Изменён",
+          "name": "Изменён",
+          "description": "Дата/время изменения объекта",
+          "source": "updated",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 9570149208169472,
+          "code": "Удалено",
+          "name": "Удалено",
+          "description": "Метка удаления объекта",
+          "source": "deleted",
+          "datatype": 144,
+          "visible": false
+        },
+        {
+          "id": 9570149208170496,
+          "code": "ВерсияОбъекта",
+          "name": "Версия объекта",
+          "source": "versionobject",
+          "datatype": 131,
+          "visible": false
+        }
+      ],
+      "data": []
+    }
+  ]
+}

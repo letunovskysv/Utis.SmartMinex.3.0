@@ -1,0 +1,94 @@
+{
+  "objects": [
+    {
+      "id": 562949953421312,
+      "parent": 17179870208,
+      "type": 259,
+      "code": "Площадки",
+      "name": "Площадки",
+      "source": "config.sites",
+      "flags": "System,Replicated",
+      "attributes": [
+        {
+          "id": 562949953422336,
+          "code": "ИД",
+          "name": "ИД",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 562949953423360,
+          "code": "Родитель",
+          "name": "Родитель",
+          "source": "parent",
+          "datatype": 131,
+          "flags": "Parent",
+          "visible": false
+        },
+        {
+          "id": 562949953424384,
+          "code": "ЭтоГруппа",
+          "name": "Это группа",
+          "source": "isgroup",
+          "datatype": 144,
+          "flags": "Parent",
+          "visible": false
+        },
+        {
+          "id": 562949953425408,
+          "code": "СостояниеЗаписи",
+          "name": "Состояние",
+          "source": "state",
+          "datatype": 130,
+          "default": 8,
+          "visible": false
+        },
+        {
+          "id": 562949953426432,
+          "code": "Код",
+          "name": "Код",
+          "source": "code",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 562949953427456,
+          "code": "Наименование",
+          "name": "Наименование",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 562949953428480,
+          "code": "Местоположение",
+          "name": "Местоположение",
+          "source": "location",
+          "datatype": 131,
+          "nullable": true,
+          "visible": false
+        },
+        {
+          "id": 562949953429504,
+          "code": "Примечание",
+          "name": "Примечание",
+          "source": "description",
+          "datatype": 140,
+          "nullable": true,
+          "visible": true
+        },
+        {
+          "id": 562949953430528,
+          "code": "ВерсияЗаписи",
+          "name": "Версия записи",
+          "source": "rowversion",
+          "datatype": 131,
+          "flags": "Version",
+          "visible": false
+        }
+      ]
+    }
+  ]
+}

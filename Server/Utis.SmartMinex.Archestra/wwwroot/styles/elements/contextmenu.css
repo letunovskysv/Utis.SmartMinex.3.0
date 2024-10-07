@@ -1,0 +1,47 @@
+.ut-popup {
+    border: solid thin lightgray;
+    box-shadow: 2px 2px 8px rgba(100,100,100,0.5);
+}
+
+.ut-ctx-menu {
+    display: block;
+    position: fixed;
+    background-color: #f8fafb;
+    box-sizing: border-box;
+    font-size: var(--ut-font-size);
+    z-index: 999;
+}
+
+.ut-ctx-menu ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0.2rem 0;
+    list-style-type: none;
+}
+
+.ut-ctx-menu li {
+    padding: 1px 0 1px 1rem;    
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.ut-ctx-menu li:hover {
+    background-color: var(--ut-select-bgcolor);
+}
+
+.ut-ctx-submenu {
+    display: inline-block;
+    position: absolute;
+    background-color: #f8fafb;
+}
+
+.ut-ctx-subname {
+    display: inline-flex;
+    width: 100%;
+}
+
+.ut-ctx-split {
+    border-top: solid 1px #dde0e6;
+    margin-top: 1px;
+    pointer-events: none;
+}

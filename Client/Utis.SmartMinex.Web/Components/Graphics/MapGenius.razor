@@ -1,0 +1,40 @@
+﻿@*--------------------------------------------------------------------------------------------------
+// (С) 2017-2025 ООО УралТехИС. Интеллектуальная Системная Платформа 3.0. Все права защищены.
+// Описание: MapGenius – Мнемосхема 3D.
+// Библтотека: https://www.babylonjs.com/  https://github.com/BabylonJS/Babylon.js/tree/master
+// Руководства: https://endoc.cnbabylon.com/how_to/gui3d
+// JavaScript библиотеки: https://doc.babylonjs.com/setup/frameworkPackages/CDN
+// glTF формат
+// Вызов JS функций: https://learn.microsoft.com/ru-ru/aspnet/core/blazor/javascript-interoperability/call-javascript-from-dotnet?view=aspnetcore-8.0
+// https://blog.elmah.io/using-js-object-references-in-blazor-wasm-to-wrap-js-libraries/
+// https://habr.com/ru/companies/intel/articles/282089/
+// https://isolution.pro/ru/t/babylonjs/babylonjs-vectorposition-and-rotation/babylonjs-vektornoe-polozenie-i-vrasenie
+//------------------------------------------------------------------------------------------------*@
+@namespace Utis.SmartMinex.Client
+
+<canvas id=@Id />
+
+@code {
+    [Inject]
+    GInstanceCreatorAsync _creator { get; set; }
+
+    [Parameter]
+    public string Id { get; set; }
+
+    [Parameter]
+    public GData? DataSource { get; set; }
+
+    BabylonInstance _bbl;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _bbl = await _creator.CreateBabylonAsync();
+            await _bbl.CreateScheme(Id, DataSource);
+        }   
+    }
+
+    public async Task Test() =>
+        await _bbl.Test();
+}

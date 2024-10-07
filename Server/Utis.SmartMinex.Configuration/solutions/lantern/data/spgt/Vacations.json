@@ -1,0 +1,49 @@
+{
+  "objects": [
+    {
+      "id": 26740122787512320,
+      "parent": 259,
+      "type": 259,
+      "code": "ГрафикОтпусковРаботников",
+      "name": "График отпусков работников",
+      "source": "$(Production)vacations",
+      "model": "TVacationsRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 26740122787513344,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 26740122787514368,
+          "code": "Человека",
+          "name": "Человека",
+          "source": "person_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 26740122787515392,
+          "code": "ДатаИВремяНачалаОтпуска",
+          "name": "Дата и время начала отпуска",
+          "source": "dt_begin",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 26740122787516416,
+          "code": "ДатаИВремяКонцаОтпуска",
+          "name": "Дата и время конца отпуска",
+          "source": "dt_end",
+          "datatype": 141,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

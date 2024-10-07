@@ -1,0 +1,41 @@
+{
+  "objects": [
+    {
+      "id": 8725724278030336,
+      "parent": 259,
+      "type": 259,
+      "code": "ПараметрыСобытийСистемы",
+      "name": "Параметры событий системы",
+      "description": "Срок хранения - 3 месяца.",
+      "source": "$(Production)event_params",
+      "model": "TEventParamsRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 8725724278031360,
+          "code": "ИмяПеременной",
+          "name": "Имя переменной",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 8725724278032384,
+          "code": "События",
+          "name": "События",
+          "source": "event_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 8725724278033408,
+          "code": "ЗначениеПеременной",
+          "name": "Значение переменной",
+          "source": "val",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

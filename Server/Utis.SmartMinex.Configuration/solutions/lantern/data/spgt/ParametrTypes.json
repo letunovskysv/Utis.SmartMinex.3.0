@@ -1,0 +1,41 @@
+{
+  "objects": [
+    {
+      "id": 18014398509481984,
+      "parent": 259,
+      "type": 259,
+      "code": "ParametrTypes",
+      "name": "Parametr types",
+      "source": "$(Production)parametr_types",
+      "model": "TParametrTypesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 18014398509483008,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 18014398509484032,
+          "code": "НазваниеТипаПараметра",
+          "name": "Название типа параметра",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 18014398509485056,
+          "code": "КоментарииКТипуПараметра",
+          "name": "Коментарии к типу параметра",
+          "source": "note",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

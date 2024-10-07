@@ -1,0 +1,145 @@
+{
+  "objects": [
+    {
+      "id": 13229323905400832,
+      "parent": 259,
+      "type": 259,
+      "code": "Светильники",
+      "name": "Светильники",
+      "source": "$(Production)lamps",
+      "model": "TLampsRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 13229323905401856,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 13229323905402880,
+          "code": "Радиоблока",
+          "name": "Радиоблока",
+          "source": "rfu_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 13229323905403904,
+          "code": "ВторогоРадиоблока",
+          "name": "Второго радиоблока",
+          "source": "rfu2_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 13229323905404928,
+          "code": "Глона",
+          "name": "Глона",
+          "source": "glon_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 13229323905405952,
+          "code": "ЗаводскойНомерСветильника",
+          "name": "Заводской номер светильника",
+          "source": "serial_nom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 13229323905406976,
+          "code": "ВнутришахтныйНомерОбозначениеСветильника",
+          "name": "Внутришахтный номер (обозначение) светильника",
+          "source": "lamp_nom",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 13229323905408000,
+          "code": "НомерЛамповой",
+          "name": "Номер ламповой",
+          "source": "group_nom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 13229323905409024,
+          "code": "ТипСветильника",
+          "name": "Тип светильника",
+          "source": "type_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 13229323905410048,
+          "code": "ДатаПоступления",
+          "name": "Дата поступления",
+          "source": "expl_begin",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 13229323905411072,
+          "code": "ДатаСписания",
+          "name": "Дата списания",
+          "source": "expl_end",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 13229323905412096,
+          "code": "ДатаОкончанияСрокаГарантии",
+          "name": "Дата окончания срока гарантии",
+          "source": "warranty_end",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 13229323905413120,
+          "code": "ДатаОкончанияСрокаЭксплуатации",
+          "name": "Дата окончания срока эксплуатации",
+          "source": "lifetime_end",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 13229323905414144,
+          "code": "СостояниеСветильника",
+          "name": "Состояние светильника",
+          "source": "lamp_state",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 13229323905415168,
+          "code": "ДатаИВремяИзмененияСостоянияСветильника",
+          "name": "Дата и время изменения состояния светильника",
+          "source": "lamp_state_changed",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 13229323905416192,
+          "code": "Selfrescuernum",
+          "name": "SelfRescuerNum",
+          "source": "selfrescuernum",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 13229323905417216,
+          "code": "View",
+          "name": "View",
+          "source": "view",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

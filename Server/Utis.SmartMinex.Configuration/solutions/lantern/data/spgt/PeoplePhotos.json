@@ -1,0 +1,48 @@
+{
+  "objects": [
+    {
+      "id": 18858823439613952,
+      "parent": 259,
+      "type": 259,
+      "code": "PeoplePhotos",
+      "name": "People photos",
+      "source": "$(Production)people_photos",
+      "model": "TPeoplePhotosRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 18858823439614976,
+          "code": "Сотрудника",
+          "name": "Сотрудника",
+          "source": "person_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 18858823439616000,
+          "code": "ПутьКФайлуСФото",
+          "name": "Путь к файлу с фото",
+          "source": "url",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 18858823439617024,
+          "code": "Фото",
+          "name": "Фото",
+          "source": "photo",
+          "datatype": 131,
+          "visible": true
+        },
+        {
+          "id": 18858823439618048,
+          "code": "ВремяИзменения",
+          "name": "Время изменения",
+          "source": "changed_datetime",
+          "datatype": 141,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

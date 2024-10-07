@@ -1,0 +1,57 @@
+{
+  "objects": [
+    {
+      "id": 16888498602639360,
+      "parent": 259,
+      "type": 259,
+      "code": "MigrationHistory",
+      "name": "Migration history",
+      "source": "$(Production)migration_history",
+      "model": "TMigrationHistoryRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 16888498602640384,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 16888498602641408,
+          "code": "Majorversion",
+          "name": "MajorVersion",
+          "source": "majorversion",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 16888498602642432,
+          "code": "Minorversion",
+          "name": "MinorVersion",
+          "source": "minorversion",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 16888498602643456,
+          "code": "Revision",
+          "name": "Revision",
+          "source": "revision",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 16888498602644480,
+          "code": "Applieddatetime",
+          "name": "AppliedDatetime",
+          "source": "applieddatetime",
+          "datatype": 141,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

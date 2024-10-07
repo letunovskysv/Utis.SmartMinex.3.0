@@ -1,0 +1,41 @@
+{
+  "objects": [
+    {
+      "id": 7599824371187712,
+      "parent": 259,
+      "type": 259,
+      "code": "Отделы",
+      "name": "Отделы (участки)",
+      "source": "$(Production)departments",
+      "model": "TDepartmentsRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 7599824371188736,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 7599824371189760,
+          "code": "НазваниеОтдела",
+          "name": "Название отдела (участка)",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 7599824371190784,
+          "code": "Организация",
+          "name": "Организация",
+          "source": "company_id",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

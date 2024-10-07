@@ -1,0 +1,113 @@
+{
+  "objects": [
+    {
+      "id": 10696049115004928,
+      "parent": 259,
+      "type": 259,
+      "code": "ДанныеГаза",
+      "name": "Данные газа",
+      "source": "$(Production)gas_data",
+      "model": "TGasDataRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 10696049115005952,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 10696049115006976,
+          "code": "ДатаИВремя",
+          "name": "Дата и время",
+          "source": "datetime",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 10696049115008000,
+          "code": "НомерГазовойМетки",
+          "name": "Номер газовой метки",
+          "source": "met_nom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 10696049115009024,
+          "code": "Считывателя",
+          "name": "Считывателя",
+          "source": "reader_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 10696049115010048,
+          "code": "Зоны",
+          "name": "Зоны",
+          "source": "zone_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 10696049115011072,
+          "code": "Газа",
+          "name": "Газа",
+          "source": "gas",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 10696049115012096,
+          "code": "СостояниеКанала",
+          "name": "Состояние канала",
+          "source": "state",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 10696049115013120,
+          "code": "МаксимальноеМинимальноеЗначениеКонцентрации",
+          "name": "Максимальное (минимальное) значение концентрации",
+          "source": "extremum",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 10696049115014144,
+          "code": "КоличествоМгновенныхИзмеренийСЭкстремальнымиЗначениями",
+          "name": "Количество мгновенных измерений с экстремальными значениями",
+          "source": "extremum_count",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 10696049115015168,
+          "code": "КоличествоПереходовЧерезУровеньАварийногоПорога",
+          "name": "Количество переходов через уровень аварийного порога",
+          "source": "extremum_level_count",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 10696049115016192,
+          "code": "CреднееЗначениеКонцентрации",
+          "name": "Cреднее значение концентрации",
+          "source": "average",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 10696049115017216,
+          "code": "СреднееЗначениеКонцентрацииДляЭкстремальныхЗначений",
+          "name": "Среднее значение концентрации для экстремальных значений",
+          "source": "extremum_average",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

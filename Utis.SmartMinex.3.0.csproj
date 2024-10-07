@@ -1,0 +1,31 @@
+﻿<Project>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Version>3.0.0.0</Version>
+    <Product>Системная платформа УТИС®</Product>
+    <Copyright>© 2017-2025 ООО «УралТехИС». Все права защищены.</Copyright>
+    <Company>ООО «УралТехИС», г. Екатеринбург, г. Санкт-Петербург</Company>
+    <Authors>Летуновский Сергей Васильевич (lesev@mail.ru)</Authors>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <BaseOutputPath>..\..\Bin</BaseOutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+    <Trimming>full</Trimming>
+    <SignAssembly>True</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <AssemblyOriginatorKeyFile>..\..\Keys\Utis.SmartMinex.snk</AssemblyOriginatorKeyFile>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/letunovskysv/Utis.SmartMinex.3.0</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+</Project>

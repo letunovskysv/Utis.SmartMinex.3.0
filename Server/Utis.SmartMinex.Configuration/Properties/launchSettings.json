@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Utis.SmartMinex.Configuration": {
+      "commandName": "Project",
+      "commandLineArgs": "\"$(SolutionDir)Server\\Utis.SmartMinex.Configuration\\solutions\\seniorlamp\" \"$(SolutionDir)Server\\Utis.SmartMinex.Server\\config\\seniorlamp.smx\""
+    }
+  }
+}

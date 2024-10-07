@@ -1,0 +1,34 @@
+{
+  "objects": [
+    {
+      "id": 5066549580791808,
+      "parent": 259,
+      "type": 259,
+      "code": "СправочникСостоянийАнтенн",
+      "name": "Справочник состояний антенн",
+      "source": "$(Production)ant_states",
+      "model": "TAntStatesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 5066549580792832,
+          "code": "КодыСостоянийАнтенн",
+          "name": "Коды состояний антенн",
+          "description": "0=Ок; 1=Антенна оборвана; 2=Антенна короткозамкнута; 128 (0x80)=Антенна не используется; 129 (0x81)=Контроль антенны отключен",
+          "source": "code",
+          "datatype": 130,
+          "visible": true,
+          "flags": "Key"
+        },
+        {
+          "id": 5066549580793856,
+          "code": "НазваниеСостояния",
+          "name": "Название состояния",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

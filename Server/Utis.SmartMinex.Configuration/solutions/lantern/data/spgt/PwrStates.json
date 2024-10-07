@@ -1,0 +1,33 @@
+{
+  "objects": [
+    {
+      "id": 20829148276588544,
+      "parent": 259,
+      "type": 259,
+      "code": "СостоянияИсточниковПитания",
+      "name": "Состояния источников питания",
+      "source": "$(Production)pwr_states",
+      "model": "TPwrStatesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 20829148276589568,
+          "code": "Состояние",
+          "name": "Состояние",
+          "description": "0-источник работает от батареи; 1-источник исправен (работает от внешней сети)",
+          "source": "code",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 20829148276590592,
+          "code": "НазваниеСостояния",
+          "name": "Название состояния",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

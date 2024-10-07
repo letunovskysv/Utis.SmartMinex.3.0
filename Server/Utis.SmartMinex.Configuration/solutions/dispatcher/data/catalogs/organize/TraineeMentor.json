@@ -1,0 +1,118 @@
+{
+  "objects": [
+    {
+      "id": 12947848928690176,
+      "parent": 17179871232,
+      "type": 259,
+      "code": "Наставники",
+      "name": "Наставники",
+      "description": "Справочник наставников",
+      "source": "$(Production)traineementor",
+      "model": "TraineeMentor, Utis.Minex.ProductionModel",
+      "attributes": [
+        {
+          "id": 12947848928691200,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "description": "Уникальный идентификатор объекта",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 12947848928692224,
+          "code": "Наименование",
+          "name": "Наименование",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 12947848928693248,
+          "code": "Сотрудник",
+          "name": "Сотрудник",
+          "source": "person_id",
+          "datatype": 131,
+          "visible": true
+        },
+        {
+          "id": 12947848928694272,
+          "code": "Стажер",
+          "name": "Стажер",
+          "source": "trainee_id",
+          "datatype": 131,
+          "visible": true
+        },
+        {
+          "id": 12947848928695296,
+          "code": "ДатаНачалаНаставничества",
+          "name": "Дата начала наставничества",
+          "source": "begindate",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 12947848928696320,
+          "code": "ДатаОкончанияНаставничества",
+          "name": "Дата окончания наставничества",
+          "source": "enddate",
+          "datatype": 141,
+          "visible": true
+        },
+        {
+          "id": 12947848928697344,
+          "code": "НомерПриказа",
+          "name": "Номер приказа",
+          "source": "ordernumber",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 12947848928698368,
+          "code": "ТипНаставничества",
+          "name": "Тип наставничества",
+          "source": "mentorshiptype",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 12947848928699392,
+          "code": "Создан",
+          "name": "Создан",
+          "description": "Дата/время создания объекта",
+          "source": "created",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 12947848928700416,
+          "code": "Изменён",
+          "name": "Изменён",
+          "description": "Дата/время изменения объекта",
+          "source": "updated",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 12947848928701440,
+          "code": "Удалено",
+          "name": "Удалено",
+          "description": "Метка удаления объекта",
+          "source": "deleted",
+          "datatype": 144,
+          "visible": false
+        },
+        {
+          "id": 12947848928702464,
+          "code": "ВерсияОбъекта",
+          "name": "Версия объекта",
+          "source": "versionobject",
+          "datatype": 131,
+          "visible": false
+        }
+      ],
+      "data": []
+    }
+  ]
+}

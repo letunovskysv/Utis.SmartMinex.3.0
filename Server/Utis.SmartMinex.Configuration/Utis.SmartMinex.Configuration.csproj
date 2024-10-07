@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\Utis.SmartMinex.3.0.csproj" />
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>make</AssemblyName>
+    <BaseOutputPath>..\..\Bin\Tools</BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql" Version="8.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Modules\Utis.Minex.ProductionModel\Utis.Minex.ProductionModel.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.Graphics\Utis.SmartMinex.Graphics.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.Spgt.ProductionModel\Utis.Spgt.ProductionModel.csproj" />
+    <ProjectReference Include="..\Utis.SmartMinex.Runtime\Utis.SmartMinex.Runtime.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="solutions\dispatcher\data\mines\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,37 @@
+﻿@*--------------------------------------------------------------------------------------------------
+// (С) 2017-2025 ООО УралТехИС. Интеллектуальная Системная Платформа 3.0. Все права защищены.
+// Описание: ObjectPage – Страница просмотра и редактирования свойств объекта конфигурации.
+//------------------------------------------------------------------------------------------------*@
+@inherits UtisPage
+
+<RadzenMenu>
+    <RadzenMenuItem Text="Правка" />
+    <RadzenMenuItem Text="Сохранить" Click=@OnApply />
+</RadzenMenu>
+<UtisPropertyGrid DataSource=@_target />
+
+@code {
+    [CascadingParameter]
+    PageContainer? _parent { get; set; }
+
+    [Parameter]
+    public string? Id { get; set; }
+
+    TEntity? _target;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (_parent != null && _dsp.TryGetObject(Id, out var obj))
+        {
+            _target = obj;
+            var mdtype = _dsp.GetObject(obj.Type);
+            await _parent.SetTitleAsync(obj.FullName);
+        }
+    }
+
+    Task OnApply(MenuItemEventArgs e)
+    {
+        _dsp.Update(_target);
+        return Task.CompletedTask;
+    }
+}

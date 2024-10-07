@@ -1,0 +1,96 @@
+{
+  "objects": [
+    {
+      "id": 10414574138294272,
+      "parent": 17179871232,
+      "type": 259,
+      "code": "Допуски",
+      "name": "Допуски",
+      "description": "Нормы действия мероприятий допуска в шахту",
+      "source": "$(Production)jobtitleadmission",
+      "model": "JobTitleAdmission, Utis.Minex.ProductionModel",
+      "attributes": [
+        {
+          "id": 10414574138295296,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "description": "Уникальный идентификатор объекта",
+          "source": "id",
+          "datatype": 131,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 10414574138296320,
+          "code": "Наименование",
+          "name": "Наименование",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 10414574138297344,
+          "code": "Должность",
+          "name": "Должность",
+          "source": "jobtitle_id",
+          "datatype": 131,
+          "visible": true
+        },
+        {
+          "id": 10414574138298368,
+          "code": "Период",
+          "name": "Период",
+          "description": "Период действия допуска для данной должности",
+          "source": "duration_id",
+          "datatype": 131,
+          "visible": true
+        },
+        {
+          "id": 10414574138299392,
+          "code": "Допуск",
+          "name": "Допуск",
+          "description": "Тип мероприятия допуска",
+          "source": "admissiontype",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 10414574138300416,
+          "code": "Создан",
+          "name": "Создан",
+          "description": "Дата/время создания объекта",
+          "source": "created",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 10414574138301440,
+          "code": "Изменён",
+          "name": "Изменён",
+          "description": "Дата/время изменения объекта",
+          "source": "updated",
+          "datatype": 141,
+          "visible": false
+        },
+        {
+          "id": 10414574138302464,
+          "code": "Удалено",
+          "name": "Удалено",
+          "description": "Метка удаления объекта",
+          "source": "deleted",
+          "datatype": 144,
+          "visible": false
+        },
+        {
+          "id": 10414574138303488,
+          "code": "ВерсияОбъекта",
+          "name": "Версия объекта",
+          "source": "versionobject",
+          "datatype": 131,
+          "visible": false
+        }
+      ],
+      "data": []
+    }
+  ]
+}

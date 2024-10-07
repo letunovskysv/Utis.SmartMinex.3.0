@@ -1,0 +1,70 @@
+{
+  "runtime": [
+    {
+      "start": "auto",
+      "code": "001",
+      "name": "Сервер приложений «Горный диспетчер»"
+    },
+    {
+      "start": "manual",
+      "code": "002",
+      "name": "Сервер приложений «Старший ламповщик»"
+    }
+  ],
+  "modules": [
+    {
+      "start": "auto",
+      "name": "Служба базы данных",
+      "type": "Metadata, Utis.SmartMinex.Metadata",
+      "dataprovider": "Utis.SmartMinex.Data.PgSqlDatabase, Utis.SmartMinex.PostgreSql",
+      "connectionstring": "Host=localhost;Database=PTKGD001;Username=postgres;Password=qwe890-;Include Error Detail=true",
+      "configuration": "config\\dispatcher.smx"
+    },
+    {
+      "start": "disabled",
+      "name": "Служба базы данных",
+      "type": "Metadata, Utis.SmartMinex.Metadata",
+      "dataprovider": "Utis.SmartMinex.Data.MsSqlDatabase, Utis.SmartMinex.MsSql",
+      "connectionstring": "Data Source=localhost;Initial Catalog=PTKGD001;User ID=sa;Password=qwe890-;Persist Security Info=False;TrustServerCertificate=True",
+      "connectionstring2": "Data Source=localhost;Initial Catalog=PTKGD001;Persist Security Info=True;Integrated Security=SSPI;TrustServerCertificate=True",
+      "configuration": "config\\dispatcher.smx"
+    },
+    {
+      "start": "disabled",
+      "name": "Служба базы данных",
+      "type": "Metadata, Utis.SmartMinex.Metadata",
+      "dataprovider": "Utis.SmartMinex.Data.FbSqlDatabase, Utis.SmartMinex.FirebirdSql",
+      "connectionstring": "Server=localhost;Database=D:/Data/SeniorLamps/spgt_database/PTKGD001.FDB;User=spgtadmin;Password=4rfvgy7;Charser=NONE",
+      "configuration": "config\\dispatcher.smx"
+    },
+    {
+      "start": "disabled",
+      "name": "Служба базы данных",
+      "type": "Metadata, Utis.SmartMinex.Metadata",
+      "dataprovider": "Utis.SmartMinex.Data.PgSqlDatabase, Utis.SmartMinex.PostgreSql",
+      "connectionstring": "Host=localhost;Database=PTKLP001;Username=postgres;Password=qwe890-;Include Error Detail=true",
+      "configuration": "config\\lantern.smx"
+    },
+    {
+      "start": "disabled",
+      "name": "Служба базы данных",
+      "type": "Metadata, Utis.SmartMinex.Metadata",
+      "dataprovider": "Utis.SmartMinex.Data.PgSqlDatabase, Utis.SmartMinex.PostgreSql",
+      "connectionstring": "Host=localhost;Database=UTIS001;Username=postgres;Password=qwe890-;Include Error Detail=true",
+      "configuration": "config\\present.smx"
+    },
+    {
+      "start": "auto",
+      "name": "Служба терминалов",
+      "type": "TerminalService, Utis.SmartMinex.Core",
+      "port": 23
+    },
+    {
+      "start": "manual",
+      "name": "Терминальная сессия",
+      "type": "TelnetSession, Utis.SmartMinex.Core",
+      "username": "admin",
+      "password": "4rfvgy7"
+    }
+  ]
+}

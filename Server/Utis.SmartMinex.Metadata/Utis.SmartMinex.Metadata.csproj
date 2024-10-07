@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\Utis.SmartMinex.3.0.csproj" />
+
+  <PropertyGroup>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.Data\Utis.SmartMinex.Data.csproj" />
+    <ProjectReference Include="..\..\Modules\Utis.SmartMinex.Graphics\Utis.SmartMinex.Graphics.csproj" />
+    <ProjectReference Include="..\Utis.SmartMinex.FirebirdSql\Utis.SmartMinex.FirebirdSql.csproj" />
+    <ProjectReference Include="..\Utis.SmartMinex.MsSql\Utis.SmartMinex.MsSql.csproj" />
+    <ProjectReference Include="..\Utis.SmartMinex.PostgreSql\Utis.SmartMinex.PostgreSql.csproj" />
+    <ProjectReference Include="..\Utis.SmartMinex.Runtime\Utis.SmartMinex.Runtime.csproj" />
+  </ItemGroup>
+
+</Project>

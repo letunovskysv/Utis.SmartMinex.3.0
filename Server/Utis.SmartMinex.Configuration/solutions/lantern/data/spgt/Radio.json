@@ -1,0 +1,41 @@
+{
+  "objects": [
+    {
+      "id": 21110623253299200,
+      "parent": 259,
+      "type": 259,
+      "code": "Радиостанции",
+      "name": "Радиостанции",
+      "source": "$(Production)radio",
+      "model": "TRadioRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 21110623253300224,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 21110623253301248,
+          "code": "ИндивидуальныйНомерРадиостанции",
+          "name": "Индивидуальный номер радиостанции",
+          "source": "ind_num",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21110623253302272,
+          "code": "Человека",
+          "name": "Человека",
+          "source": "person_id",
+          "datatype": 130,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

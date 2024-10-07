@@ -1,0 +1,185 @@
+{
+  "objects": [
+    {
+      "id": 21955048183431168,
+      "parent": 259,
+      "type": 259,
+      "code": "Считыватели",
+      "name": "Считыватели",
+      "source": "$(Production)readers",
+      "model": "TReadersRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 21955048183432192,
+          "code": "ИД",
+          "name": "Идентификатор",
+          "source": "id",
+          "datatype": 130,
+          "flags": "Key",
+          "visible": false
+        },
+        {
+          "id": 21955048183433216,
+          "code": "НазваниеСчитывателя",
+          "name": "Название считывателя",
+          "source": "name",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 21955048183434240,
+          "code": "НомерЛинии",
+          "name": "Номер линии",
+          "source": "line_nom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183435264,
+          "code": "НомерСчитывателяНаЛинииModbusАдрес",
+          "name": "Номер считывателя на линии (modbus адрес)",
+          "source": "reader_nom",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183436288,
+          "code": "КоментарийКСчитывателю",
+          "name": "Коментарий к считывателю",
+          "source": "note",
+          "datatype": 140,
+          "visible": true
+        },
+        {
+          "id": 21955048183437312,
+          "code": "Горизонт",
+          "name": "Горизонт",
+          "source": "level_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183438336,
+          "code": "ТипСчитывателя",
+          "name": "Тип считывателя",
+          "source": "reader_type",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183439360,
+          "code": "Состояние",
+          "name": "Состояние",
+          "source": "reader_state",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183440384,
+          "code": "СостояниеКрышкиСчитывателя",
+          "name": "Состояние крышки считывателя",
+          "source": "cover_state",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183441408,
+          "code": "ИсточникаПитания",
+          "name": "Источника питания",
+          "source": "power_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183442432,
+          "code": "ЗоныДляАнтенны1",
+          "name": "Зоны для антенны 1",
+          "source": "zone1_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183443456,
+          "code": "ЗоныДляАнтенны2",
+          "name": "Зоны для антенны 2",
+          "source": "zone2_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183444480,
+          "code": "ЗоныДляАнтенны3",
+          "name": "Зоны для антенны 3",
+          "source": "zone3_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183445504,
+          "code": "ЗоныДляАнтенны4",
+          "name": "Зоны для антенны 4",
+          "source": "zone4_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183446528,
+          "code": "СостояниеАнтенны1",
+          "name": "Состояние антенны 1",
+          "source": "ant1_state",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183447552,
+          "code": "СостояниеАнтенны2",
+          "name": "Состояние антенны 2",
+          "source": "ant2_state",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183448576,
+          "code": "СостояниеАнтенны3",
+          "name": "Состояние антенны 3",
+          "source": "ant3_state",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183449600,
+          "code": "СостояниеАнтенны4",
+          "name": "Состояние антенны 4",
+          "source": "ant4_state",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183450624,
+          "code": "УстройстваПоПротоколуM2",
+          "name": "Устройства по протоколу M2",
+          "source": "device_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183451648,
+          "code": "МестаРасположения",
+          "name": "Места расположения",
+          "source": "location_id",
+          "datatype": 130,
+          "visible": true
+        },
+        {
+          "id": 21955048183452672,
+          "code": "КонфигурацияСчитывателя",
+          "name": "Конфигурация считывателя",
+          "source": "config",
+          "datatype": 131,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}

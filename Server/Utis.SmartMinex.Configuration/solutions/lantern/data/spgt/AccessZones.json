@@ -1,0 +1,42 @@
+{
+  "objects": [
+    {
+      "id": 4503599627370496,
+      "parent": 259,
+      "type": 259,
+      "code": "ДоступВЗоны",
+      "name": "Доступ в зоны",
+      "source": "$(Production)access_zones",
+      "model": "TAccessZonesRow, Utis.Spgt.ProductionModel",
+      "attributes": [
+        {
+          "id": 4503599627371520,
+          "code": "Сотрудник",
+          "name": "Сотрудник",
+          "source": "person_id",
+          "datatype": 130,
+          "visible": true,
+          "flags": "Key"
+        },
+        {
+          "id": 4503599627372544,
+          "code": "Зона",
+          "name": "Зона",
+          "source": "zone_id",
+          "datatype": 130,
+          "visible": true,
+          "flags": "Key"
+        },
+        {
+          "id": 4503599627373568,
+          "code": "Изменён",
+          "name": "Изменён",
+          "source": "dt",
+          "datatype": 141,
+          "visible": true
+        }
+      ],
+      "data": []
+    }
+  ]
+}
