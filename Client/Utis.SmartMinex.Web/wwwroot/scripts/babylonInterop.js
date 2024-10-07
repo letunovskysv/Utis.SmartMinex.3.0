@@ -4,14 +4,16 @@ const TScheme = function (id, data) {
     const _data = data;
     let engine;
     let scene;
+    let axiscube;
 
     const drawAxis = (x, y, z) => {
-        const axis = (n, x, y, z, r, g, b) => {
+        const axis = (root, n, x, y, z, r, g, b) => {
             const mat = new BABYLON.StandardMaterial('axis' + n, scene);
             mat.diffuseColor = new BABYLON.Color3(r, g, b);
             mat.alpha = 1;
             mat.backFaceCulling = false;
             const c = BABYLON.MeshBuilder.CreateCylinder('axis' + n, { height: 2, diameter: 0.5, sideOrientation: 0 }, scene);
+            c.parent = root;
             c.position.x = x;
             c.position.y = y;
             c.position.z = z;
@@ -19,16 +21,14 @@ const TScheme = function (id, data) {
             c.rotation.z = n === 'x' ? -Math.PI / 2 : 0;
             c.material = mat;
             const c2 = BABYLON.MeshBuilder.CreateCylinder('arr' + n, { height: 1, diameterBottom: 0.75, diameterTop: 0, sideOrientation: 0 }, scene);
-            c2.position.x = c.position.x + (n === 'x' ? 1.5 : 0);
-            c2.position.y = c.position.y + (n === 'y' ? 1.5 : 0);
-            c2.position.z = c.position.z + (n === 'z' ? 1.5 : 0);
-            c2.rotation.x = c.rotation.x;
-            c2.rotation.z = c.rotation.z;
+            c2.parent = c;
             c2.material = mat;
+            c2.position.y = 1.5;
+            return c;
         };
-        axis('x', x + 1, y, z, 0, 1, 0);
-        axis('y', x, y + 1, z, 0, 0, 1);
-        axis('z', x, y, z + 1, 1, 0, 0);
+        axiscube = axis(null, 'y', x, y + 1, z, 0, 0, 1);
+        axis(axiscube, 'x', 1, -1, 0, 0, 1, 0);
+        axis(axiscube, 'z', 0, -1, 1, 1, 0, 0);
     };
 
     const createScene = () => {
@@ -74,9 +74,10 @@ const TScheme = function (id, data) {
         },
         test: () => {
             var view = scene.activeCamera.viewport.toGlobal(engine);
-            var w = view.width;
-            var h = view.height;
-            console.log("TEST: " + w + ", " + h);
+            //var w = view.width;
+            //var h = view.height;
+            $alert(view);
+            console.log("TEST: " + view);
         }
     }
 }
