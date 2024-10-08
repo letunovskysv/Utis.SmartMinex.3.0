@@ -4,16 +4,16 @@ const TScheme = function (id, data) {
     const _data = data;
     let engine;
     let scene;
-    let camera;
+    let camera, axicam;
     let axiscube;
 
-    const drawAxisCube = (x, y, z) => {
+    const drawAxisCube = () => {
         const axis = (root, n, x, y, z, r, g, b) => {
             const mat = new BABYLON.StandardMaterial('axis' + n, scene);
             mat.diffuseColor = new BABYLON.Color3(r, g, b);
             mat.alpha = 1;
             mat.backFaceCulling = false;
-            const c = BABYLON.MeshBuilder.CreateCylinder('axis' + n, { height: 2, diameter: 0.5, sideOrientation: 0 }, scene);
+            const c = BABYLON.MeshBuilder.CreateCylinder('axis' + n, { height: 0.2, diameter: 0.05, sideOrientation: 0 }, scene);
             c.layerMask = 0x80000000;
             c.parent = root;
             c.position.x = x;
@@ -22,16 +22,16 @@ const TScheme = function (id, data) {
             c.rotation.x = n === 'z' ? Math.PI / 2 : 0;
             c.rotation.z = n === 'x' ? -Math.PI / 2 : 0;
             c.material = mat;
-            const c2 = BABYLON.MeshBuilder.CreateCylinder('arr' + n, { height: 1, diameterBottom: 0.75, diameterTop: 0, sideOrientation: 0 }, scene);
+            const c2 = BABYLON.MeshBuilder.CreateCylinder('arr' + n, { height: 0.1, diameterBottom: 0.075, diameterTop: 0, sideOrientation: 0 }, scene);
             c2.layerMask = c.layerMask;
             c2.parent = c;
             c2.material = mat;
-            c2.position.y = 1.5;
+            c2.position.y = 0.15;
             return c;
         };
-        axiscube = axis(null, 'y', x, y + 1, z, 0, 0, 1);
-        axis(axiscube, 'x', 1, -1, 0, 0, 1, 0);
-        axis(axiscube, 'z', 0, -1, 1, 1, 0, 0);
+        axiscube = axis(null, 'y', 0, 0.1, 0, 0, 0, 1);
+        axis(axiscube, 'x', 0.1, -0.1, 0, 0, 1, 0);
+        axis(axiscube, 'z', 0, -0.1, 0.1, 1, 0, 0);
     };
 
     const createScene = () => {
@@ -41,7 +41,13 @@ const TScheme = function (id, data) {
         camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, 0, 100, new BABYLON.Vector3(_data.origin.x, _data.origin.y, _data.origin.z), scene);
         camera.attachControl(canvas, true);
 
-        const axicam = new BABYLON.ArcRotateCamera("axicam", -Math.PI / 2, 0, 100, new BABYLON.Vector3(0, 0, 0), scene);
+        //axicam = new BABYLON.FreeCamera("axicam", new BABYLON.Vector3(0, 10, 0), scene);
+        //axicam.upVector = new BABYLON.Vector3(0, 0, 1);
+        //axicam.setTarget(BABYLON.Vector3.Zero());
+        //axicam.viewport = new BABYLON.Viewport(-0.45, -0.35, 1, 1);
+        axicam = new BABYLON.ArcRotateCamera("axicam", -Math.PI / 2, 0, 10, new BABYLON.Vector3(0, 0, 0), scene);
+        axicam.viewport = new BABYLON.Viewport(-0.45, -0.35, 1, 1);
+        //axicam.mode = BABYLON.Camera.ORTHOGRAPHIC_CAMERA;
         axicam.layerMask = 0x80000000;
 
         scene.activeCameras.push(camera);
@@ -68,7 +74,12 @@ const TScheme = function (id, data) {
 
         vrtx.applyToMesh(utmesh);
 
-        drawAxisCube(0, 0, 0);
+        drawAxisCube();
+
+        const dsm = new BABYLON.DeviceSourceManager(engine);
+        dsm.onDeviceConnectedObservable.add((dev) => {
+            console.log("onDeviceConnectedObservable: " + dev.deviceType);
+        });
 
         return scene;
     };
@@ -77,7 +88,11 @@ const TScheme = function (id, data) {
         init: () => {
             engine = new BABYLON.Engine(canvas, true);
             scene = createScene();
-            engine.runRenderLoop(() => scene.render());
+            engine.runRenderLoop(() => {
+                axicam.alpha = camera.alpha;
+                axicam.beta = camera.beta;
+                scene.render();
+            });
             window.addEventListener("resize", () => engine.resize());
         },
         test: () => {

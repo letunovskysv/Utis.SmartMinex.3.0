@@ -1,0 +1,19 @@
+{
+  "class": [
+    {
+      "name": "DeviceSourceManager",
+      "help": ""
+    },
+    {
+      "name": "FreeCamera",
+      "prop": [
+        {
+          "noRotationConstraint": "bool"
+        },
+        {
+          "upVector": "vec3"
+        }
+      ]
+    }
+  ]
+}
