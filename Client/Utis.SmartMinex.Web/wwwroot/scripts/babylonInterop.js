@@ -7,7 +7,7 @@ const TScheme = function (id, data) {
     let camera;
     let axiscube;
 
-    const drawAxisCube = () => {
+    const drawAxisCube = (x, y, z) => {
         const axis = (root, n, x, y, z, r, g, b) => {
             const mat = new BABYLON.StandardMaterial('axis' + n, scene);
             mat.diffuseColor = new BABYLON.Color3(r, g, b);
@@ -29,7 +29,7 @@ const TScheme = function (id, data) {
             c2.position.y = 1.5;
             return c;
         };
-        axiscube = axis(null, 'y', 0, 1, 0, 0, 0, 1);
+        axiscube = axis(null, 'y', x, y + 1, z, 0, 0, 1);
         axis(axiscube, 'x', 1, -1, 0, 0, 1, 0);
         axis(axiscube, 'z', 0, -1, 1, 1, 0, 0);
     };
@@ -68,7 +68,7 @@ const TScheme = function (id, data) {
 
         vrtx.applyToMesh(utmesh);
 
-        drawAxisCube();
+        drawAxisCube(0, 0, 0);
 
         return scene;
     };
