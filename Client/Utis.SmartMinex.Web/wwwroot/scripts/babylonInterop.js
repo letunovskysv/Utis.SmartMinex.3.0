@@ -39,6 +39,7 @@ const TScheme = function (id, data) {
         scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
 
         camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, 0, 100, new BABYLON.Vector3(_data.origin.x, _data.origin.y, _data.origin.z), scene);
+        camera.noRotationConstraint = true;
         camera.attachControl(canvas, true);
 
         //axicam = new BABYLON.FreeCamera("axicam", new BABYLON.Vector3(0, 10, 0), scene);
