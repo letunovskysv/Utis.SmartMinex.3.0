@@ -12,6 +12,28 @@
           "upVector": "vec3"
         }
       ]
+    },
+    {
+      "StandardMaterial": [
+        {
+          "diffuseColor": "vec3"
+        },
+        {
+          "backFaceCulling": "bool"
+        },
+        {
+          "disableLighting": "bool"
+        }
+      ]
+    }
+  ],
+  "light": [
+    {
+      "HemisphericLight": [
+        {
+          "specular": "vec3"
+        }
+      ]
     }
   ]
 }

@@ -54,7 +54,8 @@ const TScheme = function (id, data) {
         scene.activeCameras.push(camera);
         scene.activeCameras.push(axicam);
 
-        const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
+        const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 0, 1000), scene);
+        light.specular = new BABYLON.Color3(0, 0, 0);
         light.intensity = 0.7;
 
         var utmesh = new BABYLON.Mesh("utis", scene);
@@ -62,7 +63,6 @@ const TScheme = function (id, data) {
 
         var mat = new BABYLON.StandardMaterial(scene);
         mat.alpha = 1;
-        mat.diffuseColor = new BABYLON.Color3(1.0, 0.2, 0.7);
         mat.backFaceCulling = false;
         utmesh.material = mat;
 

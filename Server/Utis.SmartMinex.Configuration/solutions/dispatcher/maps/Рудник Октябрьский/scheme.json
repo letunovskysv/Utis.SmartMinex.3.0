@@ -7,6 +7,87 @@
       "code": "Октябрьский",
       "name": "Рудник Октябрьский",
       "source": "config.zobjects",
+      "styles": [
+        {
+          "id": 0,
+          "font": "italic 6 tahoma"
+        },
+        {
+          "id": 1,
+          "align": "Center"
+        },
+        {
+          "id": 2,
+          "color": "WhiteSmoke"
+        },
+        {
+          "id": 3,
+          "color": "#606060"
+        },
+        {
+          "id": 4,
+          "border": "0.1 #d3d3d3"
+        },
+        {
+          "id": 5,
+          "color": "#c24a00"
+        },
+        {
+          "id": 6,
+          "color": "#9e9ec2"
+        },
+        {
+          "id": 7,
+          "border": "0.1 #ffffff"
+        },
+        {
+          "id": 8,
+          "border": "0.1 #00000000",
+          "background": "#607060"
+        },
+        {
+          "id": 9,
+          "font": "italic 4 tahoma"
+        },
+        {
+          "id": 10,
+          "font": "italic 5 tahoma"
+        },
+        {
+          "id": 11,
+          "border": "0.1 #f5f5f5"
+        },
+        {
+          "id": 12,
+          "color": "#3f7f7f"
+        },
+        {
+          "id": 13,
+          "color": "#c24a00"
+        },
+        {
+          "id": 14,
+          "font": "regular 6 tahoma"
+        },
+        {
+          "id": 15,
+          "color": "LightGray"
+        },
+        {
+          "id": 16,
+          "border": "0.1 #ffffff"
+        },
+        {
+          "id": 17,
+          "border": "0.1 #00000000"
+        },
+        {
+          "id": 18,
+          "name": "sections",
+          "background": "#606060",
+          "width": 5
+        }
+      ],
       "levels": [
         {
           "id": 13229461344356352,
@@ -117,7 +198,7 @@
                   "id": 5,
                   "name": "КС.1",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:13,1,0;",
+                  "style": "image:shaft;background:5;text:13,1,0;",
                   "text": "КС-1",
                   "d": [
                     1572865,
@@ -130,7 +211,7 @@
                   "id": 9,
                   "name": "ВС.700.4",
                   "type": 3,
-                  "style": "image:shaft;backcolor:6;text:13,1,0;",
+                  "style": "image:shaft;background:6;text:13,1,0;",
                   "text": "ВС-4",
                   "d": [
                     1572866,
@@ -142,7 +223,7 @@
                   "id": 13,
                   "name": "СС.800.1",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:13,1,0;",
+                  "style": "image:shaft;background:5;text:13,1,0;",
                   "text": "СС-1",
                   "d": [
                     1572867,
@@ -154,7 +235,7 @@
                   "id": 17,
                   "name": "КС.800.2",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:13,1,0;",
+                  "style": "image:shaft;background:5;text:13,1,0;",
                   "text": "КС-2",
                   "d": [
                     1572868,
@@ -166,7 +247,7 @@
                   "id": 21,
                   "name": "СС.800.2",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:13,1,0;",
+                  "style": "image:shaft;background:5;text:13,1,0;",
                   "text": "СС-2",
                   "d": [
                     1572869,
@@ -178,7 +259,7 @@
                   "id": 25,
                   "name": "ВС.700.1",
                   "type": 3,
-                  "style": "image:shaft;backcolor:6;text:13,1,0;",
+                  "style": "image:shaft;background:6;text:13,1,0;",
                   "text": "ВС-1",
                   "d": [
                     1572870,
@@ -190,7 +271,7 @@
                   "id": 29,
                   "name": "ВС.700.2",
                   "type": 3,
-                  "style": "image:shaft;backcolor:6;text:13,1,0;",
+                  "style": "image:shaft;background:6;text:13,1,0;",
                   "text": "ВС-2",
                   "d": [
                     1572871,
@@ -202,7 +283,7 @@
                   "id": 33,
                   "name": "ВЗС.700",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:13,1,0;",
+                  "style": "image:shaft;background:5;text:13,1,0;",
                   "text": "ВЗС",
                   "d": [
                     1572872,
@@ -214,7 +295,7 @@
                   "id": 37,
                   "name": "ВСС.700",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:13,1,0;",
+                  "style": "image:shaft;background:5;text:13,1,0;",
                   "text": "ВСС",
                   "d": [
                     1572873,
@@ -2746,7 +2827,7 @@
                   "id": 21,
                   "name": "РС.800.1",
                   "type": 2,
-                  "style": "image:orepass;backcolor:5;text:5,-5,0;",
+                  "style": "image:orepass;background:5;text:5,-5,0;",
                   "text": "р/с \u21161",
                   "d": [
                     4718593,
@@ -2759,7 +2840,7 @@
                   "id": 25,
                   "name": "РС.800.2",
                   "type": 2,
-                  "style": "image:orepass;backcolor:5;text:5,-5,0;",
+                  "style": "image:orepass;background:5;text:5,-5,0;",
                   "text": "р/с \u21162",
                   "d": [
                     4718594,
@@ -2813,7 +2894,7 @@
                   "id": 49,
                   "name": "КС.800.1",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:5,-5,0;",
+                  "style": "image:shaft;background:5;text:5,-5,0;",
                   "text": "КС-1",
                   "d": [
                     4718597,
@@ -2825,7 +2906,7 @@
                   "id": 53,
                   "name": "КС.800.2",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:5,-5,0;",
+                  "style": "image:shaft;background:5;text:5,-5,0;",
                   "text": "КС-2",
                   "d": [
                     4718598,
@@ -4015,7 +4096,7 @@
                   "id": 629,
                   "name": "ВС.850.4",
                   "type": 3,
-                  "style": "image:shaft;backcolor:6;text:5,-5,0;",
+                  "style": "image:shaft;background:6;text:5,-5,0;",
                   "text": "ВС-4",
                   "d": [
                     4718719,
@@ -4036,7 +4117,7 @@
                   "id": 637,
                   "name": "ВЗС.750",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:5,-5,0;",
+                  "style": "image:shaft;background:5;text:5,-5,0;",
                   "text": "ВЗС",
                   "d": [
                     4718721,
@@ -4048,7 +4129,7 @@
                   "id": 641,
                   "name": "ВС.0.4",
                   "type": 3,
-                  "style": "image:shaft;backcolor:6;text:5,-5,0;",
+                  "style": "image:shaft;background:6;text:5,-5,0;",
                   "text": "ВС-4",
                   "d": [
                     4718719,
@@ -4278,7 +4359,7 @@
                   "id": 749,
                   "name": "ВСС.0",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:5,-5,0;",
+                  "style": "image:shaft;background:5;text:5,-5,0;",
                   "text": "ВСС",
                   "d": [
                     4718745,
@@ -4322,7 +4403,7 @@
                   "id": 769,
                   "name": "ГС",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:5,-5,0;",
+                  "style": "image:shaft;background:5;text:5,-5,0;",
                   "text": "ГС",
                   "d": [
                     4718748,
@@ -4674,7 +4755,7 @@
                   "id": 941,
                   "name": "ВС.0.1",
                   "type": 3,
-                  "style": "image:shaft;backcolor:6;text:5,-5,0;",
+                  "style": "image:shaft;background:6;text:5,-5,0;",
                   "text": "ВС-1",
                   "d": [
                     4718764,
@@ -4686,7 +4767,7 @@
                   "id": 945,
                   "name": "ВС.0.2",
                   "type": 3,
-                  "style": "image:shaft;backcolor:6;text:5,-5,0;",
+                  "style": "image:shaft;background:6;text:5,-5,0;",
                   "text": "ВС-2",
                   "d": [
                     4718777,
@@ -4698,7 +4779,7 @@
                   "id": 949,
                   "name": "ВЗС.0",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:13,1,0;",
+                  "style": "image:shaft;background:5;text:13,1,0;",
                   "text": "ВЗС",
                   "d": [
                     4718721,
@@ -7779,7 +7860,7 @@
                 {
                   "id": 41,
                   "name": "СТС",
-                  "style": "backcolor:6;text:-8.46,15.89,0;",
+                  "style": "background:6;text:-8.46,15.89,0;",
                   "text": "СТС",
                   "d": [
                     6815756,
@@ -8062,7 +8143,7 @@
                 },
                 {
                   "id": 165,
-                  "style": "backcolor:8;",
+                  "style": "background:8;",
                   "d": [
                     6815780,
                     6815781
@@ -8071,7 +8152,7 @@
                 },
                 {
                   "id": 169,
-                  "style": "backcolor:8;",
+                  "style": "background:8;",
                   "d": [
                     6815780,
                     6815782
@@ -8146,7 +8227,7 @@
                 },
                 {
                   "id": 205,
-                  "style": "backcolor:8;",
+                  "style": "background:8;",
                   "d": [
                     6815788,
                     6815791
@@ -9503,7 +9584,7 @@
                 },
                 {
                   "id": 865,
-                  "style": "backcolor:12;",
+                  "style": "background:12;",
                   "d": [
                     6815926,
                     6815927
@@ -9512,7 +9593,7 @@
                 },
                 {
                   "id": 869,
-                  "style": "backcolor:12;",
+                  "style": "background:12;",
                   "d": [
                     6815926,
                     6815928
@@ -9521,7 +9602,7 @@
                 },
                 {
                   "id": 873,
-                  "style": "backcolor:12;",
+                  "style": "background:12;",
                   "d": [
                     6815927,
                     6815929
@@ -9530,7 +9611,7 @@
                 },
                 {
                   "id": 877,
-                  "style": "backcolor:12;",
+                  "style": "background:12;",
                   "d": [
                     6815928,
                     6815930
@@ -9539,7 +9620,7 @@
                 },
                 {
                   "id": 881,
-                  "style": "backcolor:12;",
+                  "style": "background:12;",
                   "d": [
                     6815928,
                     6815931
@@ -9548,7 +9629,7 @@
                 },
                 {
                   "id": 885,
-                  "style": "backcolor:12;",
+                  "style": "background:12;",
                   "d": [
                     6815927,
                     6815932
@@ -9957,7 +10038,7 @@
                   "id": 1081,
                   "name": "РК.97.12",
                   "type": 2,
-                  "style": "image:orepass;backcolor:13;text:0,-3,0;",
+                  "style": "image:orepass;background:13;text:0,-3,0;",
                   "text": "р/к 97/12",
                   "d": [
                     6815980,
@@ -9986,7 +10067,7 @@
                   "id": 1093,
                   "name": "РК.25.5",
                   "type": 2,
-                  "style": "image:orepass;backcolor:13;text:-16.1,-0.98,0;",
+                  "style": "image:orepass;background:13;text:-16.1,-0.98,0;",
                   "text": "р/к 25/5",
                   "d": [
                     6815952,
@@ -9998,7 +10079,7 @@
                   "id": 1097,
                   "name": "ВВ.31.6",
                   "type": 2,
-                  "style": "image:orepass;backcolor:13;text:-16.51,-1.4,0;",
+                  "style": "image:orepass;background:13;text:-16.51,-1.4,0;",
                   "text": "в/в 31/6",
                   "d": [
                     6815979,
@@ -10610,7 +10691,7 @@
                   "id": 1401,
                   "name": "ВЗС.700",
                   "type": 3,
-                  "style": "image:shaft;backcolor:13;text:3,6,0;",
+                  "style": "image:shaft;background:13;text:3,6,0;",
                   "text": "ВЗС",
                   "d": [
                     6816030,
@@ -15116,7 +15197,7 @@
                   "id": 265,
                   "name": "ВУОП",
                   "type": 2,
-                  "style": "image:orepass;backcolor:5;",
+                  "style": "image:orepass;background:5;",
                   "d": [
                     9437239,
                     9437238
@@ -15125,7 +15206,7 @@
                 },
                 {
                   "id": 269,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437239,
                     9437240
@@ -15134,7 +15215,7 @@
                 },
                 {
                   "id": 273,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437241,
                     9437244
@@ -15143,7 +15224,7 @@
                 },
                 {
                   "id": 277,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437242,
                     9437241
@@ -15152,7 +15233,7 @@
                 },
                 {
                   "id": 281,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437243,
                     9437241
@@ -15161,7 +15242,7 @@
                 },
                 {
                   "id": 285,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437244,
                     9437389
@@ -15170,7 +15251,7 @@
                 },
                 {
                   "id": 289,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437245,
                     9437244
@@ -15179,7 +15260,7 @@
                 },
                 {
                   "id": 293,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437246,
                     9437240
@@ -15188,7 +15269,7 @@
                 },
                 {
                   "id": 297,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437247,
                     9437246
@@ -15197,7 +15278,7 @@
                 },
                 {
                   "id": 301,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437248,
                     9437247
@@ -15206,7 +15287,7 @@
                 },
                 {
                   "id": 305,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437249,
                     9437248
@@ -15215,7 +15296,7 @@
                 },
                 {
                   "id": 309,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437250,
                     9437246
@@ -15276,7 +15357,7 @@
                   "id": 337,
                   "name": "ВУОП",
                   "type": 2,
-                  "style": "image:orepass;backcolor:5;",
+                  "style": "image:orepass;background:5;",
                   "d": [
                     9437250,
                     9437255
@@ -15303,7 +15384,7 @@
                   "id": 349,
                   "name": "ВУОП",
                   "type": 2,
-                  "style": "image:orepass;backcolor:5;",
+                  "style": "image:orepass;background:5;",
                   "d": [
                     9437249,
                     9437258
@@ -16106,7 +16187,7 @@
                   "id": 745,
                   "name": "ГС",
                   "type": 2,
-                  "style": "image:orepass;backcolor:6;",
+                  "style": "image:orepass;background:6;",
                   "d": [
                     9437330,
                     0
@@ -16308,7 +16389,7 @@
                 },
                 {
                   "id": 845,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437354,
                     9437247
@@ -16441,7 +16522,7 @@
                 },
                 {
                   "id": 909,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437367,
                     9437354
@@ -16452,7 +16533,7 @@
                   "id": 913,
                   "name": "ВУОП",
                   "type": 2,
-                  "style": "image:orepass;backcolor:5;",
+                  "style": "image:orepass;background:5;",
                   "d": [
                     9437367,
                     9437366
@@ -16461,7 +16542,7 @@
                 },
                 {
                   "id": 917,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437368,
                     9437369
@@ -16470,7 +16551,7 @@
                 },
                 {
                   "id": 921,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437369,
                     9437354
@@ -16479,7 +16560,7 @@
                 },
                 {
                   "id": 925,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437370,
                     9437369
@@ -16488,7 +16569,7 @@
                 },
                 {
                   "id": 929,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437371,
                     9437370
@@ -16651,7 +16732,7 @@
                 },
                 {
                   "id": 1009,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437389,
                     9437354
@@ -16687,7 +16768,7 @@
                 },
                 {
                   "id": 1025,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     9437389,
                     9437508
@@ -17166,7 +17247,7 @@
                   "id": 1261,
                   "name": "КС.850.1",
                   "type": 3,
-                  "style": "image:shaft;backcolor:6;text:5,-5,0;",
+                  "style": "image:shaft;background:6;text:5,-5,0;",
                   "text": "КС-1",
                   "d": [
                     9437437,
@@ -17178,7 +17259,7 @@
                   "id": 1265,
                   "name": "КС.0.1",
                   "type": 3,
-                  "style": "image:shaft;backcolor:6;text:5,-5,0;",
+                  "style": "image:shaft;background:6;text:5,-5,0;",
                   "text": "КС-1",
                   "d": [
                     9437437,
@@ -17190,7 +17271,7 @@
                   "id": 1269,
                   "name": "СС.0.1",
                   "type": 3,
-                  "style": "image:shaft;backcolor:6;text:5,-5,0;",
+                  "style": "image:shaft;background:6;text:5,-5,0;",
                   "text": "СС-1",
                   "d": [
                     9437434,
@@ -17794,7 +17875,7 @@
                   "id": 1565,
                   "name": "РС.700.2",
                   "type": 2,
-                  "style": "image:orepass;backcolor:6;text:5,-5,0;",
+                  "style": "image:orepass;background:6;text:5,-5,0;",
                   "text": "р/с \u21162",
                   "d": [
                     9437468,
@@ -18179,7 +18260,7 @@
                   "id": 1753,
                   "name": "ВУОП",
                   "type": 2,
-                  "style": "image:orepass;backcolor:5;",
+                  "style": "image:orepass;background:5;",
                   "d": [
                     9437368,
                     9437542
@@ -18344,7 +18425,7 @@
                   "id": 1825,
                   "name": "КС.0.2",
                   "type": 3,
-                  "style": "image:shaft;backcolor:6;text:5,-5,0;",
+                  "style": "image:shaft;background:6;text:5,-5,0;",
                   "text": "КС-2",
                   "d": [
                     9437556,
@@ -18372,7 +18453,7 @@
                   "id": 1837,
                   "name": "СС.0.2",
                   "type": 3,
-                  "style": "image:shaft;backcolor:6;text:5,-5,0;",
+                  "style": "image:shaft;background:6;text:5,-5,0;",
                   "text": "СС-2",
                   "d": [
                     9437560,
@@ -18384,7 +18465,7 @@
                   "id": 1841,
                   "name": "КС.0.2",
                   "type": 3,
-                  "style": "image:shaft;backcolor:6;text:5,-5,0;",
+                  "style": "image:shaft;background:6;text:5,-5,0;",
                   "text": "КС-2",
                   "d": [
                     9437556,
@@ -18396,7 +18477,7 @@
                   "id": 1845,
                   "name": "СС.0.2",
                   "type": 3,
-                  "style": "image:shaft;backcolor:6;text:5,-5,0;",
+                  "style": "image:shaft;background:6;text:5,-5,0;",
                   "text": "СС-2",
                   "d": [
                     9437560,
@@ -18425,7 +18506,7 @@
                   "id": 1857,
                   "name": "РС.700.1",
                   "type": 2,
-                  "style": "image:orepass;backcolor:6;",
+                  "style": "image:orepass;background:6;",
                   "d": [
                     9437562,
                     5066549580791812
@@ -22132,7 +22213,7 @@
                 },
                 {
                   "id": 309,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     12058699,
                     12058698
@@ -22141,7 +22222,7 @@
                 },
                 {
                   "id": 313,
-                  "style": "backcolor:5;",
+                  "style": "background:5;",
                   "d": [
                     12058700,
                     12058698
@@ -23392,7 +23473,7 @@
                 },
                 {
                   "id": 933,
-                  "style": "backcolor:6;",
+                  "style": "background:6;",
                   "d": [
                     12058842,
                     12058841
@@ -23401,7 +23482,7 @@
                 },
                 {
                   "id": 937,
-                  "style": "backcolor:6;",
+                  "style": "background:6;",
                   "d": [
                     12058843,
                     12058841
@@ -23747,7 +23828,7 @@
                 },
                 {
                   "id": 1109,
-                  "style": "backcolor:7;",
+                  "style": "background:7;",
                   "d": [
                     12058882,
                     12058883
@@ -23764,7 +23845,7 @@
                 },
                 {
                   "id": 1117,
-                  "style": "backcolor:6;",
+                  "style": "background:6;",
                   "d": [
                     12058884,
                     12058883
@@ -23773,7 +23854,7 @@
                 },
                 {
                   "id": 1121,
-                  "style": "backcolor:6;",
+                  "style": "background:6;",
                   "d": [
                     12058885,
                     12058884
@@ -23782,7 +23863,7 @@
                 },
                 {
                   "id": 1125,
-                  "style": "backcolor:6;",
+                  "style": "background:6;",
                   "d": [
                     12058886,
                     12058884
@@ -24042,7 +24123,7 @@
                   "id": 1253,
                   "name": "РК.199.7",
                   "type": 2,
-                  "style": "image:orepass;backcolor:8;",
+                  "style": "image:orepass;background:8;",
                   "text": "р/к 199/7",
                   "d": [
                     12058683,
@@ -24054,7 +24135,7 @@
                   "id": 1257,
                   "name": "РК.193.6",
                   "type": 2,
-                  "style": "image:orepass;backcolor:8;",
+                  "style": "image:orepass;background:8;",
                   "text": "р/к 193/6",
                   "d": [
                     12058685,
@@ -24066,7 +24147,7 @@
                   "id": 1261,
                   "name": "ВВ.189.7",
                   "type": 2,
-                  "style": "image:orepass;backcolor:8;",
+                  "style": "image:orepass;background:8;",
                   "text": "в/в 189/7",
                   "d": [
                     12058681,
@@ -24078,7 +24159,7 @@
                   "id": 1265,
                   "name": "РК.199.6",
                   "type": 2,
-                  "style": "image:orepass;backcolor:8;",
+                  "style": "image:orepass;background:8;",
                   "text": "р/к 199/6",
                   "d": [
                     12058687,
@@ -24090,7 +24171,7 @@
                   "id": 1269,
                   "name": "ВВ.201.4",
                   "type": 2,
-                  "style": "image:orepass;backcolor:8;",
+                  "style": "image:orepass;background:8;",
                   "text": "в/в 201/4",
                   "d": [
                     12058695,
@@ -24102,7 +24183,7 @@
                   "id": 1273,
                   "name": "РК.197.11",
                   "type": 2,
-                  "style": "image:orepass;backcolor:8;",
+                  "style": "image:orepass;background:8;",
                   "text": "р/к 197/11",
                   "d": [
                     12058802,
@@ -24114,7 +24195,7 @@
                   "id": 1277,
                   "name": "РК.197.11",
                   "type": 2,
-                  "style": "image:orepass;backcolor:8;",
+                  "style": "image:orepass;background:8;",
                   "text": "р/к 197/11",
                   "d": [
                     12058803,
@@ -24126,7 +24207,7 @@
                   "id": 1281,
                   "name": "РК.197.10",
                   "type": 2,
-                  "style": "image:orepass;backcolor:8;",
+                  "style": "image:orepass;background:8;",
                   "text": "р/к 197/10",
                   "d": [
                     12058757,
@@ -24138,7 +24219,7 @@
                   "id": 1285,
                   "name": "ВВ.4",
                   "type": 2,
-                  "style": "image:orepass;backcolor:8;",
+                  "style": "image:orepass;background:8;",
                   "text": "ВВ \u21164",
                   "d": [
                     12058844,
@@ -24150,7 +24231,7 @@
                   "id": 1289,
                   "name": "РК.199.13",
                   "type": 2,
-                  "style": "image:orepass;backcolor:8;",
+                  "style": "image:orepass;background:8;",
                   "text": "р/к 199/13",
                   "d": [
                     12058848,
@@ -24162,7 +24243,7 @@
                   "id": 1293,
                   "name": "РК.189.13",
                   "type": 2,
-                  "style": "image:orepass;backcolor:8;",
+                  "style": "image:orepass;background:8;",
                   "text": "р/к 189/13",
                   "d": [
                     12058851,
@@ -27973,7 +28054,7 @@
                   "id": 649,
                   "name": "РК.97.12",
                   "type": 2,
-                  "style": "image:orepass;backcolor:5;text:13,1,0;",
+                  "style": "image:orepass;background:5;text:13,1,0;",
                   "text": "р/к 97/12",
                   "d": [
                     14155777,
@@ -28002,7 +28083,7 @@
                   "id": 661,
                   "name": "КС.1",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:61.9,-43.9,0;",
+                  "style": "image:shaft;background:5;text:61.9,-43.9,0;",
                   "text": "КС-1",
                   "d": [
                     14155874,
@@ -28190,7 +28271,7 @@
                   "id": 753,
                   "name": "ВС.700.4",
                   "type": 3,
-                  "style": "image:shaft;backcolor:6;text:13,1,0;",
+                  "style": "image:shaft;background:6;text:13,1,0;",
                   "text": "ВС-4",
                   "d": [
                     14155938,
@@ -28370,7 +28451,7 @@
                   "id": 841,
                   "name": "ВВ.ДКЭ",
                   "type": 2,
-                  "style": "image:orepass;backcolor:5;text:5,-2,0;",
+                  "style": "image:orepass;background:5;text:5,-2,0;",
                   "text": "в/в ДКЭ",
                   "d": [
                     14155819,
@@ -29829,7 +29910,7 @@
                   "id": 133,
                   "name": "КС.800.2",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:5,-5,0;",
+                  "style": "image:shaft;background:5;text:5,-5,0;",
                   "text": "КС-2",
                   "d": [
                     17301505,
@@ -29842,7 +29923,7 @@
                   "id": 137,
                   "name": "СС.800.2",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:5,-5,0;",
+                  "style": "image:shaft;background:5;text:5,-5,0;",
                   "text": "СС-2",
                   "d": [
                     17301507,
@@ -29854,7 +29935,7 @@
                   "id": 141,
                   "name": "РК.1",
                   "type": 2,
-                  "style": "image:orepass;backcolor:5;text:5,-5,0;",
+                  "style": "image:orepass;background:5;text:5,-5,0;",
                   "d": [
                     17301536,
                     0
@@ -29865,7 +29946,7 @@
                   "id": 145,
                   "name": "РК.2",
                   "type": 2,
-                  "style": "image:orepass;backcolor:5;text:5,-5,0;",
+                  "style": "image:orepass;background:5;text:5,-5,0;",
                   "d": [
                     17301528,
                     0
@@ -29884,7 +29965,7 @@
                   "id": 153,
                   "name": "КС.1050.2",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:5,-5,0;",
+                  "style": "image:shaft;background:5;text:5,-5,0;",
                   "text": "КС-2",
                   "d": [
                     17301505,
@@ -29896,7 +29977,7 @@
                   "id": 157,
                   "name": "СС.1050.2",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:5,-5,0;",
+                  "style": "image:shaft;background:5;text:5,-5,0;",
                   "text": "СС-2",
                   "d": [
                     17301507,
@@ -30261,7 +30342,7 @@
                   "id": 77,
                   "name": "КС.1000.2",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:5,-5,0;",
+                  "style": "image:shaft;background:5;text:5,-5,0;",
                   "text": "КС-2",
                   "d": [
                     18874369,
@@ -30274,7 +30355,7 @@
                   "id": 81,
                   "name": "СС.1000.2",
                   "type": 3,
-                  "style": "image:shaft;backcolor:5;text:5,-5,0;",
+                  "style": "image:shaft;background:5;text:5,-5,0;",
                   "text": "СС-2",
                   "d": [
                     18874370,

@@ -15,7 +15,7 @@ public class ZScheme : TEntity
     [JsonPropertyOrder(16)]
     public List<ZLevel> Levels { get; set; }
     [JsonPropertyOrder(17)]
-    public List<ZStyle> Styles { get; set; }
+    public ZStyles Styles { get; set; }
     [JsonPropertyOrder(18)]
     public List<ZObject> Objects { get; set; }
 }
@@ -35,9 +35,23 @@ public class ZLayer : TEntity
     public List<ZSection> Sections { get; set; }
 }
 
+public class ZStyles : List<ZStyle>
+{
+    public ZStyle? this[string name] =>
+        this.FirstOrDefault(s => s.Name != null && s.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+}
+
 public class ZStyle
 {
-    public long Id { get; set; }
+    public int Id { get; set; }
+    public string? Name { get; set; }
+
+    public string? Font { get; set; }
+    public string? Align { get; set; }
+    public string? Color { get; set; }
+    public string? Background { get; set; }
+    public string? Border { get; set; }
+    public float? Width { get; set; }
 }
 
 public class ZNode
