@@ -1,12 +1,10 @@
 {
   "class": [
     {
-      "name": "DeviceSourceManager",
-      "help": ""
+      "DeviceSourceManager": "class"
     },
     {
-      "name": "FreeCamera",
-      "prop": [
+      "FreeCamera": [
         {
           "noRotationConstraint": "bool"
         },

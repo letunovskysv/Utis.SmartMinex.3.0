@@ -1,6 +1,6 @@
 var map;
 const TScheme = function (id, data) {
-    const canvas = $(id);
+    const canvas = document.getElementById(id);
     const _data = data;
     let engine;
     let scene;
@@ -58,6 +58,7 @@ const TScheme = function (id, data) {
         light.intensity = 0.7;
 
         var utmesh = new BABYLON.Mesh("utis", scene);
+        //utmesh.MeshPrimitiveMode = BABYLON.MeshPrimitiveMode.TRIANGLE_STRIP;
 
         var mat = new BABYLON.StandardMaterial(scene);
         mat.alpha = 1;
