@@ -3,17 +3,46 @@
 // Описание: Различные типы WebGL 2.0 - API построена на основе OpenGL ES 3.0, для шейдеров
 //           поддерживается язык GLSL ES версии 1.00 и 3.00.
 //--------------------------------------------------------------------------------------------------
-using System;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 
 namespace Utis.SmartMinex.Graphics;
 
+[DebuggerDisplay("{X}, {Y}, {Z}")]
 public struct GVector3(double x, double y, double z)
 {
     public double X { get; set; } = x;
     public double Y { get; set; } = y;
     public double Z { get; set; } = z;
     public readonly double[] ToArray() => [X, Y, Z];
+
+    #region Operations
+
+    public static GVector3 operator *(GVector3 left, float right) =>
+        new(left.X * right, left.Y * right, left.Z * right);
+
+    public static GVector3 operator /(GVector3 left, float right) =>
+        new(left.X / right, left.Y / right, left.Z / right);
+
+    public static GVector3 operator +(GVector3 left, GVector3 right) =>
+        new(left.X + right.X, left.Y + right.Y, left.Z + right.Z);
+
+    public static GVector3 operator -(GVector3 left, GVector3 right) =>
+        new(left.X - right.X, left.Y - right.Y, left.Z - right.Z);
+
+    public static bool operator ==(GVector3 left, GVector3 right) =>
+        left.X == right.X && left.Y == right.Y && left.Z == right.Z;
+
+    public static bool operator !=(GVector3 left, GVector3 right) =>
+        left.X != right.X || left.Y != right.Y || left.Z != right.Z;
+
+    public static bool operator >(GVector3 left, GVector3 right) =>
+        left.X > right.X || left.X > right.Y || left.Z > right.Z;
+
+    public static bool operator <(GVector3 left, GVector3 right) =>
+        left.X < right.X || left.X < right.Y || left.Z < right.Z;
+
+    #endregion Operations
 }
 
 public struct GColor4

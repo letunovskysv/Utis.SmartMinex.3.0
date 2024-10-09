@@ -1,4 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using Microsoft.AspNetCore.Routing.Matching;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
 using Utis.SmartMinex.Graphics;
 
 namespace Utis.SmartMinex.Client;
@@ -15,10 +17,10 @@ public class GData
 
     public GData(ZScheme model)
     {
-        Read(model);
+        Render(model);
     }
 
-    void Read(ZScheme model)
+    void Render(ZScheme model)
     {
         var faceStyle = model.Styles[nameof(ZLayer.Sections)] ?? new ZStyle();
         faceStyle.Background ??= "#753b00";
@@ -29,6 +31,9 @@ public class GData
         var faces = model.Levels.SelectMany(lev => lev.Layers.SelectMany(lay => 
             lay.Sections.Where(f => f.Type == 0).Select(f => new GFace(f, nodes, model.Styles, faceStyle)))).ToList();
 
+        foreach (var node in nodes.Values)
+            RenderNode(node);
+
         var vertices = new List<Double>();
         var colors = new List<float>();
         var indices = new List<Int32>();
@@ -37,7 +42,8 @@ public class GData
         {
             var n1 = f.Node1;
             var n2 = f.Node2;
-            vertices.AddRange(GetBoundVertices(n1.X, n1.Y, n1.Z, n2.X, n2.Y, n2.Z, f.Width));
+            vertices.AddRange(GMath.GetBoundVertices(n1.X, n1.Y, n1.Z, n2.X, n2.Y, n2.Z, f.Width));
+            //vertices.AddRange(f.Vertices);
             indices.AddRange(GFace.Indices.Select(j => i + j));
             i += 6;
             for (int j = 0; j < 6; j++)
@@ -50,38 +56,68 @@ public class GData
         Origin = Mean();
     }
 
-    /// <summary> Расчёт координат границ фигуры секции выработки по узловым точкам (0-1-2-3-4-5) против часовой стрелки.</summary>
-    public static double[] GetBoundVertices(double x1, double y1, double z1, double x2, double y2, double z2, double width)
+    /// <summary> Расчёт вершин для всех сегментов входящих в состав узла. Построение поверхностей.</summary>
+    void RenderNode(GNode node)
     {
-        var len = Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1) + (z2 - z1) * (z2 - z1));
-        var dx = width / 2f * (y2 - y1) / len;
-        var dy = width / 2f * (x2 - x1) / len;
+        if (node.Faces.Count > 0)
+        {
+            var p0 = node.Point; // Выстроим отрезки по порядку против часовой стрелки -->
+            var faces = node.Faces.OrderBy(f => GMath.AngleFloor(p0, f.Node1 == node ? f.Node2.Point : f.Node1.Point)).Select(f =>
+            {
+                if (f.Bounds.Length == 0)
+                {
+                    var n1 = f.Node1;
+                    var n2 = f.Node2;
+                    f.Bounds = GMath.GetBoundVertices2(n1.X, n1.Y, n1.Z, n2.X, n2.Y, n2.Z, f.Width);
+                }
 
-        var res = new double[18];
-        res[0] = x1 - dx;
-        res[1] = -dy - y1;
-        res[2] = z1;
+                return f;
+            }).ToArray();
 
-        res[3] = x1;
-        res[4] = -y1;
-        res[5] = z1;
+            var firstZ = node.Faces[0].Node1.Z;
+            if (node.Faces.Count < 3 || !node.Faces.Any(f => f.Node1.Z != firstZ || f.Node2.Z != firstZ)) // Все отрезки в одной плоскости Z, или отрезков < 3
+            {
+                if (faces.Length > 1) // построим перекрёсток -->
+                {
+                    var cnt = faces.Length;
+                    var iprev = cnt - 1;
+                    int x11, x12, x21, x22;
+                    for (var i = 0; i < cnt; i++)
+                    {
+                        var face = faces[i];
+                        var prev = faces[iprev];
+                        iprev = i;
 
-        res[6] = x1 + dx;
-        res[7] = -y1;
-        res[8] = z1;
+                        if (face.Node1 == node)
+                        {
+                            x11 = 0;
+                            x12 = 5;
+                        }
+                        else
+                        {
+                            x11 = 3;
+                            x12 = 2;
+                        }
+                        if (prev.Node1 == node)
+                        {
+                            x21 = 2;
+                            x22 = 3;
+                        }
+                        else
+                        {
+                            x21 = 5;
+                            x22 = 0;
+                        }
+                        var inter = GMath.Intersection(face.Bounds[x11], face.Bounds[x12], face.Bounds[x21], face.Bounds[x22]);
+                        face.Bounds[x11] = prev.Bounds[x21] = inter;
+                    }
+                }
+            }
+            else
+            {
 
-        res[9] = x2 + dx;
-        res[10] = dy - y2;
-        res[11] = z2;
-
-        res[12] = x2;
-        res[13] = -y2;
-        res[14] = z2;
-
-        res[15] = x2 - dx;
-        res[16] = -dy - y2;
-        res[17] = z2;
-        return res;
+            }
+        }
     }
 
     /// <summary> Вычисление центра схемы, центра вращения по умолчанию.</summary>
@@ -104,11 +140,13 @@ public class GData
     }
 }
 
+[DebuggerDisplay("{X}, {Y}, {Z}")]
 public class GNode(ZNode node)
 {
     public double X = node.D[0];
     public double Y = node.D[1];
     public double Z = node.D[2];
+    public GVector3 Point => new(X, Y, Z);
     public List<GFace> Faces = [];
 }
 
@@ -116,8 +154,11 @@ public class GFace
 {
     public GNode Node1;
     public GNode Node2;
-
     public float Width;
+
+    public GVector3[] Bounds = [];
+    /// <summary> Возвращает массив вершин для OpenGL.</summary>
+    public double[] Vertices => Bounds.SelectMany(p => p.ToArray()).ToArray();
     public static int[] Indices = [0, 1, 5, 5, 1, 4, 4, 1, 2, 2, 3, 4];
     public float[] BackColor;
 

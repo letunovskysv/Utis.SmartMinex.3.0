@@ -34,6 +34,20 @@ const TScheme = function (id, data) {
         axis(axiscube, 'z', 0, -0.1, 0.1, 1, 0, 0);
     };
 
+    const onMouseDown = (e, pick) => {
+        if (pick.hit) {
+            console.log(pick.pickedPoint);
+        }
+        switch (e.button) {
+            case 0: // left
+                break;
+            case 2: // right
+                break;
+            case 1: // wheel button or middle button
+                break;
+        }
+    };
+
     const createScene = () => {
         const scene = new BABYLON.Scene(engine);
         scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
@@ -51,14 +65,16 @@ const TScheme = function (id, data) {
         //axicam.mode = BABYLON.Camera.ORTHOGRAPHIC_CAMERA;
         axicam.layerMask = 0x80000000;
 
-        scene.activeCameras.push(camera);
         scene.activeCameras.push(axicam);
+        scene.activeCameras.push(camera);
 
         const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 0, 1000), scene);
         light.specular = new BABYLON.Color3(0, 0, 0);
         light.intensity = 0.7;
 
         var utmesh = new BABYLON.Mesh("utis", scene);
+        utmesh.isPickable = true;
+        //utmesh.actionManager = new BABYLON.ActionManager(scene);
         //utmesh.MeshPrimitiveMode = BABYLON.MeshPrimitiveMode.TRIANGLE_STRIP;
 
         var mat = new BABYLON.StandardMaterial(scene);
@@ -83,6 +99,8 @@ const TScheme = function (id, data) {
             console.log("onDeviceConnectedObservable: " + dev.deviceType);
         });
 
+        scene.onPointerDown = onMouseDown;
+
         return scene;
     };
 
@@ -91,8 +109,10 @@ const TScheme = function (id, data) {
             engine = new BABYLON.Engine(canvas, true);
             scene = createScene();
             engine.runRenderLoop(() => {
-                axicam.alpha = camera.alpha;
-                axicam.beta = camera.beta;
+                if (axicam != null) {
+                    axicam.alpha = camera.alpha;
+                    axicam.beta = camera.beta;
+                }
                 scene.render();
             });
             window.addEventListener("resize", () => engine.resize());
