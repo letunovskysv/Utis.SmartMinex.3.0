@@ -11,10 +11,14 @@ namespace Utis.SmartMinex.Graphics;
 [DebuggerDisplay("{X}, {Y}, {Z}")]
 public struct GVector3(double x, double y, double z)
 {
+    public static GVector3 Zero => new(0, 0, 0);
+
     public double X { get; set; } = x;
     public double Y { get; set; } = y;
     public double Z { get; set; } = z;
     public readonly double[] ToArray() => [X, Y, Z];
+
+    public readonly double Length => GMath.Distance(Zero, this);
 
     #region Operations
 

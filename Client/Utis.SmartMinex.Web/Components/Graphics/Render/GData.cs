@@ -38,7 +38,7 @@ public class GData
             RenderNode(node);
 
         foreach (var face in faces)
-            GMeshFactory.BuildTube(face);
+            GMeshFactory.RenderTube(face);
 
         var vertices = new List<Double>();
         var normals = new List<float>();
