@@ -103,8 +103,8 @@ public class GMeshFactory
         face.Bounds.Add(face.Bounds[3] + wall);
         face.Indices.AddRange([0, 5, i, i, i + 1, 0, 3, 2, i + 2, i + 2, i + 3, 3]);
 
-        var res = new GVector3[1000];
-        var t = RenderArc(res, 0, 0, 0, 0, 0, 0, 10, 5, 0, 180);
+        var centre = face.Bounds[1] + wall;
+        var arch = RenderArc(centre.X, centre.Y, centre.Z, 0, 0, 10, face.Width / 2.0, 0, 180);
     }
 
     /// <summary> Расчёт вершин для окружности в центре (1) и вектором направления (2) с указанным радиусом и количеством сегментов.</summary>
@@ -125,21 +125,21 @@ public class GMeshFactory
     }
 
     /// <summary> Расчёт вершин для дуги окружности. Возвращает количество построенных вершин. Углы по часовой стрелки.</summary>
-    internal static int RenderArc(GVector3[] result, int index, double cx, double cy, double cz, double nx, double ny, double nz, double radius, double startAngle, double sweepAngle)
+    internal static GVector3[] RenderArc(double cx, double cy, double cz, double nx, double ny, double nz, double radius, double startAngle, double sweepAngle)
     {
         double start, finish, ang;
-        startAngle = 360f - startAngle; // Корректировка углов по часовой стрелке, для совместимости с GDI++
+        startAngle = 360.0 - startAngle; // Корректировка углов по часовой стрелке, для совместимости с GDI++
         sweepAngle = -sweepAngle;
         if (sweepAngle < 0)
         {
-            ang = startAngle % 360f + sweepAngle;
-            startAngle = ang > 360f ? ang - 360f : ang < 0 ? 360f + ang : ang;
+            ang = startAngle % 360.0 + sweepAngle;
+            startAngle = ang > 360.0 ? ang - 360.0 : ang < 0 ? 360.0 + ang : ang;
             sweepAngle = -sweepAngle;
         }
-        start = startAngle = (startAngle < 0 ? 360f + startAngle : startAngle);
-        finish = startAngle + sweepAngle > 360f ? startAngle + sweepAngle - 360f : startAngle + sweepAngle;
-        ang = 360f / _tessellation;
-        int ibegin = (int)Math.Floor(start / ang) + 1;
+        start = startAngle = (startAngle < 0 ? 360.0 + startAngle : startAngle);
+        finish = startAngle + sweepAngle > 360.0 ? startAngle + sweepAngle - 360.0 : startAngle + sweepAngle;
+        ang = 360.0 / _tessellation;
+        int ibeg = (int)Math.Floor(start / ang) + 1;
         int iend = (int)Math.Abs(Math.Ceiling(finish / ang)) + (finish < start ? _tessellation : 0) - 1;
         int offset = 0;
         nx -= cx; ny -= cy; nz -= cz;
@@ -147,19 +147,21 @@ public class GMeshFactory
         var r = CalcRadiusVector(cx, cy, cz, nx, ny, nz, radius);
         double x = r.X, y = r.Y, z = r.Z;
         RotateVertex(ref x, ref y, ref z, nx, ny, nz, Math.Sin(start * GMath.PIOVER180), Math.Cos(start * GMath.PIOVER180));
-        result[index++] = new GVector3(cx + x, cy + y, cz + z);
-        for (int i = ibegin; i <= iend; i++)
+        var res = new GVector3[iend - ibeg + 3];
+        res[0] = new GVector3(cx + x, cy + y, cz + z);
+        var n = 1;
+        for (int i = ibeg; i <= iend; i++)
         {
             if (i == _tessellation) offset = -_tessellation;
             x = r.X; y = r.Y; z = r.Z;
             int j = i + offset;
             RotateVertex(ref x, ref y, ref z, nx, ny, nz, _sin[j], _cos[j]);
-            result[index++] = new GVector3(cx + x, cy + y, cz + z);
+            res[n++] = new GVector3(cx + x, cy + y, cz + z);
         }
         x = r.X; y = r.Y; z = r.Z;
         RotateVertex(ref x, ref y, ref z, nx, ny, nz, Math.Sin(finish * GMath.PIOVER180), Math.Cos(finish * GMath.PIOVER180));
-        result[index++] = new GVector3(cx + x, cy + y, cz + z);
-        return iend - ibegin + 3;
+        res[n] = new GVector3(cx + x, cy + y, cz + z);
+        return res;
     }
 
     #region Private methods
