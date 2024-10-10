@@ -7,6 +7,8 @@ namespace Utis.SmartMinex.Client;
 
 public class GData
 {
+    const double SHARPANGLE = Math.PI / 2.1;
+
     public double[] Vertices { get; set; }
     public int[] Indices { get; set; }
     public float[] Colors { get; set; }
@@ -110,8 +112,14 @@ public class GData
                         i21 = 3;
                         i22 = 2;
                     }
-                    face.Bounds[i11] = prev.Bounds[i21] =
-                        GMath.Intersection(face.Bounds[i11], face.Bounds[i12], prev.Bounds[i21], prev.Bounds[i22]);
+                    var inter = GMath.Intersection(face.Bounds[i11], face.Bounds[i12], prev.Bounds[i21], prev.Bounds[i22]);
+                    if (GMath.Angle(inter, face.Bounds[i12], prev.Bounds[i22]) < SHARPANGLE
+                        && !GMath.IsPointBelongsLine(face.Bounds[i11], face.Bounds[i12], inter)) // Срежем острый угол -->
+                    {
+                        face.Indices.AddRange([face.Node1 == node ? 1 : 4, i11, face.Bounds.Count]);
+                        face.Bounds.Add(prev.Bounds[i21]);
+                    }
+                    else face.Bounds[i11] = prev.Bounds[i21] = inter;
 
                     if (i > 0 && prev.Node1.Z != prev.Node2.Z)
                         RenderIntersection(prev, node);
@@ -126,14 +134,14 @@ public class GData
     {
         if (face.Node1 == node)
         {
+            face.Indices.AddRange([0, 2, face.Bounds.Count]);
             face.Bounds.Add(face.Bounds[1]);
-            face.Indices.AddRange([0, 2, face.Bounds.Count - 1]);
             face.Bounds[1] = GMath.MiddlePoint(face.Bounds[0], face.Bounds[2]);
         }
         else
         {
+            face.Indices.AddRange([5, 3, face.Bounds.Count]);
             face.Bounds.Add(face.Bounds[4]);
-            face.Indices.AddRange([5, 3, face.Bounds.Count - 1]);
             face.Bounds[4] = GMath.MiddlePoint(face.Bounds[3], face.Bounds[5]);
         }
     }

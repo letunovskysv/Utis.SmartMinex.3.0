@@ -24,7 +24,7 @@ public class GMath
     }
 
     /// <summary> Возвращает угол между прямыми в пространстве в градусах.</summary>
-    public static double Angle(double x, double y, double z, double x1, double y1, double z1, double x2, double y2, double z2)
+    public static double Degree(double x, double y, double z, double x1, double y1, double z1, double x2, double y2, double z2)
     {
         x1 -= x; y1 -= y; z1 -= z;
         x2 -= x; y2 -= y; z2 -= z;
@@ -34,13 +34,19 @@ public class GMath
     }
 
     /// <summary> Возвращает угол между прямыми в пространстве в градусах.</summary>
+    public static double Degree(GVector3 p0, GVector3 p1, GVector3 p2)
+    {
+        var rad = Angle(p0, p1, p2);
+        var degree = rad * 180.0 / Math.PI;
+        return degree == -180.0 ? 180.0 : degree < 0.0 ? 360.0 + degree : degree;
+    }
+
+    /// <summary> Возвращает угол между прямыми в пространстве в радианах.</summary>
     public static double Angle(GVector3 p0, GVector3 p1, GVector3 p2)
     {
         p1.X -= p0.X; p1.Y -= p0.Y; p1.Z -= p0.Z;
         p2.X -= p0.X; p2.Y -= p0.Y; p2.Z -= p0.Z;
-        var rad = Math.Acos((p1.X * p2.X + p1.Y * p2.Y + p1.Z * p2.Z) / (Math.Sqrt(p1.X * p1.X + p1.Y * p1.Y + p1.Z * p1.Z) * Math.Sqrt(p2.X * p2.X + p2.Y * p2.Y + p2.Z * p2.Z)));
-        var degree = rad * 180.0 / Math.PI;
-        return degree == -180.0 ? 180.0 : degree < 0.0 ? 360.0 + degree : degree;
+        return Math.Acos((p1.X * p2.X + p1.Y * p2.Y + p1.Z * p2.Z) / (Math.Sqrt(p1.X * p1.X + p1.Y * p1.Y + p1.Z * p1.Z) * Math.Sqrt(p2.X * p2.X + p2.Y * p2.Y + p2.Z * p2.Z)));
     }
 
     /// <summary> Проекция точки на прямую 3D.</summary>
