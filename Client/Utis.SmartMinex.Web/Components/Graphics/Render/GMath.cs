@@ -7,7 +7,7 @@ namespace Utis.SmartMinex.Graphics;
 public class GMath
 {
     const double PI2 = Math.PI * 2.0;
-    const double PI180 = Math.PI * 180.0;
+    public const double PIOVER180 = Math.PI / 180.0;
 
     public static double Round(float value) =>
         Math.Round(value, 2);
@@ -111,7 +111,7 @@ public class GMath
     }
 
     public static double Rad(double degress) =>
-        degress * PI180;
+        degress * PIOVER180;
 
     /// <summary> Поворачивает точку вокруг начала координат на угол (радиан) против часовой стрелке </summary>
     public static void Rotate(ref double x, ref double y, double angle)

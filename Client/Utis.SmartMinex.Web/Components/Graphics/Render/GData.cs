@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Routing.Matching;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Utis.SmartMinex.Graphics;
 
@@ -38,7 +37,7 @@ public class GData
             RenderNode(node);
 
         foreach (var face in faces)
-            GMeshFactory.BuildTube(face);
+            GMeshFactory.RenderTube(face);
 
         var vertices = new List<Double>();
         var normals = new List<float>();
