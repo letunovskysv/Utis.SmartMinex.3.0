@@ -40,10 +40,7 @@ public class GData
         int i = 0;
         faces.ForEach(f =>
         {
-            var n1 = f.Node1;
-            var n2 = f.Node2;
-            vertices.AddRange(GMath.GetBoundVertices(n1.X, n1.Y, n1.Z, n2.X, n2.Y, n2.Z, f.Width));
-            //vertices.AddRange(f.Vertices);
+            vertices.AddRange(f.Vertices);
             indices.AddRange(GFace.Indices.Select(j => i + j));
             i += 6;
             for (int j = 0; j < 6; j++)
@@ -81,7 +78,7 @@ public class GData
                 {
                     var cnt = faces.Length;
                     var iprev = cnt - 1;
-                    int x11, x12, x21, x22;
+                    int i11, i12, i21, i22;
                     for (var i = 0; i < cnt; i++)
                     {
                         var face = faces[i];
@@ -90,26 +87,26 @@ public class GData
 
                         if (face.Node1 == node)
                         {
-                            x11 = 0;
-                            x12 = 5;
+                            i11 = 0;
+                            i12 = 5;
                         }
                         else
                         {
-                            x11 = 3;
-                            x12 = 2;
+                            i11 = 3;
+                            i12 = 2;
                         }
                         if (prev.Node1 == node)
                         {
-                            x21 = 2;
-                            x22 = 3;
+                            i21 = 2;
+                            i22 = 3;
                         }
                         else
                         {
-                            x21 = 5;
-                            x22 = 0;
+                            i21 = 5;
+                            i22 = 0;
                         }
-                        var inter = GMath.Intersection(face.Bounds[x11], face.Bounds[x12], face.Bounds[x21], face.Bounds[x22]);
-                        face.Bounds[x11] = prev.Bounds[x21] = inter;
+                        face.Bounds[i11] = prev.Bounds[i21] =
+                            GMath.Intersection(face.Bounds[i11], face.Bounds[i12], prev.Bounds[i21], prev.Bounds[i22]);
                     }
                 }
             }

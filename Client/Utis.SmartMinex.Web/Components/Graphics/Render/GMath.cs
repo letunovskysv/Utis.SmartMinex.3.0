@@ -185,7 +185,7 @@ public class GMath
         res[5] = z1;
 
         res[6] = x1 + dx;
-        res[7] = -y1;
+        res[7] = dy - y1;
         res[8] = z1;
 
         res[9] = x2 + dx;
@@ -210,7 +210,7 @@ public class GMath
         var dx = width / 2.0 * (y2 - y1) / len;
         var dy = width / 2.0 * (x2 - x1) / len;
 
-        return [new GVector3(x1 - dx, -dy - y1, z1), new GVector3(x1, -y1, z1), new GVector3(x1 + dx, -y1, z1),
+        return [new GVector3(x1 - dx, -dy - y1, z1), new GVector3(x1, -y1, z1), new GVector3(x1 + dx, dy - y1, z1),
             new GVector3(x2 + dx, dy - y2, z2), new GVector3(x2, -y2, z2), new GVector3(x2 - dx, -dy - y2, z2)];
     }
 }

@@ -2,6 +2,7 @@ var map;
 const TScheme = function (id, data) {
     const canvas = document.getElementById(id);
     const _data = data;
+    const _trianglesVerticesMode = true;
     let engine;
     let scene;
     let camera, axicam;
@@ -74,7 +75,6 @@ const TScheme = function (id, data) {
 
         var utmesh = new BABYLON.Mesh("utis", scene);
         utmesh.isPickable = true;
-        //utmesh.actionManager = new BABYLON.ActionManager(scene);
         //utmesh.MeshPrimitiveMode = BABYLON.MeshPrimitiveMode.TRIANGLE_STRIP;
 
         var mat = new BABYLON.StandardMaterial(scene);
@@ -92,6 +92,16 @@ const TScheme = function (id, data) {
 
         vrtx.applyToMesh(utmesh);
 
+        if (_trianglesVerticesMode) {
+            BABYLON.MeshDebugPluginMaterial.PrepareMeshForTrianglesAndVerticesMode(utmesh);
+            new BABYLON.MeshDebugPluginMaterial(utmesh.material, {
+                mode: BABYLON.MeshDebugMode.TRIANGLES_VERTICES,
+                wireframeVerticesColor: new BABYLON.Color3(0, 0, 0.8),
+                wireframeThickness: 0.7,
+                vertexColor: new BABYLON.Color3(0, 0, 0.8),
+                vertexRadius: 1.2
+            });
+        }
         drawAxisCube();
 
         const dsm = new BABYLON.DeviceSourceManager(engine);
