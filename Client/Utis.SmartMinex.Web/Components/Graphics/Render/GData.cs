@@ -34,6 +34,9 @@ public class GData
         foreach (var node in nodes.Values)
             RenderNode(node);
 
+        foreach (var face in faces)
+            RenderFace(face);
+
         var vertices = new List<Double>();
         var normals = new List<float>();
         var colors = new List<float>();
@@ -60,7 +63,7 @@ public class GData
     }
 
     /// <summary> Расчёт вершин для всех сегментов входящих в состав узла. Построение поверхностей.</summary>
-    void RenderNode(GNode node)
+    static void RenderNode(GNode node)
     {
         if (node.Faces.Count > 0)
         {
@@ -71,7 +74,7 @@ public class GData
                 {
                     var n1 = f.Node1;
                     var n2 = f.Node2;
-                    f.Bounds = GMath.GetBoundVertices2(n1.X, n1.Y, n1.Z, n2.X, n2.Y, n2.Z, f.Width);
+                    f.Bounds = GMeshFactory.GetBoundVertices2(n1.X, n1.Y, n1.Z, n2.X, n2.Y, n2.Z, f.Width);
                 }
 
                 return f;
@@ -133,6 +136,12 @@ public class GData
             face.Indices.AddRange([5, 3, face.Bounds.Count - 1]);
             face.Bounds[4] = GMath.MiddlePoint(face.Bounds[3], face.Bounds[5]);
         }
+    }
+
+    /// <summary> Расчёт вершин для секции (тоннеля).</summary>
+    static void RenderFace(GFace face)
+    {
+        GMeshFactory.BuildTube();
     }
 
     /// <summary> Вычисление центра схемы, центра вращения по умолчанию.</summary>

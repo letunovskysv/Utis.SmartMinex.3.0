@@ -85,7 +85,8 @@
           "id": 18,
           "name": "sections",
           "background": "#606060",
-          "width": 5
+          "width": 5,
+          "height": 5
         }
       ],
       "levels": [
