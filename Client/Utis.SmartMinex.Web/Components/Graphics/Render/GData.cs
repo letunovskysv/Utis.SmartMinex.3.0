@@ -87,23 +87,23 @@ public class GData
 
                         if (face.Node1 == node)
                         {
-                            i11 = 0;
-                            i12 = 5;
+                            i11 = 2;
+                            i12 = 3;
                         }
                         else
                         {
-                            i11 = 3;
-                            i12 = 2;
+                            i11 = 5;
+                            i12 = 0;
                         }
                         if (prev.Node1 == node)
                         {
-                            i21 = 2;
-                            i22 = 3;
+                            i21 = 0;
+                            i22 = 5;
                         }
                         else
                         {
-                            i21 = 5;
-                            i22 = 0;
+                            i21 = 3;
+                            i22 = 2;
                         }
                         face.Bounds[i11] = prev.Bounds[i21] =
                             GMath.Intersection(face.Bounds[i11], face.Bounds[i12], prev.Bounds[i21], prev.Bounds[i22]);
@@ -137,9 +137,10 @@ public class GData
     }
 }
 
-[DebuggerDisplay("{X}, {Y}, {Z}")]
+[DebuggerDisplay("{Name} {X}, {Y}, {Z}")]
 public class GNode(ZNode node)
 {
+    public string Name = node.Name;
     public double X = node.D[0];
     public double Y = node.D[1];
     public double Z = node.D[2];
@@ -147,6 +148,7 @@ public class GNode(ZNode node)
     public List<GFace> Faces = [];
 }
 
+[DebuggerDisplay("{Node1} - {Node2}")]
 public class GFace
 {
     public GNode Node1;
