@@ -1,6 +1,13 @@
 {
   "class": [
     {
+      "Scene": [
+        {
+          "useRightHandedSystem": "bool"
+        }
+      ]
+    },
+    {
       "DeviceSourceManager": "class"
     },
     {
@@ -17,6 +24,15 @@
       "StandardMaterial": [
         {
           "diffuseColor": "vec3"
+        },
+        {
+          "specularColor": "vec3"
+        },
+        {
+          "emissiveColor": "vec3"
+        },
+        {
+          "ambientColor": "vec3"
         },
         {
           "backFaceCulling": "bool"

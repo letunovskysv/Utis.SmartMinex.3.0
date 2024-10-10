@@ -177,27 +177,27 @@ public class GMath
 
         var res = new double[18];
         res[0] = x1 - dx;
-        res[1] = -dy - y1;
+        res[1] = y1 + dy;
         res[2] = z1;
 
         res[3] = x1;
-        res[4] = -y1;
+        res[4] = y1;
         res[5] = z1;
 
         res[6] = x1 + dx;
-        res[7] = dy - y1;
+        res[7] = y1 - dy;
         res[8] = z1;
 
         res[9] = x2 + dx;
-        res[10] = dy - y2;
+        res[10] = y2 - dy;
         res[11] = z2;
 
         res[12] = x2;
-        res[13] = -y2;
+        res[13] = y2;
         res[14] = z2;
 
         res[15] = x2 - dx;
-        res[16] = -dy - y2;
+        res[16] = y2 + dy;
         res[17] = z2;
         return res;
     }
@@ -210,7 +210,7 @@ public class GMath
         var dx = width / 2.0 * (y2 - y1) / len;
         var dy = width / 2.0 * (x2 - x1) / len;
 
-        return [new GVector3(x1 - dx, -dy - y1, z1), new GVector3(x1, -y1, z1), new GVector3(x1 + dx, dy - y1, z1),
-            new GVector3(x2 + dx, dy - y2, z2), new GVector3(x2, -y2, z2), new GVector3(x2 - dx, -dy - y2, z2)];
+        return [new GVector3(x1 - dx, y1 + dy, z1), new GVector3(x1, y1, z1), new GVector3(x1 + dx, y1 - dy, z1),
+            new GVector3(x2 + dx, y2 - dy, z2), new GVector3(x2, y2, z2), new GVector3(x2 - dx, y2 + dy, z2)];
     }
 }

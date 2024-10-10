@@ -11,7 +11,7 @@ public class GData
     public int[] Indices { get; set; }
     public float[] Colors { get; set; }
     /// <summary> Нормали не принципиальны, поскольку направление света в нашем случае не важно!</summary>
-    public double[] Normals { get; set; } = [];
+    public float[] Normals { get; set; } = [];
     public GVector3 Camera { get; set; } = new GVector3(26605, 32072, -1300);
     public GVector3 Origin { get; set; }
 
@@ -35,6 +35,7 @@ public class GData
             RenderNode(node);
 
         var vertices = new List<Double>();
+        var normals = new List<float>();
         var colors = new List<float>();
         var indices = new List<Int32>();
         int i = 0;
@@ -44,10 +45,14 @@ public class GData
             indices.AddRange(GFace.Indices.Select(j => i + j));
             i += 6;
             for (int j = 0; j < 6; j++)
+            {
+                normals.AddRange([0, 0, 1]);
                 colors.AddRange(f.BackColor);
+            }
         });
 
         Vertices = vertices.ToArray();
+        Normals = normals.ToArray();
         Indices = indices.ToArray();
         Colors = colors.ToArray();
         Origin = Mean();

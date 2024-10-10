@@ -30,9 +30,9 @@ const TScheme = function (id, data) {
             c2.position.y = 0.15;
             return c;
         };
-        axiscube = axis(null, 'y', 0, 0.1, 0, 0, 0, 1);
-        axis(axiscube, 'x', 0.1, -0.1, 0, 0, 1, 0);
-        axis(axiscube, 'z', 0, -0.1, 0.1, 1, 0, 0);
+        axiscube = axis(null, 'y', 0, 0.1, 0, 0, 1, 0);
+        axis(axiscube, 'x', 0.1, -0.1, 0, 1, 0, 0);
+        axis(axiscube, 'z', 0, -0.1, 0.1, 0, 0, 1);
     };
 
     const onMouseDown = (e, pick) => {
@@ -51,9 +51,10 @@ const TScheme = function (id, data) {
 
     const createScene = () => {
         const scene = new BABYLON.Scene(engine);
+        scene.useRightHandedSystem = true;
         scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
 
-        camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, 0, 100, new BABYLON.Vector3(_data.origin.x, _data.origin.y, _data.origin.z), scene);
+        camera = new BABYLON.ArcRotateCamera("camera", Math.PI / 2, Math.PI, 100, new BABYLON.Vector3(_data.origin.x, _data.origin.y, _data.origin.z), scene);
         camera.noRotationConstraint = true;
         camera.attachControl(canvas, true);
 
@@ -61,7 +62,7 @@ const TScheme = function (id, data) {
         //axicam.upVector = new BABYLON.Vector3(0, 0, 1);
         //axicam.setTarget(BABYLON.Vector3.Zero());
         //axicam.viewport = new BABYLON.Viewport(-0.45, -0.35, 1, 1);
-        axicam = new BABYLON.ArcRotateCamera("axicam", -Math.PI / 2, 0, 10, new BABYLON.Vector3(0, 0, 0), scene);
+        axicam = new BABYLON.ArcRotateCamera("axicam", -Math.PI / 2, 0, 5, new BABYLON.Vector3(0, 0, 0), scene);
         axicam.viewport = new BABYLON.Viewport(-0.45, -0.35, 1, 1);
         //axicam.mode = BABYLON.Camera.ORTHOGRAPHIC_CAMERA;
         axicam.layerMask = 0x80000000;
@@ -80,10 +81,12 @@ const TScheme = function (id, data) {
         var mat = new BABYLON.StandardMaterial(scene);
         mat.alpha = 1;
         mat.backFaceCulling = false;
+        //mat.emissiveColor = new BABYLON.Color3(1, 0, 1);
         utmesh.material = mat;
 
         var vrtx = new BABYLON.VertexData();
-        BABYLON.VertexData.ComputeNormals(_data.vertices, _data.indices, _data.normals);
+        if (_data.normals.length === 0)
+            BABYLON.VertexData.ComputeNormals(_data.vertices, _data.indices, _data.normals);
 
         vrtx.positions = _data.vertices;
         vrtx.indices = _data.indices;
