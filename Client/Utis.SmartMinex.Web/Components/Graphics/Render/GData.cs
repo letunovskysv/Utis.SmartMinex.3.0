@@ -41,10 +41,11 @@ public class GData
         int i = 0;
         faces.ForEach(f =>
         {
+            var n = f.Bounds.Count;
             vertices.AddRange(f.Vertices);
-            indices.AddRange(GFace.Indices.Select(j => i + j));
-            i += 6;
-            for (int j = 0; j < 6; j++)
+            indices.AddRange(f.Indices.Select(j => i + j));
+            i += n;
+            for (int j = 0; j < n; j++)
             {
                 normals.AddRange([0, 0, 1]);
                 colors.AddRange(f.BackColor);
@@ -66,7 +67,7 @@ public class GData
             var p0 = node.Point; // Выстроим отрезки по порядку против часовой стрелки -->
             var faces = node.Faces.OrderBy(f => GMath.AngleFloor(p0, f.Node1 == node ? f.Node2.Point : f.Node1.Point)).Select(f =>
             {
-                if (f.Bounds.Length == 0)
+                if (f.Bounds.Count == 0)
                 {
                     var n1 = f.Node1;
                     var n2 = f.Node2;
@@ -76,49 +77,61 @@ public class GData
                 return f;
             }).ToArray();
 
-            var firstZ = node.Faces[0].Node1.Z;
-            if (node.Faces.Count < 3 || !node.Faces.Any(f => f.Node1.Z != firstZ || f.Node2.Z != firstZ)) // Все отрезки в одной плоскости Z, или отрезков < 3
+            if (faces.Length > 1) // построим перекрёсток -->
             {
-                if (faces.Length > 1) // построим перекрёсток -->
+                int i11, i12, i21, i22;
+                var cnt = faces.Length;
+                var face = faces[cnt - 1];
+                for (var i = 0; i < cnt; i++)
                 {
-                    var cnt = faces.Length;
-                    var iprev = cnt - 1;
-                    int i11, i12, i21, i22;
-                    for (var i = 0; i < cnt; i++)
+                    var prev = face;
+                    face = faces[i];
+
+                    if (face.Node1 == node)
                     {
-                        var face = faces[i];
-                        var prev = faces[iprev];
-                        iprev = i;
-
-                        if (face.Node1 == node)
-                        {
-                            i11 = 2;
-                            i12 = 3;
-                        }
-                        else
-                        {
-                            i11 = 5;
-                            i12 = 0;
-                        }
-                        if (prev.Node1 == node)
-                        {
-                            i21 = 0;
-                            i22 = 5;
-                        }
-                        else
-                        {
-                            i21 = 3;
-                            i22 = 2;
-                        }
-                        face.Bounds[i11] = prev.Bounds[i21] =
-                            GMath.Intersection(face.Bounds[i11], face.Bounds[i12], prev.Bounds[i21], prev.Bounds[i22]);
+                        i11 = 2;
+                        i12 = 3;
                     }
-                }
-            }
-            else
-            {
+                    else
+                    {
+                        i11 = 5;
+                        i12 = 0;
+                    }
+                    if (prev.Node1 == node)
+                    {
+                        i21 = 0;
+                        i22 = 5;
+                    }
+                    else
+                    {
+                        i21 = 3;
+                        i22 = 2;
+                    }
+                    face.Bounds[i11] = prev.Bounds[i21] =
+                        GMath.Intersection(face.Bounds[i11], face.Bounds[i12], prev.Bounds[i21], prev.Bounds[i22]);
 
+                    if (i > 0 && prev.Node1.Z != prev.Node2.Z)
+                        RenderIntersection(prev, node);
+                }
+                if (face.Node1.Z != face.Node2.Z)
+                    RenderIntersection(face, node);
             }
+        }
+    }
+
+    static void RenderIntersection(GFace face, GNode node)
+    {
+        if (face.Node1 == node)
+        {
+            face.Bounds.Add(face.Bounds[1]);
+            face.Indices.AddRange([0, 2, face.Bounds.Count - 1]);
+            face.Bounds[1] = GMath.MiddlePoint(face.Bounds[0], face.Bounds[2]);
+        }
+        else
+        {
+            face.Bounds.Add(face.Bounds[4]);
+            face.Indices.AddRange([5, 3, face.Bounds.Count - 1]);
+            face.Bounds[4] = GMath.MiddlePoint(face.Bounds[3], face.Bounds[5]);
         }
     }
 
@@ -160,10 +173,10 @@ public class GFace
     public GNode Node2;
     public float Width;
 
-    public GVector3[] Bounds = [];
+    public List<GVector3> Bounds = [];
     /// <summary> Возвращает массив вершин для OpenGL.</summary>
     public double[] Vertices => Bounds.SelectMany(p => p.ToArray()).ToArray();
-    public static int[] Indices = [0, 1, 5, 5, 1, 4, 4, 1, 2, 2, 3, 4];
+    public List<int> Indices = [0, 1, 5, 5, 1, 4, 4, 1, 2, 2, 3, 4];
     public float[] BackColor;
 
     public GFace(ZSection sect, Dictionary<long, GNode> nodes, ZStyles styles, ZStyle defaultStyle)

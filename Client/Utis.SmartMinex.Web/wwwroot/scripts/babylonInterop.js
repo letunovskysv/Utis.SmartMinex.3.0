@@ -2,7 +2,7 @@ var map;
 const TScheme = function (id, data) {
     const canvas = document.getElementById(id);
     const _data = data;
-    const _trianglesVerticesMode = true;
+    const _trianglesVerticesMode = false;
     let engine;
     let scene;
     let camera, axicam;
@@ -11,9 +11,8 @@ const TScheme = function (id, data) {
     const drawAxisCube = () => {
         const axis = (root, n, x, y, z, r, g, b) => {
             const mat = new BABYLON.StandardMaterial('axis' + n, scene);
-            mat.diffuseColor = new BABYLON.Color3(r, g, b);
+            mat.emissiveColor = new BABYLON.Color3(r, g, b);
             mat.alpha = 1;
-            mat.backFaceCulling = false;
             const c = BABYLON.MeshBuilder.CreateCylinder('axis' + n, { height: 0.2, diameter: 0.05, sideOrientation: 0 }, scene);
             c.layerMask = 0x80000000;
             c.parent = root;
@@ -30,9 +29,9 @@ const TScheme = function (id, data) {
             c2.position.y = 0.15;
             return c;
         };
-        axiscube = axis(null, 'y', 0, 0.1, 0, 0, 1, 0);
-        axis(axiscube, 'x', 0.1, -0.1, 0, 1, 0, 0);
-        axis(axiscube, 'z', 0, -0.1, 0.1, 0, 0, 1);
+        axiscube = axis(null, 'y', 0, 0.1, 0, 0, 0.6, 0);
+        axis(axiscube, 'x', 0.1, -0.1, 0, 0.6, 0, 0);
+        axis(axiscube, 'z', 0, -0.1, 0.1, 0, 0, 0.6);
     };
 
     const onMouseDown = (e, pick) => {
@@ -62,13 +61,13 @@ const TScheme = function (id, data) {
         //axicam.upVector = new BABYLON.Vector3(0, 0, 1);
         //axicam.setTarget(BABYLON.Vector3.Zero());
         //axicam.viewport = new BABYLON.Viewport(-0.45, -0.35, 1, 1);
-        axicam = new BABYLON.ArcRotateCamera("axicam", -Math.PI / 2, 0, 5, new BABYLON.Vector3(0, 0, 0), scene);
+        axicam = new BABYLON.ArcRotateCamera("axicam", -Math.PI / 2, 0, 10, new BABYLON.Vector3(0, 0, 0), scene);
         axicam.viewport = new BABYLON.Viewport(-0.45, -0.35, 1, 1);
         //axicam.mode = BABYLON.Camera.ORTHOGRAPHIC_CAMERA;
         axicam.layerMask = 0x80000000;
 
-        scene.activeCameras.push(axicam);
         scene.activeCameras.push(camera);
+        scene.activeCameras.push(axicam);
 
         const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 0, 1000), scene);
         light.specular = new BABYLON.Color3(0, 0, 0);

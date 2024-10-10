@@ -204,7 +204,7 @@ public class GMath
 
     /// <summary> Расчёт координат границ фигуры секции выработки по узловым точкам (0-1-2-3-4-5) против часовой стрелки заданной ширины.</summary>
     /// <remarks> Для построения Mesh-фигуры. Полигоны [0-1-5],[5-1-4],[4-1-2],[2-3-4] </remarks>
-    public static GVector3[] GetBoundVertices2(double x1, double y1, double z1, double x2, double y2, double z2, double width)
+    public static List<GVector3> GetBoundVertices2(double x1, double y1, double z1, double x2, double y2, double z2, double width)
     {
         var len = Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
         var dx = width / 2.0 * (y2 - y1) / len;
