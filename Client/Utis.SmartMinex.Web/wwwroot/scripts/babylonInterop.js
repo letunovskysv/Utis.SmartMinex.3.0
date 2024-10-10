@@ -2,7 +2,7 @@ var map;
 const TScheme = function (id, data) {
     const canvas = document.getElementById(id);
     const _data = data;
-    const _trianglesVerticesMode = false;
+    const _trianglesVerticesMode = true;
     let engine;
     let scene;
     let camera, axicam;
@@ -80,7 +80,6 @@ const TScheme = function (id, data) {
         var mat = new BABYLON.StandardMaterial(scene);
         mat.alpha = 1;
         mat.backFaceCulling = false;
-        //mat.emissiveColor = new BABYLON.Color3(1, 0, 1);
         utmesh.material = mat;
 
         var vrtx = new BABYLON.VertexData();

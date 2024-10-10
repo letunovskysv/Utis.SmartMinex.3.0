@@ -2,6 +2,8 @@
 // (С) 2017-2025 ООО УралТехИС. Интеллектуальная Системная Платформа 3.0. Все права защищены.
 // Описание: GMeshFactory - Построение различных фигур.
 //--------------------------------------------------------------------------------------------------
+using Utis.SmartMinex.Client;
+
 namespace Utis.SmartMinex.Graphics;
 
 public class GMeshFactory
@@ -54,8 +56,14 @@ public class GMeshFactory
     }
 
     /// <summary> Построить вершины шахты с полукруглым сводом.</summary>
-    public static void BuildTube()
+    public static void BuildTube(GFace face)
     {
-
+        var i = face.Bounds.Count;
+        var wall = new GVector3(0, 0, face.Height - face.Width / 2.0);
+        face.Bounds.Add(face.Bounds[5] + wall);
+        face.Bounds.Add(face.Bounds[0] + wall);
+        face.Bounds.Add(face.Bounds[2] + wall);
+        face.Bounds.Add(face.Bounds[3] + wall);
+        face.Indices.AddRange([0, 5, i, i, i + 1, 0, 3, 2, i + 2, i + 2, i + 3, 3]);
     }
 }

@@ -27,6 +27,7 @@ public class GData
         var faceStyle = model.Styles[nameof(ZLayer.Sections)] ?? new ZStyle();
         faceStyle.Background ??= "#753b00";
         faceStyle.Width ??= 5;
+        faceStyle.Height ??= faceStyle.Width;
 
         var nodes = model.Levels.SelectMany(lev => lev.Layers.SelectMany(lay => lay.Nodes)).ToDictionary(k => k.Id, v => new GNode(v));
         // ...Layers.Where(l => l.Id == 13229461344372736) // -800 horizon
@@ -37,7 +38,7 @@ public class GData
             RenderNode(node);
 
         foreach (var face in faces)
-            RenderFace(face);
+            GMeshFactory.BuildTube(face);
 
         var vertices = new List<Double>();
         var normals = new List<float>();
@@ -146,12 +147,6 @@ public class GData
         }
     }
 
-    /// <summary> Расчёт вершин для секции (тоннеля).</summary>
-    static void RenderFace(GFace face)
-    {
-        GMeshFactory.BuildTube();
-    }
-
     /// <summary> Вычисление центра схемы, центра вращения по умолчанию.</summary>
     /// <remarks> Расчитываться должно исходя из центра масс (облака точек).</remarks>
     GVector3 Mean()
@@ -189,11 +184,12 @@ public class GFace
     public GNode Node1;
     public GNode Node2;
     public float Width;
+    public float Height;
 
     public List<GVector3> Bounds = [];
     /// <summary> Возвращает массив вершин для OpenGL.</summary>
     public double[] Vertices => Bounds.SelectMany(p => p.ToArray()).ToArray();
-    public List<int> Indices = [0, 1, 5, 5, 1, 4, 4, 1, 2, 2, 3, 4];
+    public List<int> Indices = [1, 0, 5, 5, 4, 1, 2, 1, 4, 2, 4, 3];
     public float[] BackColor;
 
     public GFace(ZSection sect, Dictionary<long, GNode> nodes, ZStyles styles, ZStyle defaultStyle)
@@ -204,6 +200,7 @@ public class GFace
         Node2.Faces.Add(this);
         BackColor = new GColor4(defaultStyle.Background).ToArray();
         Width = defaultStyle.Width ?? 5;
+        Height = defaultStyle.Height ?? Width;
         if (sect.Style != null && sect.Style.Contains("background:") && int.TryParse(Regex.Match(sect.Style, @"(?<=background\:)\d+").Value, out var n))
         {
             var st = styles[n];

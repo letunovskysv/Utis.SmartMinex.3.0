@@ -52,6 +52,7 @@ public class ZStyle
     public string? Background { get; set; }
     public string? Border { get; set; }
     public float? Width { get; set; }
+    public float? Height { get; set; }
 }
 
 public class ZNode
